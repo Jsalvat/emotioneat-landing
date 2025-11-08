@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "EmotionEat - Libérate del Comer Emocional con IA",
+    "description": "Comprende tus patrones de alimentación emocional con insights impulsados por IA. Rastrea tus hábitos diarios, descubre tus triggers, y recibe consejos personalizados para construir una relación más saludable con la comida.",
+    "ogTitle": "EmotionEat - Soporte para el Comer Emocional con IA",
+    "ogDescription": "Libérate del comer emocional. Obtén insights personalizados y soporte a través de análisis de patrones impulsado por IA."
+  },
+  "header": {
+    "features": "Características",
+    "pricing": "Precios",
+    "faq": "FAQ",
+    "startFree": "Empezar Gratis"
+  },
+  "hero": {
+    "headline": "Libérate del Comer Emocional",
+    "subheadline": "Deja de sentirte controlado por los antojos. EmotionEat te ayuda a entender tus patrones, identificar triggers, y construir una relación más saludable con la comida—un día a la vez.",
+    "cta": "Comienza Tu Viaje Gratis",
+    "ctaSecondary": "Ver Cómo Funciona",
+    "trustSignal": "Únete a los primeros usuarios tomando control",
+    "noCard": "No se requiere tarjeta de crédito"
+  },
+  "howItWorks": {
+    "title": "Cómo Funciona EmotionEat",
+    "subtitle": "Tres pasos simples para entender y superar el comer emocional",
+    "step1": {
+      "title": "Registra Tu Día",
+      "description": "Ten una conversación natural con nuestra IA sobre tu día, sentimientos, y relación con la comida. Sin formularios rígidos—solo habla."
+    },
+    "step2": {
+      "title": "Descubre Patrones",
+      "description": "Nuestra IA analiza tus entradas para identificar triggers, patrones emocionales, y contextos que llevan al comer emocional."
+    },
+    "step3": {
+      "title": "Recibe Consejos Personalizados",
+      "description": "Obtén recomendaciones accionables y basadas en ciencia, adaptadas a tus patrones únicos y estilo de vida."
+    }
+  },
+  "features": {
+    "title": "Todo Lo Que Necesitas Para Tomar Control",
+    "subtitle": "Herramientas poderosas diseñadas para ayudarte a entender y cambiar tu relación con la comida",
+    "feature1": {
+      "title": "Entiende Tus Triggers",
+      "description": "La detección de patrones impulsada por IA revela qué impulsa realmente tu comer emocional—estrés, aburrimiento, tristeza, o situaciones específicas."
+    },
+    "feature2": {
+      "title": "Construye Hábitos Más Saludables",
+      "description": "Rastrea tu progreso en el tiempo con una vista de calendario hermosa. Ve tu crecimiento y celebra pequeñas victorias."
+    },
+    "feature3": {
+      "title": "Obtén Soporte Personal",
+      "description": "Recomendaciones de IA que realmente entienden tus desafíos únicos. Sin consejos genéricos—solo soluciones reales."
+    },
+    "feature4": {
+      "title": "Tus Datos, Tu Privacidad",
+      "description": "Tus entradas están encriptadas y protegidas con seguridad de nivel empresarial. Nunca compartimos tus datos con nadie, jamás."
+    }
+  },
+  "pricing": {
+    "title": "Empieza Gratis, Actualiza Cuando Estés Listo",
+    "subtitle": "Sin compromiso. Cancela cuando quieras. Todos los planes incluyen características principales.",
+    "free": {
+      "name": "Gratis",
+      "price": "$0",
+      "period": "para siempre",
+      "description": "Perfecto para comenzar tu viaje",
+      "features": [
+        "1 entrada de diario por día",
+        "1 análisis de patrones por semana",
+        "Consejos personalizados ilimitados",
+        "Seguimiento en calendario",
+        "Privacidad y encriptación"
+      ],
+      "cta": "Empezar Gratis"
+    },
+    "premium": {
+      "name": "Premium",
+      "price": "$9.99",
+      "period": "por mes",
+      "badge": "Más Popular",
+      "description": "Para transformación seria",
+      "features": [
+        "3 entradas de diario por día",
+        "1 análisis de patrones por día",
+        "Consejos personalizados ilimitados",
+        "Soporte prioritario",
+        "Acceso anticipado a nuevas funciones"
+      ],
+      "cta": "Actualizar Ahora"
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Todo lo que necesitas saber sobre EmotionEat",
+    "question1": {
+      "q": "¿Mis datos son privados y seguros?",
+      "a": "Absolutamente. Tus datos están encriptados y protegidos con seguridad estándar de la industria (HTTPS + encriptación a nivel de base de datos). Tus entradas de diario son privadas y nunca se comparten con nadie. No vendemos tus datos, nunca."
+    },
+    "question2": {
+      "q": "¿Cómo funciona la IA?",
+      "a": "Nuestra IA usa procesamiento avanzado de lenguaje natural para entender tus entradas diarias e identificar patrones en tu alimentación emocional. Busca triggers, contextos, y comportamientos recurrentes para proporcionar insights personalizados."
+    },
+    "question3": {
+      "q": "¿Puedo cancelar en cualquier momento?",
+      "a": "¡Sí! Tanto los planes gratis como premium no tienen compromiso. Puedes cancelar tu suscripción premium en cualquier momento, y continuarás teniendo acceso hasta el final de tu período de facturación."
+    },
+    "question4": {
+      "q": "¿Necesito experiencia con diarios?",
+      "a": "¡Para nada! Nuestro chat impulsado por IA hace que escribir en el diario se sienta como tener una conversación. Solo habla naturalmente sobre tu día, y la IA te guiará con preguntas útiles."
+    },
+    "question5": {
+      "q": "¿Cuál es la diferencia entre gratis y premium?",
+      "a": "Gratis te da 1 entrada de diario y 1 análisis de patrones por semana—perfecto para comenzar. Premium desbloquea 3 entradas diarias y análisis de patrones diario para insights más profundos y progreso más rápido."
+    },
+    "question6": {
+      "q": "¿Es esto un reemplazo para terapia?",
+      "a": "No. EmotionEat es una herramienta para ayudarte a entender patrones y construir hábitos más saludables, pero no es un sustituto para atención médica profesional o de salud mental. Para trastornos alimentarios serios, por favor consulta a un proveedor de salud."
+    }
+  },
+  "cta": {
+    "title": "Comienza a Entenderte Hoy",
+    "subtitle": "Únete a miles de personas construyendo una relación más saludable con la comida",
+    "button": "Empezar Gratis",
+    "noCard": "No se requiere tarjeta de crédito · Plan gratuito para siempre disponible"
+  },
+  "footer": {
+    "tagline": "Construyendo relaciones más saludables con la comida, un día a la vez.",
+    "product": "Producto",
+    "features": "Características",
+    "pricing": "Precios",
+    "support": "Soporte",
+    "faq": "FAQ",
+    "contact": "Contacto",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "legal": "Legal",
+    "rights": "© 2024 EmotionEat. Todos los derechos reservados."
+  }
+}

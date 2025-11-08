@@ -1,0 +1,87 @@
+---
+interface Props {
+  t: any;
+}
+
+const { t } = Astro.props;
+
+const features = [
+  {
+    title: t.features.feature1.title,
+    description: t.features.feature1.description,
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+    </svg>`,
+    gradient: "from-brand-500 to-calm-500"
+  },
+  {
+    title: t.features.feature2.title,
+    description: t.features.feature2.description,
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+    </svg>`,
+    gradient: "from-calm-500 to-mint-500"
+  },
+  {
+    title: t.features.feature3.title,
+    description: t.features.feature3.description,
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+    </svg>`,
+    gradient: "from-mint-500 to-lavender-500"
+  },
+  {
+    title: t.features.feature4.title,
+    description: t.features.feature4.description,
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+    </svg>`,
+    gradient: "from-lavender-500 to-brand-500"
+  }
+];
+---
+
+<section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+  <div class="container mx-auto max-w-7xl">
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        {t.features.title}
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        {t.features.subtitle}
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      {features.map((feature, index) => (
+        <div class={`group relative animate-on-scroll delay-${(index + 1) * 100}`}>
+          <!-- Card -->
+          <div class="relative bg-white rounded-3xl p-8 lg:p-10 border-2 border-gray-100 hover:border-transparent transition-all hover:shadow-2xl group-hover:-translate-y-1 h-full flex flex-col">
+            <!-- Gradient border on hover -->
+            <div class={`absolute inset-0 rounded-3xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity -z-10`}></div>
+
+            <!-- Icon -->
+            <div class={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+              <Fragment set:html={feature.icon} />
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                {feature.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed text-lg">
+                {feature.description}
+              </p>
+            </div>
+
+            <!-- Decorative element -->
+            <div class={`absolute -bottom-2 -right-2 w-24 h-24 bg-gradient-to-br ${feature.gradient} rounded-full opacity-0 group-hover:opacity-10 blur-2xl transition-opacity`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

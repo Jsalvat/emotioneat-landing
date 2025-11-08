@@ -1,0 +1,95 @@
+---
+interface Props {
+  lang: string;
+  t: any;
+}
+
+const { lang, t } = Astro.props;
+const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href={lang === 'en' ? '/' : '/es'} class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-gradient-to-br from-brand-500 to-calm-500 rounded-xl"></div>
+          <span class="text-xl font-bold text-gray-900">EmotionEat</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href={`#features`} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+          {t.header.features}
+        </a>
+        <a href={`#pricing`} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+          {t.header.pricing}
+        </a>
+        <a href={`#faq`} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+          {t.header.faq}
+        </a>
+      </div>
+
+      <!-- CTA & Language Switcher -->
+      <div class="flex items-center space-x-4">
+        <!-- Language Switcher -->
+        <div class="flex items-center space-x-1 bg-gray-100 rounded-lg p-1">
+          <a 
+            href="/" 
+            class={`px-3 py-1 rounded-md text-sm font-medium transition-all ${lang === 'en' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
+            data-lang-switch="en"
+          >
+            EN
+          </a>
+          <a 
+            href="/es" 
+            class={`px-3 py-1 rounded-md text-sm font-medium transition-all ${lang === 'es' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
+            data-lang-switch="es"
+          >
+            ES
+          </a>
+        </div>
+
+        <!-- CTA Button -->
+        <a 
+          href={appUrl}
+          class="hidden sm:inline-flex items-center px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5"
+          data-cta-location="header"
+        >
+          {t.header.startFree}
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  import { initMixpanel, trackCTAClick, trackLanguageSwitch } from '../scripts/mixpanel';
+  
+  // Initialize Mixpanel
+  initMixpanel();
+  
+  // Track CTA clicks
+  document.querySelectorAll('[data-cta-location]').forEach(button => {
+    button.addEventListener('click', () => {
+      const location = button.getAttribute('data-cta-location');
+      const lang = document.documentElement.lang;
+      if (location) {
+        trackCTAClick(location, lang);
+      }
+    });
+  });
+  
+  // Track language switches
+  document.querySelectorAll('[data-lang-switch]').forEach(link => {
+    link.addEventListener('click', () => {
+      const toLang = link.getAttribute('data-lang-switch');
+      const fromLang = document.documentElement.lang;
+      if (toLang && fromLang !== toLang) {
+        trackLanguageSwitch(fromLang, toLang);
+      }
+    });
+  });
+</script>

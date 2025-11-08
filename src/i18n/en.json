@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "EmotionEat - Break Free from Emotional Eating with AI",
+    "description": "Understand your emotional eating patterns with AI-powered insights. Track your daily habits, discover triggers, and get personalized advice to build a healthier relationship with food.",
+    "ogTitle": "EmotionEat - AI-Powered Emotional Eating Support",
+    "ogDescription": "Break free from emotional eating. Get personalized insights and support through AI-powered pattern analysis."
+  },
+  "header": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "startFree": "Start Free"
+  },
+  "hero": {
+    "headline": "Break Free from Emotional Eating",
+    "subheadline": "Stop feeling controlled by cravings. EmotionEat helps you understand your patterns, identify triggers, and build a healthier relationship with food—one day at a time.",
+    "cta": "Start Your Journey Free",
+    "ctaSecondary": "See How It Works",
+    "trustSignal": "Join early adopters taking control",
+    "noCard": "No credit card required"
+  },
+  "howItWorks": {
+    "title": "How EmotionEat Works",
+    "subtitle": "Three simple steps to understand and overcome emotional eating",
+    "step1": {
+      "title": "Journal Your Day",
+      "description": "Have a natural conversation with our AI about your day, feelings, and relationship with food. No rigid forms—just talk."
+    },
+    "step2": {
+      "title": "Discover Patterns",
+      "description": "Our AI analyzes your entries to identify triggers, emotional patterns, and contexts that lead to emotional eating."
+    },
+    "step3": {
+      "title": "Get Personalized Advice",
+      "description": "Receive actionable, science-backed recommendations tailored to your unique patterns and lifestyle."
+    }
+  },
+  "features": {
+    "title": "Everything You Need to Take Control",
+    "subtitle": "Powerful tools designed to help you understand and change your relationship with food",
+    "feature1": {
+      "title": "Understand Your Triggers",
+      "description": "AI-powered pattern detection reveals what really drives your emotional eating—stress, boredom, sadness, or specific situations."
+    },
+    "feature2": {
+      "title": "Build Healthier Habits",
+      "description": "Track your progress over time with a beautiful calendar view. See your growth and celebrate small wins."
+    },
+    "feature3": {
+      "title": "Get Personal Support",
+      "description": "AI recommendations that actually understand your unique challenges. No generic advice—just real solutions."
+    },
+    "feature4": {
+      "title": "Your Data, Your Privacy",
+      "description": "Your journal entries are encrypted and protected with enterprise-grade security. We never share your data with anyone, ever."
+    }
+  },
+  "pricing": {
+    "title": "Start Free, Upgrade When Ready",
+    "subtitle": "No commitment. Cancel anytime. All plans include core features.",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "period": "forever",
+      "description": "Perfect to start your journey",
+      "features": [
+        "1 journal entry per day",
+        "1 pattern analysis per week",
+        "Unlimited personalized advice",
+        "Calendar tracking",
+        "Privacy & encryption"
+      ],
+      "cta": "Start Free"
+    },
+    "premium": {
+      "name": "Premium",
+      "price": "$9.99",
+      "period": "per month",
+      "badge": "Most Popular",
+      "description": "For serious transformation",
+      "features": [
+        "3 journal entries per day",
+        "1 pattern analysis per day",
+        "Unlimited personalized advice",
+        "Priority support",
+        "Early access to new features"
+      ],
+      "cta": "Upgrade Now"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about EmotionEat",
+    "question1": {
+      "q": "Is my data private and secure?",
+      "a": "Absolutely. Your data is encrypted and protected with industry-standard security (HTTPS + database-level encryption). Your journal entries are private and never shared with anyone. We don't sell your data, ever."
+    },
+    "question2": {
+      "q": "How does the AI work?",
+      "a": "Our AI uses advanced natural language processing to understand your daily entries and identify patterns in your emotional eating. It looks for triggers, contexts, and recurring behaviors to provide personalized insights."
+    },
+    "question3": {
+      "q": "Can I cancel anytime?",
+      "a": "Yes! Both free and premium plans have no commitment. You can cancel your premium subscription at any time, and you'll continue to have access until the end of your billing period."
+    },
+    "question4": {
+      "q": "Do I need any experience with journaling?",
+      "a": "Not at all! Our AI-powered chat makes journaling feel like having a conversation. Just talk about your day naturally, and the AI will guide you with helpful questions."
+    },
+    "question5": {
+      "q": "What's the difference between free and premium?",
+      "a": "Free gives you 1 journal entry and 1 pattern analysis per week—perfect for getting started. Premium unlocks 3 daily entries and daily pattern analysis for deeper insights and faster progress."
+    },
+    "question6": {
+      "q": "Is this a replacement for therapy?",
+      "a": "No. EmotionEat is a tool to help you understand patterns and build healthier habits, but it's not a substitute for professional medical or mental health care. For serious eating disorders, please consult a healthcare provider."
+    }
+  },
+  "cta": {
+    "title": "Start Understanding Yourself Today",
+    "subtitle": "Join thousands of people building a healthier relationship with food",
+    "button": "Get Started Free",
+    "noCard": "No credit card required · Free forever plan available"
+  },
+  "footer": {
+    "tagline": "Building healthier relationships with food, one day at a time.",
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "support": "Support",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "legal": "Legal",
+    "rights": "© 2024 EmotionEat. All rights reserved."
+  }
+}

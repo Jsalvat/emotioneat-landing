@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import HowItWorks from '../../components/HowItWorks.astro';
+import Features from '../../components/Features.astro';
+import Pricing from '../../components/Pricing.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+
+import es from '../../i18n/es.json';
+
+const lang = 'es';
+const t = es;
+---
+
+<Layout 
+  title={t.meta.title}
+  description={t.meta.description}
+  ogTitle={t.meta.ogTitle}
+  ogDescription={t.meta.ogDescription}
+  lang={lang}
+>
+  <Header lang={lang} t={t} />
+  <main>
+    <Hero t={t} />
+    <HowItWorks t={t} />
+    <Features t={t} />
+    <Pricing t={t} />
+    <FAQ t={t} />
+    <CTA t={t} />
+  </main>
+  <Footer t={t} lang={lang} />
+
+  <script>
+    import { initMixpanel, trackPageView } from '../../scripts/mixpanel';
+    
+    // Initialize Mixpanel and track page view
+    initMixpanel();
+    trackPageView('home', 'es');
+  </script>
+</Layout>

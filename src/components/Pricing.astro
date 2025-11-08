@@ -1,0 +1,122 @@
+---
+interface Props {
+  t: any;
+}
+
+const { t } = Astro.props;
+const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+---
+
+<section id="pricing" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="container mx-auto max-w-7xl">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        {t.pricing.title}
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        {t.pricing.subtitle}
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <!-- Free Plan -->
+      <div class="relative bg-white rounded-3xl p-8 border-2 border-gray-200 hover:shadow-xl transition-all animate-on-scroll">
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">{t.pricing.free.name}</h3>
+          <div class="flex items-baseline mb-2">
+            <span class="text-5xl font-bold text-gray-900">{t.pricing.free.price}</span>
+            <span class="text-gray-500 ml-2">/ {t.pricing.free.period}</span>
+          </div>
+          <p class="text-gray-600">{t.pricing.free.description}</p>
+        </div>
+
+        <!-- Features List -->
+        <ul class="space-y-4 mb-8">
+          {t.pricing.free.features.map((feature: string) => (
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-mint-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700">{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <!-- CTA Button -->
+        <a 
+          href={appUrl}
+          class="block w-full text-center px-8 py-4 bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold rounded-xl transition-all"
+          data-cta-location="pricing-free"
+          data-pricing-plan="free"
+        >
+          {t.pricing.free.cta}
+        </a>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="relative bg-gradient-to-br from-brand-500 to-calm-500 rounded-3xl p-8 text-white shadow-2xl transform hover:scale-105 transition-all animate-on-scroll delay-200">
+        <!-- Popular Badge -->
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <span class="bg-mint-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+            {t.pricing.premium.badge}
+          </span>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold mb-2">{t.pricing.premium.name}</h3>
+          <div class="flex items-baseline mb-2">
+            <span class="text-5xl font-bold">{t.pricing.premium.price}</span>
+            <span class="text-brand-100 ml-2">/ {t.pricing.premium.period}</span>
+          </div>
+          <p class="text-brand-100">{t.pricing.premium.description}</p>
+        </div>
+
+        <!-- Features List -->
+        <ul class="space-y-4 mb-8">
+          {t.pricing.premium.features.map((feature: string) => (
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-mint-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-white">{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <!-- CTA Button -->
+        <a 
+          href={appUrl}
+          class="block w-full text-center px-8 py-4 bg-white hover:bg-gray-50 text-brand-600 font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl"
+          data-cta-location="pricing-premium"
+          data-pricing-plan="premium"
+        >
+          {t.pricing.premium.cta}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { trackPricingView } from '../scripts/mixpanel';
+  
+  // Track pricing plan views
+  document.querySelectorAll('[data-pricing-plan]').forEach(button => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const plan = button.getAttribute('data-pricing-plan');
+          const lang = document.documentElement.lang;
+          if (plan) {
+            trackPricingView(plan, lang);
+          }
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(button);
+  });
+</script>
