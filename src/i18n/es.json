@@ -39,18 +39,26 @@
     "title": "Todo Lo Que Necesitas Para Tomar Control",
     "subtitle": "Herramientas poderosas diseñadas para ayudarte a entender y cambiar tu relación con la comida",
     "feature1": {
-      "title": "Entiende Tus Triggers",
-      "description": "La detección de patrones impulsada por IA revela qué impulsa realmente tu comer emocional—estrés, aburrimiento, tristeza, o situaciones específicas."
+      "title": "Detección de Patrones con IA",
+      "description": "Nuestra IA analiza tus entradas para identificar triggers, patrones emocionales y contextos que conducen a la alimentación emocional."
     },
     "feature2": {
-      "title": "Construye Hábitos Más Saludables",
-      "description": "Rastrea tu progreso en el tiempo con una vista de calendario hermosa. Ve tu crecimiento y celebra pequeñas victorias."
+      "title": "Desafíos Diarios Personalizados",
+      "description": "Recibe 5 desafíos diarios accionables basados en tu análisis. Complétalos para construir hábitos más saludables paso a paso."
     },
     "feature3": {
-      "title": "Obtén Soporte Personal",
-      "description": "Recomendaciones de IA que realmente entienden tus desafíos únicos. Sin consejos genéricos—solo soluciones reales."
+      "title": "Calendario Visual e Historial",
+      "description": "Rastrea tu progreso con una vista de calendario hermosa. Revisa entradas pasadas, ve patrones a lo largo del tiempo y celebra tu crecimiento."
     },
     "feature4": {
+      "title": "Consejos Personalizados",
+      "description": "Recomendaciones de IA adaptadas a tus patrones únicos y estilo de vida. Sin consejos genéricos—solo soluciones reales que funcionan para ti."
+    },
+    "feature5": {
+      "title": "Insights de IA Instantáneos (Premium)",
+      "description": "Los usuarios Premium obtienen insights de IA instantáneos en cada entrada—feedback inmediato para ayudarte a entender tu comportamiento en tiempo real."
+    },
+    "feature6": {
       "title": "Tus Datos, Tu Privacidad",
       "description": "Tus entradas están encriptadas y protegidas con seguridad de nivel empresarial. Nunca compartimos tus datos con nadie, jamás."
     }
@@ -66,9 +74,9 @@
       "features": [
         "1 entrada de diario por día",
         "1 análisis de patrones por semana",
+        "5 desafíos personalizados diarios",
         "Consejos personalizados ilimitados",
-        "Seguimiento en calendario",
-        "Privacidad y encriptación"
+        "Calendario e historial"
       ],
       "cta": "Empezar Gratis"
     },
@@ -80,8 +88,9 @@
       "description": "Para transformación seria",
       "features": [
         "5 entradas de diario por día",
-        "1 análisis de patrones por día",
         "Insights de IA en cada entrada",
+        "1 análisis de patrones por día",
+        "5 desafíos personalizados diarios",
         "Consejos personalizados ilimitados",
         "Acceso anticipado a nuevas funciones"
       ],

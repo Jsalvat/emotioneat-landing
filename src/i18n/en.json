@@ -39,18 +39,26 @@
     "title": "Everything You Need to Take Control",
     "subtitle": "Powerful tools designed to help you understand and change your relationship with food",
     "feature1": {
-      "title": "Understand Your Triggers",
-      "description": "AI-powered pattern detection reveals what really drives your emotional eating—stress, boredom, sadness, or specific situations."
+      "title": "AI Pattern Detection",
+      "description": "Our AI analyzes your journal entries to identify triggers, emotional patterns, and contexts that lead to emotional eating."
     },
     "feature2": {
-      "title": "Build Healthier Habits",
-      "description": "Track your progress over time with a beautiful calendar view. See your growth and celebrate small wins."
+      "title": "Daily Personalized Challenges",
+      "description": "Get 5 actionable daily challenges based on your analysis. Complete them to build healthier habits step by step."
     },
     "feature3": {
-      "title": "Get Personal Support",
-      "description": "AI recommendations that actually understand your unique challenges. No generic advice—just real solutions."
+      "title": "Visual Calendar & History",
+      "description": "Track your progress with a beautiful calendar view. Review past entries, see patterns over time, and celebrate your growth."
     },
     "feature4": {
+      "title": "Personalized Advice",
+      "description": "AI recommendations tailored to your unique patterns and lifestyle. No generic advice—just real solutions that work for you."
+    },
+    "feature5": {
+      "title": "Instant AI Insights (Premium)",
+      "description": "Premium users get instant AI insights on every journal entry—immediate feedback to help you understand your behavior in real-time."
+    },
+    "feature6": {
       "title": "Your Data, Your Privacy",
       "description": "Your journal entries are encrypted and protected with enterprise-grade security. We never share your data with anyone, ever."
     }
@@ -66,9 +74,9 @@
       "features": [
         "1 journal entry per day",
         "1 pattern analysis per week",
+        "5 daily personalized challenges",
         "Unlimited personalized advice",
-        "Calendar tracking",
-        "Privacy & encryption"
+        "Calendar tracking & history"
       ],
       "cta": "Start Free"
     },
@@ -80,8 +88,9 @@
       "description": "For serious transformation",
       "features": [
         "5 journal entries per day",
-        "1 pattern analysis per day",
         "AI insights on every entry",
+        "1 pattern analysis per day",
+        "5 daily personalized challenges",
         "Unlimited personalized advice",
         "Early access to new features"
       ],
