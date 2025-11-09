@@ -60,7 +60,7 @@
     "subtitle": "No commitment. Cancel anytime. All plans include core features.",
     "free": {
       "name": "Free",
-      "price": "$0",
+      "price": "€0",
       "period": "forever",
       "description": "Perfect to start your journey",
       "features": [
@@ -74,15 +74,15 @@
     },
     "premium": {
       "name": "Premium",
-      "price": "$9.99",
+      "price": "€7.99",
       "period": "per month",
       "badge": "Most Popular",
       "description": "For serious transformation",
       "features": [
-        "3 journal entries per day",
+        "5 journal entries per day",
         "1 pattern analysis per day",
+        "AI insights on every entry",
         "Unlimited personalized advice",
-        "Priority support",
         "Early access to new features"
       ],
       "cta": "Upgrade Now"
@@ -109,7 +109,7 @@
     },
     "question5": {
       "q": "What's the difference between free and premium?",
-      "a": "Free gives you 1 journal entry and 1 pattern analysis per week—perfect for getting started. Premium unlocks 3 daily entries and daily pattern analysis for deeper insights and faster progress."
+      "a": "Free gives you 1 journal entry and 1 pattern analysis per week—perfect for getting started. Premium unlocks 5 daily entries with AI insights on every entry, plus 1 pattern analysis per day for deeper insights and faster progress."
     },
     "question6": {
       "q": "Is this a replacement for therapy?",

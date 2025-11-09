@@ -60,7 +60,7 @@
     "subtitle": "Sin compromiso. Cancela cuando quieras. Todos los planes incluyen características principales.",
     "free": {
       "name": "Gratis",
-      "price": "$0",
+      "price": "€0",
       "period": "para siempre",
       "description": "Perfecto para comenzar tu viaje",
       "features": [
@@ -74,15 +74,15 @@
     },
     "premium": {
       "name": "Premium",
-      "price": "$9.99",
+      "price": "€7.99",
       "period": "por mes",
       "badge": "Más Popular",
       "description": "Para transformación seria",
       "features": [
-        "3 entradas de diario por día",
+        "5 entradas de diario por día",
         "1 análisis de patrones por día",
+        "Insights de IA en cada entrada",
         "Consejos personalizados ilimitados",
-        "Soporte prioritario",
         "Acceso anticipado a nuevas funciones"
       ],
       "cta": "Actualizar Ahora"
@@ -109,7 +109,7 @@
     },
     "question5": {
       "q": "¿Cuál es la diferencia entre gratis y premium?",
-      "a": "Gratis te da 1 entrada de diario y 1 análisis de patrones por semana—perfecto para comenzar. Premium desbloquea 3 entradas diarias y análisis de patrones diario para insights más profundos y progreso más rápido."
+      "a": "Gratis te da 1 entrada de diario y 1 análisis de patrones por semana—perfecto para comenzar. Premium desbloquea 5 entradas diarias con insights de IA en cada entrada, más 1 análisis de patrones diario para insights más profundos y progreso más rápido."
     },
     "question6": {
       "q": "¿Es esto un reemplazo para terapia?",
