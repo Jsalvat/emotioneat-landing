@@ -5,7 +5,6 @@ interface Props {
       tagline: string;
       product: string;
       features: string;
-      pricing: string;
       support: string;
       faq: string;
       contact: string;
@@ -24,7 +23,6 @@ const translations = t || {
     tagline: "Building healthier relationships with food, one day at a time.",
     product: "Product",
     features: "Features",
-    pricing: "Pricing",
     support: "Support",
     faq: "FAQ",
     contact: "Contact",
@@ -71,7 +69,6 @@ const currentYear = new Date().getFullYear();
         <h3 class="text-white font-semibold mb-4">{translations.footer.product}</h3>
         <ul class="space-y-3">
           <li><a href="#features" class="hover:text-brand-400 transition-colors">{translations.footer.features}</a></li>
-          <li><a href="#pricing" class="hover:text-brand-400 transition-colors">{translations.footer.pricing}</a></li>
         </ul>
       </div>
 

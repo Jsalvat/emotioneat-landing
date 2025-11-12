@@ -7,24 +7,23 @@
   },
   "header": {
     "features": "Funciones",
-    "pricing": "Precios",
     "faq": "Preguntas Frecuentes",
-    "startFree": "Empezar Gratis"
+    "startNow": "Empezar"
   },
   "hero": {
     "headline": "Toma el Control de lo Que Comes",
     "subheadline": "Habla cada día con IA para entender por qué comes, descubre tus patrones y recibe retos que te ayudan a construir una relación más sana con la comida.",
-    "cta": "Empieza Tu Viaje Gratis",
+    "cta": "Empieza Tu Viaje",
     "ctaSecondary": "Ver Cómo Funciona",
     "trustSignal": "Más de 5.000 personas construyendo hábitos más sanos",
-    "noCard": "Sin tarjeta de crédito"
+    "noCard": ""
   },
   "howItWorks": {
     "title": "Cómo Funciona en 3 Pasos Sencillos",
     "subtitle": "Tu camino hacia una relación más sana con la comida empieza aquí",
     "step1": {
       "title": "Habla de Tu Día",
-      "description": "Conversa de forma natural con nuestra IA sobre tus hábitos alimentarios, sentimientos y desencadenantes. Sin formularios complicados—solo una conversación honesta. Empieza con 10 mensajes diarios gratis, o pasa a ilimitados con Premium."
+      "description": "Conversa de forma natural con nuestra IA sobre tus hábitos alimentarios, sentimientos y desencadenantes. Sin formularios complicados—solo una conversación honesta."
     },
     "step2": {
       "title": "Descubre Tus Patrones",
@@ -32,7 +31,7 @@
     },
     "step3": {
       "title": "Construye Nuevos Hábitos con Retos Diarios",
-      "description": "Recibe 5 retos personalizados cada día basados en tus patrones únicos. Complétalos, sigue tu progreso y observa cómo se transforma tu relación con la comida. Los miembros Premium también aprenden por qué cada reto funciona para ellos."
+      "description": "Recibe retos personalizados cada día basados en tus patrones únicos. Complétalos, sigue tu progreso y observa cómo se transforma tu relación con la comida."
     }
   },
   "features": {
@@ -56,45 +55,11 @@
     },
     "feature5": {
       "title": "Entiende el 'Por Qué' de Cada Reto",
-      "description": "Los miembros Premium descubren exactamente por qué se elige cada reto para ellos. Conectarás los puntos entre tus patrones y tu camino a seguir, haciendo cada paso más significativo."
+      "description": "Descubre exactamente por qué se elige cada reto para ti. Conectarás los puntos entre tus patrones y tu camino a seguir, haciendo cada paso más significativo."
     },
     "feature6": {
       "title": "Tu Historia Queda Entre Tú y la IA",
       "description": "Lo que compartes es solo tuyo. Tus conversaciones están protegidas con el mismo cifrado que usan los bancos, y nunca venderemos ni compartiremos tus datos. Punto."
-    }
-  },
-  "pricing": {
-    "title": "Empieza Gratis, Mejora Cuando Quieras",
-    "subtitle": "Sin compromiso, sin tarjeta de crédito. Cancela Premium cuando quieras.",
-    "free": {
-      "name": "Gratis",
-      "price": "0€",
-      "period": "para siempre",
-      "description": "Ideal para probar",
-      "features": [
-        "10 mensajes de chat con IA al día",
-        "Análisis de patrones semanal",
-        "5 retos personalizados cada día",
-        "Consejos adaptados ilimitados",
-        "Seguimiento completo del progreso"
-      ],
-      "cta": "Empezar Gratis"
-    },
-    "premium": {
-      "name": "Premium",
-      "price": "7,99€",
-      "period": "al mes",
-      "badge": "Más Popular",
-      "description": "Para un cambio real y duradero",
-      "features": [
-        "50 mensajes de chat con IA al día",
-        "Análisis de patrones diario",
-        "Aprende por qué cada reto es para ti",
-        "5 retos personalizados cada día",
-        "Consejos adaptados ilimitados",
-        "Acceso prioritario a nuevas funciones"
-      ],
-      "cta": "Hazte Premium"
     }
   },
   "faq": {
@@ -109,16 +74,16 @@
       "a": "Piensa en ello como tener un amigo muy perspicaz que nota patrones que tú no ves. Nuestra IA analiza tus conversaciones diarias para detectar qué está impulsando realmente tus hábitos alimentarios. Luego te da retos personalizados que te ayudan a construir mejores patrones. Es como tener un entrenador que conoce tu historia."
     },
     "question3": {
-      "q": "¿Puedo cancelar Premium cuando quiera?",
-      "a": "¡Sí! No hay ningún compromiso. Cancela cuando quieras y mantendrás el acceso Premium hasta el final de tu periodo de facturación actual. El plan gratuito siempre está disponible si decides bajar de categoría."
+      "q": "¿Cuánto cuesta?",
+      "a": "EmotionEat ofrece precios flexibles que se adaptan a tus necesidades. Puedes explorar todas las funciones y encontrar el plan que mejor te funcione directamente en la app."
     },
     "question4": {
       "q": "Se me da fatal escribir diarios. ¿Funcionará esto para mí?",
       "a": "Buenas noticias: ¡esto no es un diario! Es más como enviar mensajes a un amigo sobre tu día. Solo habla con naturalidad sobre qué pasó, cómo te sentiste y qué comiste. La IA te hará preguntas útiles para mantener la conversación. Sin presión, sin páginas en blanco."
     },
     "question5": {
-      "q": "¿Cuál es la diferencia real entre Gratis y Premium?",
-      "a": "Gratis es perfecto para probar: 10 mensajes diarios y análisis de patrones semanal. Premium te da 50 mensajes al día, análisis diario para que detectes patrones más rápido, y explicaciones que te muestran exactamente por qué cada reto está diseñado para ti. Piensa en Premium como la vía rápida."
+      "q": "¿Qué funciones incluye EmotionEat?",
+      "a": "EmotionEat te da todo lo que necesitas: conversaciones diarias con IA para seguir tus patrones alimentarios, retos personalizados basados en tus hábitos únicos, consejos ilimitados adaptados a tu camino, y seguimiento completo del progreso para que veas hasta dónde has llegado."
     },
     "question6": {
       "q": "¿Esto sustituye a la terapia?",
@@ -128,14 +93,13 @@
   "cta": {
     "title": "¿Listo para Cambiar Tu Relación con la Comida?",
     "subtitle": "Únete a más de 5.000 personas que están construyendo hábitos más sanos, una conversación a la vez",
-    "button": "Empieza Tu Viaje Gratis",
-    "noCard": "Sin tarjeta de crédito · Siempre gratis para empezar"
+    "button": "Empieza Tu Viaje",
+    "noCard": ""
   },
   "footer": {
     "tagline": "Ayudándote a construir una relación más sana con la comida, una conversación a la vez.",
     "product": "Producto",
     "features": "Funciones",
-    "pricing": "Precios",
     "support": "Soporte",
     "faq": "Preguntas Frecuentes",
     "contact": "Contacto",

@@ -7,24 +7,23 @@
   },
   "header": {
     "features": "Features",
-    "pricing": "Pricing",
     "faq": "FAQ",
-    "startFree": "Start Free"
+    "startNow": "Get Started"
   },
   "hero": {
     "headline": "Take Control of Emotional Eating",
     "subheadline": "Chat with AI daily to understand why you eat, discover your patterns, and get challenges that help you build a healthier relationship with food.",
-    "cta": "Start Your Free Journey",
+    "cta": "Start Your Journey",
     "ctaSecondary": "See How It Works",
     "trustSignal": "Join 5,000+ people building healthier habits",
-    "noCard": "No credit card required"
+    "noCard": ""
   },
   "howItWorks": {
     "title": "How It Works in 3 Simple Steps",
     "subtitle": "Your journey to a healthier relationship with food starts here",
     "step1": {
       "title": "Chat About Your Day",
-      "description": "Talk naturally with our AI about your eating habits, feelings, and triggers. No complicated forms—just an honest conversation. Start with 10 messages daily for free, or go unlimited with Premium."
+      "description": "Talk naturally with our AI about your eating habits, feelings, and triggers. No complicated forms—just an honest conversation."
     },
     "step2": {
       "title": "Uncover Your Patterns",
@@ -32,7 +31,7 @@
     },
     "step3": {
       "title": "Build New Habits with Daily Challenges",
-      "description": "Get 5 personalized challenges every day based on your unique patterns. Complete them, track your progress, and watch your relationship with food transform. Premium members also learn why each challenge works for them."
+      "description": "Get personalized challenges every day based on your unique patterns. Complete them, track your progress, and watch your relationship with food transform."
     }
   },
   "features": {
@@ -56,45 +55,11 @@
     },
     "feature5": {
       "title": "Understand the 'Why' Behind Every Challenge",
-      "description": "Premium members discover exactly why each challenge is chosen for them. You'll connect the dots between your patterns and your path forward, making every step more meaningful."
+      "description": "Discover exactly why each challenge is chosen for you. You'll connect the dots between your patterns and your path forward, making every step more meaningful."
     },
     "feature6": {
       "title": "Your Story Stays Between You and the AI",
       "description": "What you share is yours alone. Your conversations are protected with bank-level encryption, and we'll never sell or share your data. Period."
-    }
-  },
-  "pricing": {
-    "title": "Start Free, Upgrade When You're Ready",
-    "subtitle": "No commitment, no credit card required. Cancel Premium anytime.",
-    "free": {
-      "name": "Free",
-      "price": "€0",
-      "period": "forever",
-      "description": "Great for testing the waters",
-      "features": [
-        "10 daily AI chat messages",
-        "Weekly pattern analysis",
-        "5 personalized challenges each day",
-        "Unlimited tailored advice",
-        "Full progress tracking"
-      ],
-      "cta": "Start Free Now"
-    },
-    "premium": {
-      "name": "Premium",
-      "price": "€7.99",
-      "period": "per month",
-      "badge": "Most Popular",
-      "description": "For real, lasting change",
-      "features": [
-        "50 daily AI chat messages",
-        "Daily pattern analysis",
-        "Learn why each challenge fits you",
-        "5 personalized challenges each day",
-        "Unlimited tailored advice",
-        "First access to new features"
-      ],
-      "cta": "Go Premium"
     }
   },
   "faq": {
@@ -109,16 +74,16 @@
       "a": "Think of it as having a really insightful friend who notices patterns you don't. Our AI analyzes your daily conversations to spot what's really driving your eating habits. Then it gives you personalized challenges to help you build better patterns. It's like having a coach who knows your story."
     },
     "question3": {
-      "q": "Can I cancel Premium anytime?",
-      "a": "Yes! There's zero commitment. Cancel whenever you want and you'll keep Premium access until the end of your current billing period. The free plan is always available if you decide to downgrade."
+      "q": "How much does it cost?",
+      "a": "EmotionEat offers flexible pricing to fit your needs. You can explore all features and find the plan that works best for you directly in the app."
     },
     "question4": {
       "q": "I'm terrible at journaling. Will this work for me?",
       "a": "Good news—this isn't journaling! It's more like texting a friend about your day. Just chat naturally about what happened, how you felt, and what you ate. The AI will ask helpful questions to keep the conversation going. No pressure, no blank pages."
     },
     "question5": {
-      "q": "What's the real difference between Free and Premium?",
-      "a": "Free is perfect for trying things out: 10 daily messages and weekly pattern analysis. Premium gives you 50 messages per day, daily analysis so you spot patterns faster, and explanations that show you exactly why each challenge is designed for you. Think of Premium as the fast track."
+      "q": "What features does EmotionEat include?",
+      "a": "EmotionEat gives you everything you need: daily AI conversations to track your eating patterns, personalized challenges based on your unique habits, unlimited advice tailored to your journey, and full progress tracking so you can see how far you've come."
     },
     "question6": {
       "q": "Is this a replacement for therapy?",
@@ -128,14 +93,13 @@
   "cta": {
     "title": "Ready to Change Your Relationship with Food?",
     "subtitle": "Join 5,000+ people who are building healthier habits, one conversation at a time",
-    "button": "Start Your Free Journey",
-    "noCard": "No credit card required · Always free to start"
+    "button": "Start Your Journey",
+    "noCard": ""
   },
   "footer": {
     "tagline": "Helping you build a healthier relationship with food, one conversation at a time.",
     "product": "Product",
     "features": "Features",
-    "pricing": "Pricing",
     "support": "Support",
     "faq": "FAQ",
     "contact": "Contact",

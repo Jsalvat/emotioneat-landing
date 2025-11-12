@@ -4,9 +4,8 @@ interface Props {
   t?: {
     header: {
       features: string;
-      pricing: string;
       faq: string;
-      startFree: string;
+      startNow: string;
     };
     hero: {
       noCard: string;
@@ -20,12 +19,11 @@ const { lang, t } = Astro.props;
 const translations = t || {
   header: {
     features: 'Features',
-    pricing: 'Pricing',
     faq: 'FAQ',
-    startFree: 'Start Free'
+    startNow: 'Get Started'
   },
   hero: {
-    noCard: 'No credit card required'
+    noCard: ''
   }
 };
 
@@ -67,9 +65,6 @@ if (currentPath.startsWith('/es')) {
         <a href={lang === 'es' ? '/es/blog' : '/blog'} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
           Blog
         </a>
-        <a href="#pricing" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
-          {translations.header.pricing}
-        </a>
         <a href="#faq" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
           {translations.header.faq}
         </a>
@@ -100,9 +95,9 @@ if (currentPath.startsWith('/es')) {
           href={appUrl}
           class="hidden sm:inline-flex items-center px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5"
           data-cta-location="header"
-          aria-label={translations.header.startFree + " - " + translations.hero.noCard}
+          aria-label={translations.header.startNow}
         >
-          {translations.header.startFree}
+          {translations.header.startNow}
         </a>
       </div>
     </div>
