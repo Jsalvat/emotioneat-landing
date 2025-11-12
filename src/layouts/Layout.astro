@@ -6,15 +6,17 @@ interface Props {
   ogDescription?: string;
   lang?: string;
   canonical?: string;
+  structuredData?: object;
 }
 
-const { 
-  title, 
-  description, 
+const {
+  title,
+  description,
   ogTitle = title,
   ogDescription = description,
   lang = 'en',
-  canonical
+  canonical,
+  structuredData
 } = Astro.props;
 
 // SEO UPDATE: Improved canonical URLs and meta tags
@@ -89,6 +91,11 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
 
     <!-- Google Search Console Verification -->
     {GSC_VERIFICATION_CODE && <meta name="google-site-verification" content={GSC_VERIFICATION_CODE} />}
+
+    <!-- Structured Data -->
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    )}
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

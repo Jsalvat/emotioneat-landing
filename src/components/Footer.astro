@@ -1,9 +1,38 @@
 ---
 interface Props {
-  t: any;
+  t?: {
+    footer: {
+      tagline: string;
+      product: string;
+      features: string;
+      pricing: string;
+      support: string;
+      faq: string;
+      contact: string;
+      privacy: string;
+      terms: string;
+      rights: string;
+    };
+  };
 }
 
 const { t } = Astro.props;
+
+// Fallback values in case t is not available
+const translations = t || {
+  footer: {
+    tagline: "Building healthier relationships with food, one day at a time.",
+    product: "Product",
+    features: "Features",
+    pricing: "Pricing",
+    support: "Support",
+    faq: "FAQ",
+    contact: "Contact",
+    privacy: "Privacy Policy",
+    terms: "Terms of Service",
+    rights: "© 2025 EmotionEat. All rights reserved."
+  }
+};
 const currentYear = new Date().getFullYear();
 ---
 
@@ -17,7 +46,7 @@ const currentYear = new Date().getFullYear();
           <span class="text-xl font-bold text-white">EmotionEat</span>
         </div>
         <p class="text-gray-400 mb-6 max-w-md">
-          {t.footer.tagline}
+          {translations.footer.tagline}
         </p>
         <!-- Social Links (Placeholder) -->
         <div class="flex space-x-4" aria-label="Social media links">
@@ -36,19 +65,19 @@ const currentYear = new Date().getFullYear();
 
       <!-- Product Column -->
       <div>
-        <h3 class="text-white font-semibold mb-4">{t.footer.product}</h3>
+        <h3 class="text-white font-semibold mb-4">{translations.footer.product}</h3>
         <ul class="space-y-3">
-          <li><a href="#features" class="hover:text-brand-400 transition-colors">{t.footer.features}</a></li>
-          <li><a href="#pricing" class="hover:text-brand-400 transition-colors">{t.footer.pricing}</a></li>
+          <li><a href="#features" class="hover:text-brand-400 transition-colors">{translations.footer.features}</a></li>
+          <li><a href="#pricing" class="hover:text-brand-400 transition-colors">{translations.footer.pricing}</a></li>
         </ul>
       </div>
 
       <!-- Support Column -->
       <div>
-        <h3 class="text-white font-semibold mb-4">{t.footer.support}</h3>
+        <h3 class="text-white font-semibold mb-4">{translations.footer.support}</h3>
         <ul class="space-y-3">
-          <li><a href="#faq" class="hover:text-brand-400 transition-colors">{t.footer.faq}</a></li>
-          <li><a href="mailto:support@emotioneat.com" class="hover:text-brand-400 transition-colors">{t.footer.contact}</a></li>
+          <li><a href="#faq" class="hover:text-brand-400 transition-colors">{translations.footer.faq}</a></li>
+          <li><a href="mailto:support@emotioneat.com" class="hover:text-brand-400 transition-colors">{translations.footer.contact}</a></li>
         </ul>
       </div>
     </div>
@@ -57,11 +86,11 @@ const currentYear = new Date().getFullYear();
     <div class="pt-8 border-t border-gray-800">
       <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
         <p class="text-sm text-gray-500">
-          © {currentYear} EmotionEat. {t.footer.rights}
+          © {currentYear} EmotionEat. {translations.footer.rights}
         </p>
         <div class="flex space-x-6 text-sm">
-          <a href="/privacy" class="text-gray-500 hover:text-brand-400 transition-colors">{t.footer.privacy}</a>
-          <a href="/terms" class="text-gray-500 hover:text-brand-400 transition-colors">{t.footer.terms}</a>
+          <a href="/privacy" class="text-gray-500 hover:text-brand-400 transition-colors">{translations.footer.privacy}</a>
+          <a href="/terms" class="text-gray-500 hover:text-brand-400 transition-colors">{translations.footer.terms}</a>
         </div>
       </div>
     </div>

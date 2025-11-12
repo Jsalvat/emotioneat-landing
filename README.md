@@ -10,6 +10,8 @@ SEO-optimized landing page for EmotionEat - Break free from emotional eating wit
 - **Responsive design**: Mobile-first with Tailwind CSS
 - **Performance optimized**: Fast loading with Astro framework
 - **Accessibility**: WCAG compliant with proper ARIA labels
+- **Blog system**: Dynamic blog posts stored in Supabase
+- **Static generation**: Blog posts pre-rendered for optimal performance
 
 ## 🛠 Tech Stack
 
@@ -17,6 +19,7 @@ SEO-optimized landing page for EmotionEat - Break free from emotional eating wit
 - **Styling**: Tailwind CSS
 - **Analytics**: Google Analytics 4
 - **SEO**: Google Search Console
+- **Database**: Supabase (for blog posts)
 - **Deployment**: Netlify
 
 ## 📦 Installation
@@ -32,13 +35,18 @@ cd emotioneat-landing
 npm install
 ```
 
-3. Create environment variables:
+3. Set up Supabase database:
 ```bash
-cp .env.example .env
-# Edit .env with your actual values
+# Follow SUPABASE_SETUP.md for database configuration
 ```
 
-4. Start development server:
+4. Create environment variables:
+```bash
+cp .env.example .env
+# Edit .env with your actual values (GA4, GSC, Supabase)
+```
+
+5. Start development server:
 ```bash
 npm run dev
 ```
@@ -139,13 +147,22 @@ emotion-eat-landing/
 │   │   └── Header.astro
 │   ├── layouts/
 │   │   └── Layout.astro    # Main layout with SEO
+│   ├── lib/
+│   │   └── supabase.ts     # Supabase client and blog functions
 │   ├── pages/
+│   │   ├── blog/
+│   │   │   ├── index.astro # Blog listing page
+│   │   │   └── [slug].astro # Individual blog posts
 │   │   ├── index.astro     # English homepage
 │   │   └── es/
 │   │       └── index.astro # Spanish homepage
 │   └── i18n/               # Translation files
 │       ├── en.json
 │       └── es.json
+├── migrations/             # Database migrations
+│   ├── 001_create_blog_posts.sql
+│   └── 002_insert_first_blog_post.sql
+├── SUPABASE_SETUP.md       # Database setup instructions
 ├── astro.config.mjs        # Astro configuration
 ├── netlify.toml           # Netlify deployment config
 ├── tailwind.config.mjs    # Tailwind configuration

@@ -1,11 +1,48 @@
 ---
 interface Props {
   lang: string;
-  t: any;
+  t?: {
+    header: {
+      features: string;
+      pricing: string;
+      faq: string;
+      startFree: string;
+    };
+    hero: {
+      noCard: string;
+    };
+  };
 }
 
 const { lang, t } = Astro.props;
+
+// Fallback values in case t is not available
+const translations = t || {
+  header: {
+    features: 'Features',
+    pricing: 'Pricing',
+    faq: 'FAQ',
+    startFree: 'Start Free'
+  },
+  hero: {
+    noCard: 'No credit card required'
+  }
+};
+
 const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+
+// Calculate language switch URLs based on current path
+const currentPath = Astro.url.pathname;
+let englishUrl = currentPath;
+let spanishUrl = currentPath;
+
+// If current path starts with /es, remove it for English
+if (currentPath.startsWith('/es')) {
+  englishUrl = currentPath.replace(/^\/es/, '') || '/';
+} else {
+  // If current path doesn't start with /es, add /es for Spanish
+  spanishUrl = currentPath === '/' ? '/es' : `/es${currentPath}`;
+}
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
@@ -21,14 +58,17 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
-        <a href={`#features`} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
-          {t.header.features}
+        <a href="#features" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+          {translations.header.features}
         </a>
-        <a href={`#pricing`} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
-          {t.header.pricing}
+        <a href={lang === 'es' ? '/es/blog' : '/blog'} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+          Blog
         </a>
-        <a href={`#faq`} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
-          {t.header.faq}
+        <a href="#pricing" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+          {translations.header.pricing}
+        </a>
+        <a href="#faq" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+          {translations.header.faq}
         </a>
       </nav>
 
@@ -37,14 +77,14 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
         <!-- Language Switcher -->
         <div class="flex items-center space-x-1 bg-gray-100 rounded-lg p-1">
           <a
-            href="/?lang=en"
+            href={englishUrl}
             class={`px-3 py-1 rounded-md text-sm font-medium transition-all ${lang === 'en' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
             data-lang-switch="en"
           >
             EN
           </a>
           <a
-            href="/es?lang=es"
+            href={spanishUrl}
             class={`px-3 py-1 rounded-md text-sm font-medium transition-all ${lang === 'es' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
             data-lang-switch="es"
           >
@@ -57,9 +97,9 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
           href={appUrl}
           class="hidden sm:inline-flex items-center px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5"
           data-cta-location="header"
-          aria-label={t.header.startFree + " - " + t.hero.noCard}
+          aria-label={translations.header.startFree + " - " + translations.hero.noCard}
         >
-          {t.header.startFree}
+          {translations.header.startFree}
         </a>
       </div>
     </div>
