@@ -7,20 +7,35 @@ import en from '../../i18n/en.json';
 const lang: 'en' | 'es' = 'en';
 const t = en;
 
-// Fetch blog posts
-let posts = [];
+// Fetch blog posts with bilingual fields
+let posts: any[] = [];
 try {
 	if (supabase) {
 		const { data, error } = await supabase
 			.from('blog_posts')
-			.select('*')
+			.select(`
+				id,
+				slug,
+				published_at,
+				reading_time,
+				cover_image_url,
+				title_en,
+				title_es,
+				excerpt_en,
+				excerpt_es
+			`)
 			.eq('status', 'published')
 			.order('published_at', { ascending: false });
 
 		if (error) {
 			console.error('Error fetching blog posts:', error);
 		} else {
-			posts = data || [];
+			// Localize posts for English
+			posts = (data || []).map((post: any) => ({
+				...post,
+				title: post.title_en || post.title_es || '',
+				excerpt: post.excerpt_en || post.excerpt_es || ''
+			}));
 		}
 	} else {
 		console.warn('Supabase not configured - showing empty blog');
@@ -89,19 +104,21 @@ const description = 'Discover expert tips on emotional eating, strategies to con
 
 								<h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
 									<a
-										href={`/blog/emotional-eating-how-to-identify-and-overcome-it`}
+										href={`/blog/${post.slug}`}
 										class="hover:text-blue-600 transition-colors"
 									>
-										Emotional Eating: How to Identify and Overcome It
+										{post.title}
 									</a>
 								</h2>
 
-								<p class="text-gray-600 line-clamp-3 mb-4">
-									Discover what emotional eating is, its warning signs, physical and emotional consequences, and practical strategies to create a healthy relationship with food.
-								</p>
+								{post.excerpt && (
+									<p class="text-gray-600 line-clamp-3 mb-4">
+										{post.excerpt}
+									</p>
+								)}
 
 								<a
-									href={`/blog/emotional-eating-how-to-identify-and-overcome-it`}
+									href={`/blog/${post.slug}`}
 									class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
 								>
 									Read more

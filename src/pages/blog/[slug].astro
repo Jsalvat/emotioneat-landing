@@ -1,6 +1,6 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
-import { supabase } from '../../lib/supabase';
+import { supabase, getBlogPostInLanguage, type BlogPost } from '../../lib/supabase';
 import en from '../../i18n/en.json';
 import es from '../../i18n/es.json';
 
@@ -14,12 +14,13 @@ const t = lang === 'es' ? es : en;
 const { slug } = Astro.params;
 
 // Fetch the blog post
-let post = null;
-let relatedPosts = null;
+let post: BlogPost | null = null;
+let relatedPosts: any[] | null = null;
+let localizedPost: ReturnType<typeof getBlogPostInLanguage> | null = null;
 
 if (supabase && slug) {
 	try {
-		// Get the specific post
+		// Get the specific post with all bilingual fields
 		const { data: postData, error: postError } = await supabase
 			.from('blog_posts')
 			.select('*')
@@ -30,20 +31,36 @@ if (supabase && slug) {
 		if (postError) {
 			console.error('Error fetching blog post:', postError);
 		} else {
-			post = postData;
+			post = postData as BlogPost;
+			// Get localized version with fallback
+			localizedPost = getBlogPostInLanguage(post, lang);
 		}
 
 		// Get related posts if we have the current post
 		if (post) {
 			const { data: relatedPostsData } = await supabase
 				.from('blog_posts')
-				.select('title, slug, excerpt, cover_image_url, published_at')
+				.select(`
+					id,
+					slug,
+					cover_image_url,
+					published_at,
+					title_en,
+					title_es,
+					excerpt_en,
+					excerpt_es
+				`)
 				.eq('status', 'published')
 				.neq('id', post.id)
 				.order('published_at', { ascending: false })
 				.limit(3);
 
-			relatedPosts = relatedPostsData;
+			// Localize related posts
+			relatedPosts = relatedPostsData?.map((rp: any) => ({
+				...rp,
+				title: lang === 'es' ? (rp.title_es || rp.title_en) : (rp.title_en || rp.title_es),
+				excerpt: lang === 'es' ? (rp.excerpt_es || rp.excerpt_en) : (rp.excerpt_en || rp.excerpt_es)
+			})) || null;
 		}
 	} catch (error) {
 		console.error('Error connecting to Supabase:', error);
@@ -51,17 +68,17 @@ if (supabase && slug) {
 }
 
 // Handle 404 if post not found
-if (!post) {
+if (!post || !localizedPost) {
 	return Astro.redirect(lang === 'es' ? '/es/blog' : '/blog');
 }
 
-// SEO Meta
-const title = post.meta_title || `${post.title} | EmotionEat Blog`;
-const description = post.meta_description || post.excerpt || post.title;
+// SEO Meta with localized content
+const title = localizedPost.meta_title || `${localizedPost.title} | EmotionEat Blog`;
+const description = localizedPost.meta_description || localizedPost.excerpt || localizedPost.title;
 const image = post.cover_image_url || '/og-image.jpg';
 
-// Calculate reading time if not set
-const readingTime = post.reading_time || Math.ceil(post.content.split(' ').length / 200);
+// Calculate reading time if not set (use localized content)
+const readingTime = post.reading_time || Math.ceil(localizedPost.content.split(' ').length / 200);
 ---
 
 <BlogLayout
@@ -89,12 +106,12 @@ const readingTime = post.reading_time || Math.ceil(post.content.split(' ').lengt
 				</div>
 
 				<h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-					{post.title}
+					{localizedPost.title}
 				</h1>
 
-				{post.excerpt && (
+				{localizedPost.excerpt && (
 					<p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-						{post.excerpt}
+						{localizedPost.excerpt}
 					</p>
 				)}
 			</div>
@@ -103,7 +120,7 @@ const readingTime = post.reading_time || Math.ceil(post.content.split(' ').lengt
 				<div class="aspect-video rounded-xl overflow-hidden mb-8 shadow-lg">
 					<img
 						src={post.cover_image_url}
-						alt={post.title}
+						alt={localizedPost.title}
 						class="w-full h-full object-cover"
 					/>
 				</div>
@@ -115,7 +132,7 @@ const readingTime = post.reading_time || Math.ceil(post.content.split(' ').lengt
 	<article class="bg-white">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 			<div class="prose prose-lg max-w-none">
-				<Fragment set:html={post.content} />
+				<Fragment set:html={localizedPost.content} />
 			</div>
 		</div>
 	</article>
