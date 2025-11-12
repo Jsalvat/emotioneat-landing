@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "EmotionEat - Break Free from Emotional Eating with AI Chat & Pattern Analysis",
-    "description": "Understand your emotional eating patterns through AI-powered chat conversations. Track daily habits, discover triggers, get personalized challenges, and build a healthier relationship with food.",
-    "ogTitle": "EmotionEat - AI-Powered Emotional Eating Support with Chat & Pattern Analysis",
-    "ogDescription": "Break free from emotional eating. Chat with AI daily, discover behavioral patterns, and get personalized challenges to transform your relationship with food."
+    "title": "Emotional Eating and How to Stop It | AI Chat & Pattern Analysis",
+    "description": "Stop emotional eating with AI-powered chat. Discover binge eating triggers, overcome stress eating patterns, and break the cycle of emotional eating. Free plan available.",
+    "ogTitle": "Emotional Eating and How to Stop It with AI Chat & Pattern Analysis",
+    "ogDescription": "Break free from emotional eating and binge eating. Chat with AI daily to discover triggers, analyze patterns, and get personalized challenges to overcome stress eating."
   },
   "header": {
     "features": "Features",
@@ -12,59 +12,59 @@
     "startFree": "Start Free"
   },
   "hero": {
-    "headline": "Break Free from Emotional Eating",
-    "subheadline": "Stop feeling controlled by cravings. Chat with AI daily, discover your behavioral patterns, get personalized challenges, and build a healthier relationship with food—one conversation at a time.",
-    "cta": "Start Your Journey Free",
+    "headline": "Break the Bonds of Emotional Eating",
+    "subheadline": "Stop emotional eating and stress eating for good. Chat with AI daily to discover your binge eating triggers, analyze emotional eating patterns, and get personalized challenges to transform your relationship with food.",
+    "cta": "Start Free - Stop Emotional Eating Today",
     "ctaSecondary": "See How It Works",
-    "trustSignal": "Join early adopters taking control",
+    "trustSignal": "Join thousands overcoming emotional eating",
     "noCard": "No credit card required"
   },
   "howItWorks": {
-    "title": "How EmotionEat Works",
-    "subtitle": "Three simple steps to understand and overcome emotional eating",
+    "title": "How to Break Free from Emotional Eating in 3 Steps",
+    "subtitle": "Simple steps to overcome binge eating and emotional eating patterns",
     "step1": {
-      "title": "Chat About Your Day",
-      "description": "Have a natural conversation with our AI about your day, feelings, and relationship with food. No rigid forms—just chat naturally. Free plan: 10 messages/day, Premium: 50 messages/day."
+      "title": "Chat About Your Emotional Eating Triggers",
+      "description": "Have natural conversations with our AI about stress eating, binge eating triggers, and your relationship with food. No forms—just chat. Free: 10 messages/day, Premium: 50 messages/day."
     },
     "step2": {
-      "title": "Discover Your Patterns",
-      "description": "Our AI analyzes your chat conversations to identify triggers, emotional patterns, and contexts. Detects both positive patterns (what works) and problematic ones (what leads to emotional eating)."
+      "title": "Discover Your Emotional Eating Patterns",
+      "description": "Our AI analyzes your conversations to identify emotional eating triggers, stress eating patterns, and binge eating contexts. Detects both helpful patterns and problematic ones that lead to emotional eating."
     },
     "step3": {
-      "title": "Get Challenges & Advice",
-      "description": "Receive 5 personalized daily challenges based on your analysis, plus unlimited personalized advice. Premium users get explanations of why each challenge was chosen."
+      "title": "Get Personalized Challenges to Stop Emotional Eating",
+      "description": "Receive 5 personalized daily challenges to overcome emotional eating, plus unlimited advice. Premium users get explanations connecting your patterns to each challenge."
     }
   },
   "features": {
-    "title": "Everything You Need to Take Control",
-    "subtitle": "Powerful tools designed to help you understand and change your relationship with food",
+    "title": "Break Free from Emotional Eating with AI",
+    "subtitle": "AI-powered tools to overcome binge eating, stress eating, and emotional eating patterns",
     "feature1": {
-      "title": "AI Pattern Detection from Chat",
-      "description": "Our AI analyzes your daily chat conversations to identify triggers, emotional patterns, and contexts. Detects both positive patterns (what helps) and problematic ones (what leads to emotional eating)."
+      "title": "AI Uncovers Your Emotional Eating Triggers",
+      "description": "Our AI analyzes your daily conversations to identify emotional eating triggers, binge eating patterns, and stress eating contexts. Detects both helpful patterns and problematic ones that lead to emotional eating."
     },
     "feature2": {
-      "title": "5 Daily Personalized Challenges",
-      "description": "Get 5 actionable daily challenges automatically generated from your pattern analysis. Complete them to build healthier habits, and regenerate completed challenges for fresh ones."
+      "title": "Daily Challenges to Break Emotional Eating Habits",
+      "description": "Get 5 personalized daily challenges to stop emotional eating, automatically generated from your pattern analysis. Complete them to build healthier habits and overcome binge eating patterns."
     },
     "feature3": {
-      "title": "Visual Calendar & History",
-      "description": "Track your progress with a beautiful calendar view. Review past entries, see patterns over time, and celebrate your growth."
+      "title": "Track Your Emotional Eating Recovery Journey",
+      "description": "Monitor your journey to stop emotional eating with progress tracking. Review past entries, see patterns over time, and celebrate victories over binge eating and stress eating."
     },
     "feature4": {
-      "title": "Personalized Advice",
-      "description": "AI recommendations tailored to your unique patterns and lifestyle. No generic advice—just real solutions that work for you."
+      "title": "Personalized Strategies to Overcome Emotional Eating",
+      "description": "AI recommendations tailored to your unique emotional eating patterns. Get specific strategies to overcome binge eating and stress eating—not generic advice."
     },
     "feature5": {
-      "title": "Pattern Explanations for Challenges (Premium)",
-      "description": "Premium users get detailed explanations of why each daily challenge was chosen based on their detected patterns. Understand the connection between your behaviors and your personalized challenges."
+      "title": "Why Each Challenge Targets Your Emotional Eating (Premium)",
+      "description": "Premium users get detailed explanations connecting your emotional eating triggers to each challenge. Understand how to stop binge eating and stress eating based on your patterns."
     },
     "feature6": {
-      "title": "Your Data, Your Privacy",
-      "description": "Your chat conversations are encrypted and protected with enterprise-grade security. We never share your data with anyone, ever."
+      "title": "Your Emotional Eating Journey Stays Private",
+      "description": "Your emotional eating conversations are encrypted with enterprise-grade security. We never share your data with anyone, ever."
     }
   },
   "pricing": {
-    "title": "Start Free, Upgrade When Ready",
+    "title": "Start Free, Break Emotional Eating Today",
     "subtitle": "No commitment. Cancel anytime. All plans include core features.",
     "free": {
       "name": "Free",
@@ -101,34 +101,34 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Everything you need to know about EmotionEat",
     "question1": {
-      "q": "Is my data private and secure?",
-      "a": "Absolutely. Your data is encrypted and protected with industry-standard security (HTTPS + database-level encryption). Your chat conversations are private and never shared with anyone. We don't sell your data, ever."
+      "q": "Is my emotional eating data private and secure?",
+      "a": "Absolutely. Your data is encrypted with industry-standard security (HTTPS + database encryption). Your conversations about binge eating and emotional eating triggers are private and never shared. We don't sell your data, ever."
     },
     "question2": {
-      "q": "How does the AI work?",
-      "a": "Our AI uses advanced natural language processing to analyze your daily chat conversations and identify patterns in your emotional eating. It detects triggers, contexts, recurring behaviors, and both positive and problematic patterns to provide personalized insights and challenges."
+      "q": "How does EmotionEat help stop emotional eating?",
+      "a": "Our AI uses natural language processing to analyze your conversations and identify emotional eating patterns, binge eating triggers, and stress eating contexts. It detects triggers, recurring behaviors, and patterns to provide personalized strategies to overcome emotional eating."
     },
     "question3": {
-      "q": "Can I cancel anytime?",
-      "a": "Yes! Both free and premium plans have no commitment. You can cancel your premium subscription at any time, and you'll continue to have access until the end of your billing period."
+      "q": "Can I cancel my subscription anytime?",
+      "a": "Yes! Both free and premium plans have no commitment. Cancel your premium subscription anytime and keep access until the end of your billing period."
     },
     "question4": {
-      "q": "Do I need any experience with journaling?",
-      "a": "Not at all! Our AI-powered chat makes journaling feel like having a conversation. Just talk about your day naturally, and the AI will guide you with helpful questions."
+      "q": "Do I need experience with journaling to stop emotional eating?",
+      "a": "Not at all! Our AI chat makes tracking emotional eating feel like a conversation. Just talk about your day, binge eating episodes, or stress eating triggers naturally, and the AI guides you with helpful questions."
     },
     "question5": {
-      "q": "What's the difference between free and premium?",
-      "a": "Free gives you 10 chat messages per day and 1 pattern analysis per week—perfect for getting started. Premium unlocks 50 chat messages per day, pattern explanations for your daily challenges, plus 1 pattern analysis per day for deeper insights and faster progress."
+      "q": "What's the difference between free and premium for stopping emotional eating?",
+      "a": "Free gives you 10 chat messages per day and 1 emotional eating pattern analysis per week—perfect to start. Premium unlocks 50 messages daily, pattern explanations for challenges, plus daily analysis for faster progress overcoming binge eating and stress eating."
     },
     "question6": {
-      "q": "Is this a replacement for therapy?",
-      "a": "No. EmotionEat is a tool to help you understand patterns and build healthier habits, but it's not a substitute for professional medical or mental health care. For serious eating disorders, please consult a healthcare provider."
+      "q": "Is EmotionEat a replacement for therapy for emotional eating disorder?",
+      "a": "No. EmotionEat helps you understand emotional eating patterns and build healthier habits, but it's not a substitute for professional medical or mental health care. For serious eating disorders like binge eating disorder, please consult a healthcare provider."
     }
   },
   "cta": {
-    "title": "Start Understanding Yourself Today",
-    "subtitle": "Join thousands of people building a healthier relationship with food",
-    "button": "Get Started Free",
+    "title": "Break Free from Emotional Eating Today",
+    "subtitle": "Join thousands overcoming binge eating and stress eating patterns",
+    "button": "Stop Emotional Eating Free",
     "noCard": "No credit card required · Free forever plan available"
   },
   "footer": {
@@ -142,6 +142,6 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "legal": "Legal",
-    "rights": "© 2024 EmotionEat. All rights reserved."
+    "rights": "© 2025 EmotionEat. All rights reserved."
   }
 }

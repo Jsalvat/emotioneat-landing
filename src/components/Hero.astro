@@ -43,20 +43,20 @@ const heroImage = lang === 'es' ? '/landing_es.png' : '/landing_en.png';
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
-          <a 
+          <a
             href={appUrl}
-            class="inline-flex items-center justify-center px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white text-lg font-semibold rounded-2xl transition-all hover:shadow-xl hover:-translate-y-1"
+            class="inline-flex items-center justify-center px-8 py-3 bg-brand-500 hover:bg-brand-600 text-white text-base font-semibold rounded-2xl transition-all hover:shadow-xl hover:-translate-y-1 whitespace-nowrap"
             data-cta-location="hero-primary"
             aria-label={t.hero.cta + " - " + t.hero.noCard}
           >
             {t.hero.cta}
-            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="ml-2 w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
             </svg>
           </a>
-          <a 
+          <a
             href="#how-it-works"
-            class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-50 text-brand-600 text-lg font-semibold rounded-2xl border-2 border-brand-200 transition-all hover:shadow-lg"
+            class="inline-flex items-center justify-center px-8 py-3 bg-white hover:bg-gray-50 text-brand-600 text-base font-semibold rounded-2xl border-2 border-brand-200 transition-all hover:shadow-lg whitespace-nowrap"
             aria-label={t.hero.ctaSecondary}
           >
             {t.hero.ctaSecondary}
@@ -71,9 +71,10 @@ const heroImage = lang === 'es' ? '/landing_es.png' : '/landing_en.png';
       <div class="relative animate-on-scroll delay-200">
         <!-- Hero image -->
         <div class="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+          <!-- SEO UPDATE: Optimized alt text with primary keywords -->
           <img
             src={heroImage}
-            alt="EmotionEat - AI-powered emotional eating support with daily chat conversations and personalized challenges"
+            alt={lang === 'es' ? "EmotionEat - Deja de comer emocional con chat de IA y análisis de patrones para superar atracones" : "EmotionEat - Stop emotional eating with AI chat and pattern analysis to overcome binge eating"}
             class="w-full h-full object-cover"
             loading="eager"
           />

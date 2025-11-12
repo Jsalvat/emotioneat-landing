@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 
 // SEO UPDATE: Improved canonical URLs and meta tags
-const siteUrl = 'https://www.emotioneat.com';
+const siteUrl = 'https://emotioneat.com';
 const currentUrl = Astro.url.href;
 // SEO UPDATE: Proper canonical URLs for multi-language support
 const canonicalUrl = canonical || (lang === 'es' ? `${siteUrl}/es` : siteUrl);
@@ -39,7 +39,8 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content="emotional eating, AI chat, pattern analysis, binge eating support, eating disorder app, food anxiety, emotional eating triggers, daily challenges" />
+    <!-- SEO UPDATE: Optimized keywords based on search volume and relevance -->
+    <meta name="keywords" content="emotional eating, stress eating, binge eating, stop emotional eating, emotional eating triggers, overcome emotional eating, emotional eating patterns, ansiedad, depresión, ansiedad alimentaria, comer compulsivo, emotional eating support, binge eating disorder" />
     <meta name="author" content="EmotionEat" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
@@ -131,7 +132,7 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
           "@id": `${siteUrl}/#webapp`,
           "name": "EmotionEat",
           "url": siteUrl,
-          "description": "AI-powered emotional eating support through daily chat conversations, behavioral pattern analysis, and personalized daily challenges. Break free from emotional eating with AI chat, pattern detection, and daily personalized challenges.",
+          "description": "Break free from emotional eating and stress eating with AI-powered chat. Discover binge eating triggers, analyze emotional eating patterns, and get personalized challenges to overcome anxiety-driven eating. Free plan available.",
           "applicationCategory": "HealthApplication",
           "operatingSystem": "Web",
           "browserRequirements": "Requires JavaScript. Requires HTML5.",

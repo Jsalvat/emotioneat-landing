@@ -1,7 +1,7 @@
 {
   "name": "EmotionEat - Break Free from Emotional Eating",
   "short_name": "EmotionEat",
-  "description": "AI-powered emotional eating support through daily chat conversations, behavioral pattern analysis, and personalized daily challenges",
+  "description": "Stop emotional eating with AI-powered chat. Discover binge eating triggers, analyze stress eating patterns, and get personalized challenges to overcome emotional eating.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
