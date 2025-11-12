@@ -14,7 +14,7 @@ PUBLIC_GA4_ID=G-XXXXXXXXXX
 PUBLIC_GSC_VERIFICATION_CODE=your_verification_code_here
 
 # App Configuration
-PUBLIC_APP_URL=https://app.emotioneat.com
+PUBLIC_APP_URL=https://your-app-domain.com
 ```
 
 ## 📊 Google Analytics 4 (GA4)

@@ -60,9 +60,9 @@ npm run dev
 
 3. **Set environment variables** in Netlify dashboard:
    ```
-   PUBLIC_GA4_ID=G-MN2LZ89K94
-   PUBLIC_GSC_VERIFICATION_CODE=your_verification_code_here
-   PUBLIC_APP_URL=https://app.emotioneat.com
+   PUBLIC_GA4_ID=your_ga4_id_here
+   PUBLIC_GSC_VERIFICATION_CODE=your_gsc_verification_code
+   PUBLIC_APP_URL=https://your-app-url.com
    ```
 
 4. **Deploy**: Click "Deploy site"
@@ -85,19 +85,19 @@ Create a `.env` file in the root directory:
 
 ```env
 # Google Analytics 4
-PUBLIC_GA4_ID=G-MN2LZ89K94
+PUBLIC_GA4_ID=your_ga4_measurement_id
 
 # Google Search Console (optional - if using HTML verification)
-PUBLIC_GSC_VERIFICATION_CODE=your_verification_code_here
+PUBLIC_GSC_VERIFICATION_CODE=your_gsc_verification_code
 
 # App URL
-PUBLIC_APP_URL=https://app.emotioneat.com
+PUBLIC_APP_URL=https://your-app-domain.com
 ```
 
 ## 📊 SEO & Analytics Setup
 
 ### Google Analytics 4
-- ✅ **Already configured** with ID `G-MN2LZ89K94`
+- ✅ **Already configured** (set your GA4 ID in environment variables)
 - Tracks page views, user engagement, conversions
 - Multi-language support (EN/ES)
 
