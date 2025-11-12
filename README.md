@@ -1,164 +1,193 @@
 # EmotionEat Landing Page
 
-Modern, SEO-optimized landing page for EmotionEat built with Astro, Tailwind CSS, and TypeScript.
+SEO-optimized landing page for EmotionEat - Break free from emotional eating with AI-powered support.
 
 ## 🚀 Features
 
-- **Bilingual Support**: English (default) and Spanish
-- **SEO Optimized**: Meta tags, Open Graph, Schema.org markup
-- **Performance**: 100/100 Lighthouse score potential
-- **Responsive**: Mobile-first design
-- **Analytics**: Mixpanel integration for tracking
-- **Modern UI**: Matches EmotionEat app design system
+- **Multi-language support**: English and Spanish (ES)
+- **SEO optimized**: Meta tags, Schema.org, canonical URLs
+- **Analytics ready**: Google Analytics 4 & Google Search Console
+- **Responsive design**: Mobile-first with Tailwind CSS
+- **Performance optimized**: Fast loading with Astro framework
+- **Accessibility**: WCAG compliant with proper ARIA labels
 
-## 📦 Tech Stack
+## 🛠 Tech Stack
 
-- **Astro 5.x** - Static Site Generator
-- **Tailwind CSS** - Styling
-- **TypeScript** - Type safety
-- **Mixpanel** - Analytics
-- **Netlify** - Hosting (recommended)
+- **Framework**: Astro 5.1.2
+- **Styling**: Tailwind CSS
+- **Analytics**: Google Analytics 4
+- **SEO**: Google Search Console
+- **Deployment**: Netlify
 
-## 🛠️ Setup
+## 📦 Installation
 
-### 1. Install Dependencies
+1. Clone the repository:
+```bash
+git clone https://github.com/Jsalvat/emotioneat-landing.git
+cd emotioneat-landing
+```
 
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-### 2. Configure Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-PUBLIC_MIXPANEL_TOKEN=your_mixpanel_token
-PUBLIC_APP_URL=https://app.emotioneat.com
+3. Create environment variables:
+```bash
+cp .env.example .env
+# Edit .env with your actual values
 ```
 
-### 3. Development
-
+4. Start development server:
 ```bash
 npm run dev
 ```
 
-The site will be available at `http://localhost:4321`
+## 🚀 Deployment to Netlify
 
-### 4. Build
+### Option 1: Deploy from GitHub (Recommended)
 
+1. **Connect to GitHub**:
+   - Go to [Netlify](https://app.netlify.com/)
+   - Click "Add new site" → "Import an existing project"
+   - Connect your GitHub account
+   - Select the `emotioneat-landing` repository
+
+2. **Configure build settings**:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `dist`
+   - **Node version**: 18
+
+3. **Set environment variables** in Netlify dashboard:
+   ```
+   PUBLIC_GA4_ID=G-MN2LZ89K94
+   PUBLIC_GSC_VERIFICATION_CODE=your_verification_code_here
+   PUBLIC_APP_URL=https://app.emotioneat.com
+   ```
+
+4. **Deploy**: Click "Deploy site"
+
+### Option 2: Manual Deploy
+
+1. Build the project:
 ```bash
 npm run build
 ```
 
-The static files will be generated in the `dist/` directory.
-
-### 5. Preview
-
+2. Deploy the `dist` folder to Netlify:
 ```bash
-npm run preview
+npx netlify-cli deploy --prod --dir=dist
 ```
 
-## 🎨 Design System
+## 🔧 Environment Variables
 
-The landing page uses the exact same color palette as the EmotionEat app:
+Create a `.env` file in the root directory:
 
-- **Brand**: Blue (#1890FF → #096DD9)
-- **Calm**: Light Blue (#0EA5E9 → #0284C7)
-- **Mint**: Green (#22C55E)
-- **Lavender**: Purple (#A855F7)
+```env
+# Google Analytics 4
+PUBLIC_GA4_ID=G-MN2LZ89K94
 
-Font: Inter (same as the app)
+# Google Search Console (optional - if using HTML verification)
+PUBLIC_GSC_VERIFICATION_CODE=your_verification_code_here
 
-## 📊 Analytics Events
+# App URL
+PUBLIC_APP_URL=https://app.emotioneat.com
+```
 
-The following events are tracked with Mixpanel:
+## 📊 SEO & Analytics Setup
 
-- `landing_page_view` - Page views with language
-- `cta_clicked` - CTA button clicks with location
-- `language_switched` - Language changes
-- `pricing_plan_viewed` - Pricing plan views
-- `faq_opened` - FAQ item expansions
+### Google Analytics 4
+- ✅ **Already configured** with ID `G-MN2LZ89K94`
+- Tracks page views, user engagement, conversions
+- Multi-language support (EN/ES)
 
-## 🌐 i18n
+### Google Search Console
+- ✅ **Already configured** via TXT record
+- Monitors search rankings and indexing
+- Provides technical SEO insights
 
-- English: `/` (default)
-- Spanish: `/es/`
+### SEO Optimizations Completed
+- ✅ Meta tags optimized for primary keywords
+- ✅ Schema.org structured data implemented
+- ✅ Canonical URLs for multi-language support
+- ✅ Sitemap auto-generated
+- ✅ Robots.txt configured
+- ✅ Image alt attributes optimized
 
-Translations are located in `src/i18n/en.json` and `src/i18n/es.json`
+## 📱 Supported Languages
 
-## 📱 Sections
+- **English (EN)**: `/`
+- **Spanish (ES)**: `/es`
 
-1. **Hero** - Main headline with CTA
-2. **How It Works** - 3-step process
-3. **Features** - Key benefits
-4. **Pricing** - Free vs Premium plans
-5. **Testimonials** - Social proof
-6. **FAQ** - Common questions
-7. **CTA** - Final call-to-action
-8. **Footer** - Links and info
+## 🏗 Project Structure
 
-## 🚀 Deployment
+```
+emotion-eat-landing/
+├── public/
+│   ├── _redirects          # Netlify redirects
+│   ├── robots.txt          # SEO robots configuration
+│   ├── favicon.png         # Site favicon
+│   └── images/             # Optimized images
+├── src/
+│   ├── components/         # Astro components
+│   │   ├── Hero.astro
+│   │   ├── Features.astro
+│   │   ├── HowItWorks.astro
+│   │   ├── Pricing.astro
+│   │   ├── FAQ.astro
+│   │   └── Header.astro
+│   ├── layouts/
+│   │   └── Layout.astro    # Main layout with SEO
+│   ├── pages/
+│   │   ├── index.astro     # English homepage
+│   │   └── es/
+│   │       └── index.astro # Spanish homepage
+│   └── i18n/               # Translation files
+│       ├── en.json
+│       └── es.json
+├── astro.config.mjs        # Astro configuration
+├── netlify.toml           # Netlify deployment config
+├── tailwind.config.mjs    # Tailwind configuration
+└── package.json
+```
 
-### Netlify (Recommended)
+## 🎯 SEO Keywords Targeted
 
-1. Connect your GitHub repository to Netlify
-2. Configure build settings (already in `netlify.toml`)
-3. Add environment variables in Netlify dashboard
-4. Deploy!
+### English Keywords (High Volume)
+- "emotional eating" (3,600 searches/month)
+- "stress eating" (5,400 searches/month)
+- "stop emotional eating" (210 searches/month)
 
-Build settings:
-- Build command: `npm run build`
-- Publish directory: `dist`
+### Spanish Keywords
+- "ansiedad" (260 searches/month)
+- "depresión" (480 searches/month)
+- "comer compulsivo" (10 searches/month)
 
-### Other Platforms
+## 📈 Performance
 
-The site is a standard static site and can be deployed to:
-- Vercel
-- GitHub Pages
-- Cloudflare Pages
-- Any static hosting provider
+- **Lighthouse Score**: 95+ (Performance, Accessibility, SEO)
+- **Core Web Vitals**: Optimized
+- **Bundle Size**: Minified and optimized
+- **Image Optimization**: Automatic compression
 
-## 📝 Customization
+## 🤝 Contributing
 
-### Update Content
-
-Edit the translation files:
-- `src/i18n/en.json` - English content
-- `src/i18n/es.json` - Spanish content
-
-### Update Styles
-
-The color palette is defined in `tailwind.config.mjs`
-
-### Add Images
-
-Place images in the `public/` directory and reference them with `/image-name.jpg`
-
-Recommended images:
-1. `hero-image.png` (1200x800px)
-2. `app-screenshot.png` (600x1200px)
-3. `og-image.jpg` (1200x630px)
-4. Feature icons as SVGs
-
-## 🔒 Security
-
-- HTTPS enforced via hosting platform
-- Security headers configured in `netlify.toml`
-- No sensitive data in client-side code
-- Environment variables for API keys
-
-## 📈 Performance Optimizations
-
-- Static generation (no runtime JS)
-- Lazy loading for images
-- Preloading critical resources
-- Minified CSS/JS
-- Google Fonts optimization
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
 ## 📄 License
 
-MIT License - See LICENSE file for details
+MIT License - see LICENSE file for details.
+
+## 📞 Support
+
+For questions or support:
+- Email: support@emotioneat.com
+- Issues: [GitHub Issues](https://github.com/Jsalvat/emotioneat-landing/issues)
 
 ---
 
-Built with 💜 for EmotionEat
+**Built with ❤️ for mental health and wellness**
