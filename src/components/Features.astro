@@ -79,7 +79,7 @@ const features = [
             <div class={`absolute inset-0 rounded-3xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity -z-10`}></div>
 
             <!-- Icon -->
-            <div class={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+            <div class={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform`} aria-hidden="true">
               <Fragment set:html={feature.icon} />
             </div>
 
@@ -88,6 +88,7 @@ const features = [
               <h3 class="text-2xl font-bold text-gray-900 mb-4">
                 {feature.title}
               </h3>
+              <!-- SEO IMPROVEMENT: Feature descriptions contain keywords like "chat conversations", "pattern analysis", "daily challenges" -->
               <p class="text-gray-600 leading-relaxed text-lg">
                 {feature.description}
               </p>

@@ -33,10 +33,10 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
         </div>
 
         <!-- Features List -->
-        <ul class="space-y-4 mb-8">
+        <ul class="space-y-4 mb-8" aria-label="Free plan features">
           {t.pricing.free.features.map((feature: string) => (
             <li class="flex items-start">
-              <svg class="w-6 h-6 text-mint-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-mint-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               <span class="text-gray-700">{feature}</span>
@@ -74,10 +74,10 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
         </div>
 
         <!-- Features List -->
-        <ul class="space-y-4 mb-8">
+        <ul class="space-y-4 mb-8" aria-label="Premium plan features">
           {t.pricing.premium.features.map((feature: string) => (
             <li class="flex items-start">
-              <svg class="w-6 h-6 text-mint-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-mint-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               <span class="text-white">{feature}</span>

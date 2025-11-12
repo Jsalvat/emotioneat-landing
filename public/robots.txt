@@ -1,6 +1,12 @@
+# SEO UPDATE: Optimized robots.txt for EmotionEat
 # Allow all crawlers
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Disallow admin/private routes if any (none currently)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location - SEO UPDATE: Updated with correct sitemap URLs
+Sitemap: https://emotioneat.com/sitemap.xml
 Sitemap: https://emotioneat.com/sitemap-index.xml

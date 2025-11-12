@@ -20,7 +20,7 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
+      <nav class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
         <a href={`#features`} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
           {t.header.features}
         </a>
@@ -30,21 +30,21 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
         <a href={`#faq`} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
           {t.header.faq}
         </a>
-      </div>
+      </nav>
 
       <!-- CTA & Language Switcher -->
       <div class="flex items-center space-x-4">
         <!-- Language Switcher -->
         <div class="flex items-center space-x-1 bg-gray-100 rounded-lg p-1">
-          <a 
-            href="/" 
+          <a
+            href="/?lang=en"
             class={`px-3 py-1 rounded-md text-sm font-medium transition-all ${lang === 'en' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
             data-lang-switch="en"
           >
             EN
           </a>
-          <a 
-            href="/es" 
+          <a
+            href="/es?lang=es"
             class={`px-3 py-1 rounded-md text-sm font-medium transition-all ${lang === 'es' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
             data-lang-switch="es"
           >
@@ -57,6 +57,7 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
           href={appUrl}
           class="hidden sm:inline-flex items-center px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5"
           data-cta-location="header"
+          aria-label={t.header.startFree + " - " + t.hero.noCard}
         >
           {t.header.startFree}
         </a>

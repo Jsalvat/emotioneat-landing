@@ -15,29 +15,54 @@ const lang = 'en';
 const t = en;
 ---
 
+<!-- SEO UPDATE: Proper canonical URL for English version -->
 <Layout 
   title={t.meta.title}
   description={t.meta.description}
   ogTitle={t.meta.ogTitle}
   ogDescription={t.meta.ogDescription}
   lang={lang}
+  canonical="https://emotioneat.com"
 >
   <Header lang={lang} t={t} />
-  <main>
-    <Hero t={t} />
+  <main id="main-content">
+    <Hero t={t} lang={lang} />
     <HowItWorks t={t} />
     <Features t={t} />
     <Pricing t={t} />
     <FAQ t={t} />
     <CTA t={t} />
   </main>
-  <Footer t={t} lang={lang} />
+  <Footer t={t} />
 
   <script>
     import { initMixpanel, trackPageView } from '../scripts/mixpanel';
     
-    // Initialize Mixpanel and track page view
-    initMixpanel();
-    trackPageView('home', 'en');
+    // Detección de idioma en el cliente (fallback si el middleware no funciona)
+    // SOLO para primera visita sin parámetro lang
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+
+      // No hacer nada si ya hay un parámetro lang (usuario eligió idioma manualmente)
+      if (urlParams.has('lang')) {
+        return;
+      }
+
+      // Solo redirigir si estamos en la raíz y no hay parámetro lang
+      if (window.location.pathname === '/' && !urlParams.has('lang')) {
+        const browserLang = navigator.language || navigator.languages?.[0] || 'en';
+        const detectedLang = browserLang.startsWith('es') ? 'es' : 'en';
+
+        // Si detecta español y no estamos ya en /es, redirigir
+        if (detectedLang === 'es' && !window.location.pathname.startsWith('/es')) {
+          window.location.href = '/es';
+          return;
+        }
+      }
+      
+      // Initialize Mixpanel and track page view
+      initMixpanel();
+      trackPageView('home', 'en');
+    })();
   </script>
 </Layout>

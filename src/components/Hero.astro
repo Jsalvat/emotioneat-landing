@@ -1,10 +1,14 @@
 ---
 interface Props {
   t: any;
+  lang?: string;
 }
 
-const { t } = Astro.props;
+const { t, lang = 'en' } = Astro.props;
 const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+
+// SEO UPDATE: Select appropriate hero image based on language
+const heroImage = lang === 'es' ? '/landing_es.png' : '/landing_en.png';
 ---
 
 <section class="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -30,6 +34,7 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
         <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
           {t.hero.headline}
         </h1>
+        <!-- SEO IMPROVEMENT: H1 contains main keyword "emotional eating" -->
 
         <!-- Subheadline -->
         <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -42,15 +47,17 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
             href={appUrl}
             class="inline-flex items-center justify-center px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white text-lg font-semibold rounded-2xl transition-all hover:shadow-xl hover:-translate-y-1"
             data-cta-location="hero-primary"
+            aria-label={t.hero.cta + " - " + t.hero.noCard}
           >
             {t.hero.cta}
-            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
             </svg>
           </a>
           <a 
             href="#how-it-works"
             class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-50 text-brand-600 text-lg font-semibold rounded-2xl border-2 border-brand-200 transition-all hover:shadow-lg"
+            aria-label={t.hero.ctaSecondary}
           >
             {t.hero.ctaSecondary}
           </a>
@@ -62,17 +69,14 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
 
       <!-- Right Column - Visual -->
       <div class="relative animate-on-scroll delay-200">
-        <!-- Placeholder for hero image -->
+        <!-- Hero image -->
         <div class="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-          <!-- Gradient placeholder -->
-          <div class="absolute inset-0 bg-gradient-to-br from-brand-100 via-calm-100 to-lavender-100 flex items-center justify-center">
-            <div class="text-center p-8">
-              <svg class="w-32 h-32 mx-auto mb-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-              </svg>
-              <p class="text-brand-600 font-medium">Your journey to freedom starts here</p>
-            </div>
-          </div>
+          <img
+            src={heroImage}
+            alt="EmotionEat - AI-powered emotional eating support with daily chat conversations and personalized challenges"
+            class="w-full h-full object-cover"
+            loading="eager"
+          />
         </div>
 
         <!-- Floating cards decoration -->
@@ -83,8 +87,8 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
   </div>
 
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" aria-hidden="true">
+    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
     </svg>
   </div>

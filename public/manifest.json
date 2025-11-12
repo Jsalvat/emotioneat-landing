@@ -1,0 +1,22 @@
+{
+  "name": "EmotionEat - Break Free from Emotional Eating",
+  "short_name": "EmotionEat",
+  "description": "AI-powered emotional eating support through daily chat conversations, behavioral pattern analysis, and personalized daily challenges",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1890FF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr"
+}
+

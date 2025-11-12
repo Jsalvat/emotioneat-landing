@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "EmotionEat - Break Free from Emotional Eating with AI",
-    "description": "Understand your emotional eating patterns with AI-powered insights. Track your daily habits, discover triggers, and get personalized advice to build a healthier relationship with food.",
-    "ogTitle": "EmotionEat - AI-Powered Emotional Eating Support",
-    "ogDescription": "Break free from emotional eating. Get personalized insights and support through AI-powered pattern analysis."
+    "title": "EmotionEat - Break Free from Emotional Eating with AI Chat & Pattern Analysis",
+    "description": "Understand your emotional eating patterns through AI-powered chat conversations. Track daily habits, discover triggers, get personalized challenges, and build a healthier relationship with food.",
+    "ogTitle": "EmotionEat - AI-Powered Emotional Eating Support with Chat & Pattern Analysis",
+    "ogDescription": "Break free from emotional eating. Chat with AI daily, discover behavioral patterns, and get personalized challenges to transform your relationship with food."
   },
   "header": {
     "features": "Features",
@@ -13,7 +13,7 @@
   },
   "hero": {
     "headline": "Break Free from Emotional Eating",
-    "subheadline": "Stop feeling controlled by cravings. EmotionEat helps you understand your patterns, identify triggers, and build a healthier relationship with food—one day at a time.",
+    "subheadline": "Stop feeling controlled by cravings. Chat with AI daily, discover your behavioral patterns, get personalized challenges, and build a healthier relationship with food—one conversation at a time.",
     "cta": "Start Your Journey Free",
     "ctaSecondary": "See How It Works",
     "trustSignal": "Join early adopters taking control",
@@ -23,28 +23,28 @@
     "title": "How EmotionEat Works",
     "subtitle": "Three simple steps to understand and overcome emotional eating",
     "step1": {
-      "title": "Journal Your Day",
-      "description": "Have a natural conversation with our AI about your day, feelings, and relationship with food. No rigid forms—just talk."
+      "title": "Chat About Your Day",
+      "description": "Have a natural conversation with our AI about your day, feelings, and relationship with food. No rigid forms—just chat naturally. Free plan: 10 messages/day, Premium: 50 messages/day."
     },
     "step2": {
-      "title": "Discover Patterns",
-      "description": "Our AI analyzes your entries to identify triggers, emotional patterns, and contexts that lead to emotional eating."
+      "title": "Discover Your Patterns",
+      "description": "Our AI analyzes your chat conversations to identify triggers, emotional patterns, and contexts. Detects both positive patterns (what works) and problematic ones (what leads to emotional eating)."
     },
     "step3": {
-      "title": "Get Personalized Advice",
-      "description": "Receive actionable, science-backed recommendations tailored to your unique patterns and lifestyle."
+      "title": "Get Challenges & Advice",
+      "description": "Receive 5 personalized daily challenges based on your analysis, plus unlimited personalized advice. Premium users get explanations of why each challenge was chosen."
     }
   },
   "features": {
     "title": "Everything You Need to Take Control",
     "subtitle": "Powerful tools designed to help you understand and change your relationship with food",
     "feature1": {
-      "title": "AI Pattern Detection",
-      "description": "Our AI analyzes your journal entries to identify triggers, emotional patterns, and contexts that lead to emotional eating."
+      "title": "AI Pattern Detection from Chat",
+      "description": "Our AI analyzes your daily chat conversations to identify triggers, emotional patterns, and contexts. Detects both positive patterns (what helps) and problematic ones (what leads to emotional eating)."
     },
     "feature2": {
-      "title": "Daily Personalized Challenges",
-      "description": "Get 5 actionable daily challenges based on your analysis. Complete them to build healthier habits step by step."
+      "title": "5 Daily Personalized Challenges",
+      "description": "Get 5 actionable daily challenges automatically generated from your pattern analysis. Complete them to build healthier habits, and regenerate completed challenges for fresh ones."
     },
     "feature3": {
       "title": "Visual Calendar & History",
@@ -55,12 +55,12 @@
       "description": "AI recommendations tailored to your unique patterns and lifestyle. No generic advice—just real solutions that work for you."
     },
     "feature5": {
-      "title": "Instant AI Insights (Premium)",
-      "description": "Premium users get instant AI insights on every journal entry—immediate feedback to help you understand your behavior in real-time."
+      "title": "Pattern Explanations for Challenges (Premium)",
+      "description": "Premium users get detailed explanations of why each daily challenge was chosen based on their detected patterns. Understand the connection between your behaviors and your personalized challenges."
     },
     "feature6": {
       "title": "Your Data, Your Privacy",
-      "description": "Your journal entries are encrypted and protected with enterprise-grade security. We never share your data with anyone, ever."
+      "description": "Your chat conversations are encrypted and protected with enterprise-grade security. We never share your data with anyone, ever."
     }
   },
   "pricing": {
@@ -72,7 +72,7 @@
       "period": "forever",
       "description": "Perfect to start your journey",
       "features": [
-        "1 journal entry per day",
+        "10 chat messages per day",
         "1 pattern analysis per week",
         "5 daily personalized challenges",
         "Unlimited personalized advice",
@@ -87,8 +87,8 @@
       "badge": "Most Popular",
       "description": "For serious transformation",
       "features": [
-        "5 journal entries per day",
-        "AI insights on every entry",
+        "50 chat messages per day",
+        "Pattern explanations for challenges",
         "1 pattern analysis per day",
         "5 daily personalized challenges",
         "Unlimited personalized advice",
@@ -102,11 +102,11 @@
     "subtitle": "Everything you need to know about EmotionEat",
     "question1": {
       "q": "Is my data private and secure?",
-      "a": "Absolutely. Your data is encrypted and protected with industry-standard security (HTTPS + database-level encryption). Your journal entries are private and never shared with anyone. We don't sell your data, ever."
+      "a": "Absolutely. Your data is encrypted and protected with industry-standard security (HTTPS + database-level encryption). Your chat conversations are private and never shared with anyone. We don't sell your data, ever."
     },
     "question2": {
       "q": "How does the AI work?",
-      "a": "Our AI uses advanced natural language processing to understand your daily entries and identify patterns in your emotional eating. It looks for triggers, contexts, and recurring behaviors to provide personalized insights."
+      "a": "Our AI uses advanced natural language processing to analyze your daily chat conversations and identify patterns in your emotional eating. It detects triggers, contexts, recurring behaviors, and both positive and problematic patterns to provide personalized insights and challenges."
     },
     "question3": {
       "q": "Can I cancel anytime?",
@@ -118,7 +118,7 @@
     },
     "question5": {
       "q": "What's the difference between free and premium?",
-      "a": "Free gives you 1 journal entry and 1 pattern analysis per week—perfect for getting started. Premium unlocks 5 daily entries with AI insights on every entry, plus 1 pattern analysis per day for deeper insights and faster progress."
+      "a": "Free gives you 10 chat messages per day and 1 pattern analysis per week—perfect for getting started. Premium unlocks 50 chat messages per day, pattern explanations for your daily challenges, plus 1 pattern analysis per day for deeper insights and faster progress."
     },
     "question6": {
       "q": "Is this a replacement for therapy?",

@@ -23,13 +23,15 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
 
     <!-- CTA Button -->
     <div class="flex flex-col items-center space-y-4">
+      <!-- SEO UPDATE: Improved accessibility with aria-label -->
       <a 
         href={appUrl}
         class="inline-flex items-center px-10 py-5 bg-white hover:bg-gray-50 text-brand-600 text-xl font-bold rounded-2xl transition-all hover:shadow-2xl hover:scale-105"
         data-cta-location="footer-cta"
+        aria-label={t.cta.button + " - " + t.cta.noCard}
       >
         {t.cta.button}
-        <svg class="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
         </svg>
       </a>
@@ -38,22 +40,22 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
       </p>
     </div>
 
-    <!-- Trust indicators -->
-    <div class="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/80 animate-on-scroll delay-200">
-      <div class="flex items-center space-x-2">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+    <!-- SEO UPDATE: Trust indicators with improved accessibility -->
+    <div class="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/80 animate-on-scroll delay-200" role="list" aria-label="Trust indicators">
+      <div class="flex items-center space-x-2" role="listitem">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
           <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
         </svg>
         <span class="text-sm font-medium">Enterprise security</span>
       </div>
-      <div class="flex items-center space-x-2">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+      <div class="flex items-center space-x-2" role="listitem">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
           <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"></path>
         </svg>
         <span class="text-sm font-medium">AI-powered insights</span>
       </div>
-      <div class="flex items-center space-x-2">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+      <div class="flex items-center space-x-2" role="listitem">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
           <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
         </svg>
         <span class="text-sm font-medium">Cancel anytime</span>

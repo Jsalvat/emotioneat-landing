@@ -17,9 +17,14 @@ const {
   canonical
 } = Astro.props;
 
+// SEO UPDATE: Improved canonical URLs and meta tags
+const siteUrl = 'https://www.emotioneat.com';
 const currentUrl = Astro.url.href;
-const canonicalUrl = canonical || currentUrl;
-const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+// SEO UPDATE: Proper canonical URLs for multi-language support
+const canonicalUrl = canonical || (lang === 'es' ? `${siteUrl}/es` : siteUrl);
+
+// Build absolute URLs for OG images
+const ogImageUrl = `${siteUrl}/og-image.jpg`;
 ---
 
 <!doctype html>
@@ -29,10 +34,14 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     
+    <!-- SEO UPDATE: Enhanced meta tags for better SEO -->
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="keywords" content="emotional eating, AI chat, pattern analysis, binge eating support, eating disorder app, food anxiety, emotional eating triggers, daily challenges" />
+    <meta name="author" content="EmotionEat" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
     
     <!-- Open Graph / Facebook -->
@@ -40,53 +49,184 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
     <meta property="og:url" content={currentUrl} />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
-    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="EmotionEat - AI-powered emotional eating support" />
+    <meta property="og:site_name" content="EmotionEat" />
     <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    {lang === 'es' && <meta property="og:locale:alternate" content="en_US" />}
+    {lang === 'en' && <meta property="og:locale:alternate" content="es_ES" />}
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={currentUrl} />
-    <meta property="twitter:title" content={ogTitle} />
-    <meta property="twitter:description" content={ogDescription} />
-    <meta property="twitter:image" content="/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={currentUrl} />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content="EmotionEat - AI-powered emotional eating support" />
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Theme and Mobile -->
+    <meta name="theme-color" content="#1890FF" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="EmotionEat" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
     
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
+    <!-- SEO UPDATE: Optimized font loading with font-display swap -->
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "EmotionEat",
-        "url": "https://emotioneat.com",
-        "description": "AI-powered emotional eating support and pattern analysis",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "Web",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "127"
-        }
+    <style>
+      /* Preload critical font weights */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
       }
-    </script>
+    </style>
+    
+    <!-- SEO UPDATE: Enhanced Schema.org with Organization and improved WebApplication -->
+    <!-- Schema.org -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": `${siteUrl}/#organization`,
+          "name": "EmotionEat",
+          "url": siteUrl,
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${siteUrl}/favicon.png`,
+            "width": 512,
+            "height": 512
+          },
+          "sameAs": [
+            "https://twitter.com/emotioneat",
+            "https://github.com/emotioneat"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "email": "support@emotioneat.com"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "@id": `${siteUrl}/#webapp`,
+          "name": "EmotionEat",
+          "url": siteUrl,
+          "description": "AI-powered emotional eating support through daily chat conversations, behavioral pattern analysis, and personalized daily challenges. Break free from emotional eating with AI chat, pattern detection, and daily personalized challenges.",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web",
+          "browserRequirements": "Requires JavaScript. Requires HTML5.",
+          "softwareVersion": "2.0",
+          "releaseNotes": "AI-powered pattern analysis and daily challenges",
+          "featureList": [
+            "Daily AI chat conversations (10 messages/day free, 50/day premium)",
+            "Behavioral pattern analysis from chat conversations",
+            "Detection of positive and problematic eating patterns",
+            "5 personalized daily challenges with regeneration",
+            "Pattern explanations for challenges (Premium)",
+            "Unlimited personalized advice based on detected patterns"
+          ],
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Free Plan",
+              "price": "0",
+              "priceCurrency": "EUR",
+              "description": "10 chat messages per day, 1 pattern analysis per week, 5 daily challenges",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Premium Plan",
+              "price": "7.99",
+              "priceCurrency": "EUR",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "7.99",
+                "priceCurrency": "EUR",
+                "billingDuration": "P1M"
+              },
+              "description": "50 chat messages per day, 1 pattern analysis per day, pattern explanations for challenges",
+              "availability": "https://schema.org/InStock"
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "127",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "publisher": {
+            "@id": `${siteUrl}/#organization`
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${currentUrl}#breadcrumb`,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": lang === 'es' ? "Inicio" : "Home",
+              "item": siteUrl
+            }
+          ]
+        }
+      ]
+    })} />
   </head>
   <body class="bg-gray-50 text-gray-900 antialiased">
+    <!-- SEO UPDATE: Skip link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-500 focus:text-white focus:rounded-lg focus:shadow-lg">
+      Skip to main content
+    </a>
     <slot />
     
     <style is:global>
+      /* SEO UPDATE: Skip link styles for accessibility */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      
+      .sr-only:focus {
+        position: absolute;
+        width: auto;
+        height: auto;
+        padding: 0.5rem 1rem;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+      }
+      
       /* Smooth scroll behavior */
       html {
         scroll-behavior: smooth;

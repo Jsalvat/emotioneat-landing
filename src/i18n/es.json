@@ -1,143 +1,143 @@
 {
   "meta": {
-    "title": "EmotionEat - Libérate del Comer Emocional con IA",
-    "description": "Comprende tus patrones de alimentación emocional con insights impulsados por IA. Rastrea tus hábitos diarios, descubre tus triggers, y recibe consejos personalizados para construir una relación más saludable con la comida.",
-    "ogTitle": "EmotionEat - Soporte para el Comer Emocional con IA",
-    "ogDescription": "Libérate del comer emocional. Obtén insights personalizados y soporte a través de análisis de patrones impulsado por IA."
+    "title": "EmotionEat - Escapa del Comer Emocional con Chat de IA y Seguimiento de Patrones",
+    "description": "Descubre tus hábitos alimentarios emocionales charlando con IA. Lleva cuenta de tus rutinas diarias, detecta qué te dispara, aborda retos a tu medida y crea una relación más sana con la comida.",
+    "ogTitle": "EmotionEat - Apoyo IA para Vencer el Comer Emocional con Chat y Análisis",
+    "ogDescription": "Manda el comer emocional a paseo. Chatea con IA cada día, descubre tus patrones y recibe retos personalizados para cambiar tu relación con la comida."
   },
   "header": {
-    "features": "Características",
+    "features": "Funciones",
     "pricing": "Precios",
-    "faq": "FAQ",
+    "faq": "Preguntas Frecuentes",
     "startFree": "Empezar Gratis"
   },
   "hero": {
-    "headline": "Libérate del Comer Emocional",
-    "subheadline": "Deja de sentirte controlado por los antojos. EmotionEat te ayuda a entender tus patrones, identificar triggers, y construir una relación más saludable con la comida—un día a la vez.",
-    "cta": "Comienza Tu Viaje Gratis",
-    "ctaSecondary": "Ver Cómo Funciona",
-    "trustSignal": "Únete a los primeros usuarios tomando control",
-    "noCard": "No se requiere tarjeta de crédito"
+    "headline": "Por Fin, Vence el Comer Emocional",
+    "subheadline": "Deja que los antojos dejen de mandarte. Chatea con IA cada día, descubre tus hábitos alimentarios, enfrenta retos a tu medida y crea una relación más sana con la comida—una charla a la vez.",
+    "cta": "Empieza Gratis Ya",
+    "ctaSecondary": "Échale un Vistazo",
+    "trustSignal": "Únete a la gente que ya lo está consiguiendo",
+    "noCard": "Sin tarjeta necesaria"
   },
   "howItWorks": {
-    "title": "Cómo Funciona EmotionEat",
-    "subtitle": "Tres pasos simples para entender y superar el comer emocional",
+    "title": "Cómo Funciona Esto en la Práctica",
+    "subtitle": "Tres pasos sencillos para pillar y superar el comer emocional",
     "step1": {
-      "title": "Registra Tu Día",
-      "description": "Ten una conversación natural con nuestra IA sobre tu día, sentimientos, y relación con la comida. Sin formularios rígidos—solo habla."
+      "title": "Charla Sobre Tu Día",
+      "description": "Habla normal con nuestra IA sobre qué tal tu día, cómo te sientes y tu rollo con la comida. Olvídate de formularios pesados—solo habla como lo harías con un amigo. Plan gratis: 10 mensajes diarios, Premium: 50 mensajes diarios."
     },
     "step2": {
-      "title": "Descubre Patrones",
-      "description": "Nuestra IA analiza tus entradas para identificar triggers, patrones emocionales, y contextos que llevan al comer emocional."
+      "title": "Descubre Tus Hábitos",
+      "description": "Nuestra IA revisa tus charlas para detectar gatillos, patrones emocionales y situaciones. Caza tanto lo bueno (lo que ayuda) como lo malo (lo que dispara el comer emocional)."
     },
     "step3": {
-      "title": "Recibe Consejos Personalizados",
-      "description": "Obtén recomendaciones accionables y basadas en ciencia, adaptadas a tus patrones únicos y estilo de vida."
+      "title": "Consigue Retos y Tips",
+      "description": "Llévate 5 retos diarios hechos a tu medida según tu análisis, más consejos personalizados sin límite. Los usuarios Premium se llevan la explicación completa de por qué cada reto te toca a ti."
     }
   },
   "features": {
-    "title": "Todo Lo Que Necesitas Para Tomar Control",
-    "subtitle": "Herramientas poderosas diseñadas para ayudarte a entender y cambiar tu relación con la comida",
+    "title": "Todas las Herramientas Que Realmente Necesitas",
+    "subtitle": "Herramientas útiles para ayudarte a entender y mejorar tu relación con la comida",
     "feature1": {
-      "title": "Detección de Patrones con IA",
-      "description": "Nuestra IA analiza tus entradas para identificar triggers, patrones emocionales y contextos que conducen a la alimentación emocional."
+      "title": "IA Que Encuentra Patrones en Tus Chats",
+      "description": "La IA lee tus charlas diarias para encontrar gatillos, hábitos emocionales y situaciones. Detecta tanto lo que ayuda como lo que causa el comer emocional."
     },
     "feature2": {
-      "title": "Desafíos Diarios Personalizados",
-      "description": "Recibe 5 desafíos diarios accionables basados en tu análisis. Complétalos para construir hábitos más saludables paso a paso."
+      "title": "5 Retos Diarios Frescos",
+      "description": "Consigue 5 retos diarios realizables, creados según tu análisis de patrones. Complétalos para crear hábitos más sanos, y consigue nuevos cuando termines."
     },
     "feature3": {
-      "title": "Calendario Visual e Historial",
-      "description": "Rastrea tu progreso con una vista de calendario hermosa. Revisa entradas pasadas, ve patrones a lo largo del tiempo y celebra tu crecimiento."
+      "title": "Charla de Verdad con IA",
+      "description": "Mantén conversaciones reales con IA sobre tu día, estado de ánimo y tu tema con la comida. Plan gratis: 10 mensajes diarios. Premium: 50 mensajes diarios. Sin formularios pesados—solo habla naturalmente."
     },
     "feature4": {
-      "title": "Consejos Personalizados",
-      "description": "Recomendaciones de IA adaptadas a tus patrones únicos y estilo de vida. Sin consejos genéricos—solo soluciones reales que funcionan para ti."
+      "title": "Recomendaciones Hechas para Ti",
+      "description": "Sugerencias de IA basadas en tus patrones específicos y forma de vida. Nada de consejos genéricos—solo cosas prácticas que podrían ayudarte."
     },
     "feature5": {
-      "title": "Insights de IA Instantáneos (Premium)",
-      "description": "Los usuarios Premium obtienen insights de IA instantáneos en cada entrada—feedback inmediato para ayudarte a entender tu comportamiento en tiempo real."
+      "title": "Explicaciones de Retos (Solo Premium)",
+      "description": "Los usuarios Premium se llevan la explicación completa de por qué cada reto diario fue elegido según sus patrones. Entiende la conexión entre tus hábitos y los retos."
     },
     "feature6": {
-      "title": "Tus Datos, Tu Privacidad",
-      "description": "Tus entradas están encriptadas y protegidas con seguridad de nivel empresarial. Nunca compartimos tus datos con nadie, jamás."
+      "title": "Tu Info Se Queda Contigo",
+      "description": "Tus charlas están encriptadas y protegidas con seguridad de nivel pro. Nunca compartimos tu info con nadie. Jamás."
     }
   },
   "pricing": {
-    "title": "Empieza Gratis, Actualiza Cuando Estés Listo",
-    "subtitle": "Sin compromiso. Cancela cuando quieras. Todos los planes incluyen características principales.",
+    "title": "Gratis para Empezar, Paga Cuando Quieras",
+    "subtitle": "Sin ataduras. Cancela cuando te dé la gana. Ambos planes dan lo básico.",
     "free": {
       "name": "Gratis",
       "price": "€0",
       "period": "para siempre",
-      "description": "Perfecto para comenzar tu viaje",
+      "description": "Genial para mojarte los pies",
       "features": [
-        "1 entrada de diario por día",
-        "1 análisis de patrones por semana",
-        "5 desafíos personalizados diarios",
-        "Consejos personalizados ilimitados",
-        "Calendario e historial"
+        "10 mensajes de chat diarios",
+        "1 revisión de patrones por semana",
+        "5 retos personalizados diarios",
+        "Tips personalizados sin límite",
+        "Seguimiento de progreso e historial"
       ],
-      "cta": "Empezar Gratis"
+      "cta": "Métete Ya"
     },
     "premium": {
       "name": "Premium",
       "price": "€7.99",
       "period": "por mes",
       "badge": "Más Popular",
-      "description": "Para transformación seria",
+      "description": "Cuando vas en serio",
       "features": [
-        "5 entradas de diario por día",
-        "Insights de IA en cada entrada",
-        "1 análisis de patrones por día",
-        "5 desafíos personalizados diarios",
-        "Consejos personalizados ilimitados",
-        "Acceso anticipado a nuevas funciones"
+        "50 mensajes de chat diarios",
+        "Explicaciones incluidas en retos",
+        "Análisis diario de patrones",
+        "5 retos personalizados diarios",
+        "Tips personalizados sin límite",
+        "Primera fila para cosas nuevas"
       ],
-      "cta": "Actualizar Ahora"
+      "cta": "Ir a Premium"
     }
   },
   "faq": {
-    "title": "Preguntas Frecuentes",
-    "subtitle": "Todo lo que necesitas saber sobre EmotionEat",
+    "title": "Preguntas que La Gente Hace",
+    "subtitle": "Lo que normalmente preguntan sobre EmotionEat",
     "question1": {
-      "q": "¿Mis datos son privados y seguros?",
-      "a": "Absolutamente. Tus datos están encriptados y protegidos con seguridad estándar de la industria (HTTPS + encriptación a nivel de base de datos). Tus entradas de diario son privadas y nunca se comparten con nadie. No vendemos tus datos, nunca."
+      "q": "¿Mi info está realmente privada y segura?",
+      "a": "Sí. Todo está encriptado con buena seguridad (HTTPS y encriptación en base de datos). Tus charlas son privadas y nunca las compartimos. No vendemos tu info."
     },
     "question2": {
-      "q": "¿Cómo funciona la IA?",
-      "a": "Nuestra IA usa procesamiento avanzado de lenguaje natural para entender tus entradas diarias e identificar patrones en tu alimentación emocional. Busca triggers, contextos, y comportamientos recurrentes para proporcionar insights personalizados."
+      "q": "¿Cómo funciona exactamente la IA?",
+      "a": "Nuestra IA usa procesamiento de lenguaje para leer tus charlas diarias y encontrar patrones en tus hábitos de comer emocional. Detecta gatillos, situaciones, comportamientos repetitivos, y tanto patrones útiles como problemáticos para darte consejos personalizados y retos."
     },
     "question3": {
-      "q": "¿Puedo cancelar en cualquier momento?",
-      "a": "¡Sí! Tanto los planes gratis como premium no tienen compromiso. Puedes cancelar tu suscripción premium en cualquier momento, y continuarás teniendo acceso hasta el final de tu período de facturación."
+      "q": "¿Puedo irme cuando quiera?",
+      "a": "Sí. Ambos planes no tienen compromiso. Cancela premium cuando quieras y seguirás teniendo acceso hasta el final de tu período de facturación."
     },
     "question4": {
-      "q": "¿Necesito experiencia con diarios?",
-      "a": "¡Para nada! Nuestro chat impulsado por IA hace que escribir en el diario se sienta como tener una conversación. Solo habla naturalmente sobre tu día, y la IA te guiará con preguntas útiles."
+      "q": "¿Necesito saber llevar un diario o algo?",
+      "a": "¡Qué va! Nuestro chat con IA hace que escribir se sienta como charlar con un amigo. Habla normal sobre tu día y la IA te irá preguntando cosas útiles para guiarte."
     },
     "question5": {
-      "q": "¿Cuál es la diferencia entre gratis y premium?",
-      "a": "Gratis te da 1 entrada de diario y 1 análisis de patrones por semana—perfecto para comenzar. Premium desbloquea 5 entradas diarias con insights de IA en cada entrada, más 1 análisis de patrones diario para insights más profundos y progreso más rápido."
+      "q": "¿Cuál es la diferencia real entre gratis y premium?",
+      "a": "Gratis te da 10 mensajes diarios de chat y una revisión de patrones semanal—genial para probar. Premium sube a 50 mensajes diarios, incluye explicaciones para tus retos diarios, más análisis diario de patrones para insights más profundos y progreso más rápido."
     },
     "question6": {
-      "q": "¿Es esto un reemplazo para terapia?",
-      "a": "No. EmotionEat es una herramienta para ayudarte a entender patrones y construir hábitos más saludables, pero no es un sustituto para atención médica profesional o de salud mental. Para trastornos alimentarios serios, por favor consulta a un proveedor de salud."
+      "q": "¿Esto reemplaza ir al terapeuta?",
+      "a": "Nope. Es solo una herramienta para ayudarte a ver patrones y crear hábitos mejores, pero no es sustituto de atención médica real o terapia. Para problemas serios de alimentación, mejor habla con un médico."
     }
   },
   "cta": {
-    "title": "Comienza a Entenderte Hoy",
-    "subtitle": "Únete a miles de personas construyendo una relación más saludable con la comida",
-    "button": "Empezar Gratis",
-    "noCard": "No se requiere tarjeta de crédito · Plan gratuito para siempre disponible"
+    "title": "Hora de Conocerte Mejor",
+    "subtitle": "Únete al grupo que está trabajando en una relación más sana con la comida",
+    "button": "Vamos a Empezar",
+    "noCard": "Sin tarjeta necesaria · Plan gratis para siempre"
   },
   "footer": {
-    "tagline": "Construyendo relaciones más saludables con la comida, un día a la vez.",
+    "tagline": "Relaciones más sanas con la comida, un día a la vez.",
     "product": "Producto",
-    "features": "Características",
+    "features": "Funciones",
     "pricing": "Precios",
     "support": "Soporte",
-    "faq": "FAQ",
+    "faq": "Preguntas Frecuentes",
     "contact": "Contacto",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",

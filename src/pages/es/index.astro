@@ -15,27 +15,29 @@ const lang = 'es';
 const t = es;
 ---
 
+<!-- SEO UPDATE: Proper canonical URL for Spanish version -->
 <Layout 
   title={t.meta.title}
   description={t.meta.description}
   ogTitle={t.meta.ogTitle}
   ogDescription={t.meta.ogDescription}
   lang={lang}
+  canonical="https://emotioneat.com/es"
 >
   <Header lang={lang} t={t} />
-  <main>
-    <Hero t={t} />
+  <main id="main-content">
+    <Hero t={t} lang={lang} />
     <HowItWorks t={t} />
     <Features t={t} />
     <Pricing t={t} />
     <FAQ t={t} />
     <CTA t={t} />
   </main>
-  <Footer t={t} lang={lang} />
+  <Footer t={t} />
 
   <script>
     import { initMixpanel, trackPageView } from '../../scripts/mixpanel';
-    
+
     // Initialize Mixpanel and track page view
     initMixpanel();
     trackPageView('home', 'es');
