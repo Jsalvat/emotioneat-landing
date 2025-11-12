@@ -3,6 +3,8 @@ import BlogLayout from '../../../layouts/BlogLayout.astro';
 import { supabase } from '../../../lib/supabase';
 import es from '../../../i18n/es.json';
 
+export const prerender = false;
+
 // Language is Spanish
 const lang = 'es';
 const t = es;

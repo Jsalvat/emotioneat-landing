@@ -4,14 +4,6 @@ import { supabase } from '../../lib/supabase';
 import en from '../../i18n/en.json';
 import es from '../../i18n/es.json';
 
-export async function getStaticPaths() {
-	// Return dummy paths to satisfy Astro's requirements for dynamic routes
-	// The actual logic will be handled in the component
-	return [
-		{ params: { slug: 'dummy-post' } }
-	];
-}
-
 export const prerender = false;
 
 // Detect language from URL
