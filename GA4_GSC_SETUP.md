@@ -38,14 +38,18 @@ PUBLIC_APP_URL=https://your-app-domain.com
 
 ## 🔍 Google Search Console (GSC)
 
-### Cómo obtener el código de verificación:
+### Cómo obtener el código de verificación (OPCIONAL - Ya verificado por DNS):
+
+**Como ya verificaste por TXT record, NO necesitas esto.** Pero si quieres tener verificación HTML como respaldo:
 
 1. **Ve a Google Search Console**: https://search.google.com/search-console/
 2. **Añade propiedad** > **URL prefix** o **Domain**
 3. **Ingresa tu dominio**: `https://emotioneat.com`
 4. **Selecciona "HTML tag"** para verificación
-5. **Copia el código de verificación** del meta tag
-6. **Pégalo en `.env`** como `PUBLIC_GSC_VERIFICATION_CODE`
+5. **Copia el código de verificación** del meta tag (ej: `google-site-verification=abc123def456`)
+6. **Pégalo en `.env`** como `PUBLIC_GSC_VERIFICATION_CODE=abc123def456`
+
+**Nota**: El TXT record en DNS es suficiente. El HTML meta tag es solo backup.
 
 ### Qué te da GSC:
 - ✅ **Posicionamiento en búsquedas** para tus keywords

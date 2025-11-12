@@ -14,7 +14,8 @@
   status = 200
 
 # Environment variables will be set in Netlify dashboard
-# (PUBLIC_GA4_ID, PUBLIC_GSC_VERIFICATION_CODE, PUBLIC_APP_URL)
+# (PUBLIC_GA4_ID, PUBLIC_APP_URL)
+# PUBLIC_GSC_VERIFICATION_CODE is optional (already verified via DNS TXT record)
 
 # Headers for security and performance
 [[headers]]

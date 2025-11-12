@@ -102,9 +102,10 @@ PUBLIC_APP_URL=https://your-app-domain.com
 - Multi-language support (EN/ES)
 
 ### Google Search Console
-- ✅ **Already configured** via TXT record
+- ✅ **Already configured** via TXT record (recommended method)
 - Monitors search rankings and indexing
 - Provides technical SEO insights
+- **Note**: HTML meta tag verification is optional backup
 
 ### SEO Optimizations Completed
 - ✅ Meta tags optimized for primary keywords
