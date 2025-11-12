@@ -3,8 +3,15 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import { supabase, getBlogPostInLanguage, type BlogPost } from '../../lib/supabase';
 import en from '../../i18n/en.json';
 import es from '../../i18n/es.json';
+import { marked } from 'marked';
 
 export const prerender = false;
+
+// Configure marked for better HTML output
+marked.setOptions({
+	breaks: true,
+	gfm: true,
+});
 
 // Detect language from URL
 const lang = Astro.url.pathname.startsWith('/es') ? 'es' : 'en';
@@ -79,6 +86,9 @@ const image = post.cover_image_url || '/og-image.jpg';
 
 // Calculate reading time if not set (use localized content)
 const readingTime = post.reading_time || Math.ceil(localizedPost.content.split(' ').length / 200);
+
+// Convert Markdown to HTML
+const contentHtml = await marked.parse(localizedPost.content);
 ---
 
 <BlogLayout
@@ -132,7 +142,7 @@ const readingTime = post.reading_time || Math.ceil(localizedPost.content.split('
 	<article class="bg-white">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 			<div class="prose prose-lg max-w-none">
-				<Fragment set:html={localizedPost.content} />
+				<Fragment set:html={contentHtml} />
 			</div>
 		</div>
 	</article>
@@ -229,20 +239,20 @@ const readingTime = post.reading_time || Math.ceil(localizedPost.content.split('
 	<section class="bg-gradient-to-r from-blue-600 to-indigo-700 py-16">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 			<h2 class="text-3xl font-bold text-white mb-4">
-				{lang === 'es' ? '¿Quieres Ayuda Profesional?' : 'Need Professional Help?'}
+				{lang === 'es' ? '¿Listo para Cambiar Tu Relación con la Comida?' : 'Ready to Change Your Relationship with Food?'}
 			</h2>
 			<p class="text-xl text-blue-100 mb-8">
 				{lang === 'es'
-					? 'Descubre cómo EmotionEat puede ayudarte a crear hábitos saludables y superar la alimentación emocional.'
-					: 'Discover how EmotionEat can help you create healthy habits and overcome emotional eating.'
+					? 'Únete a miles de personas que están construyendo hábitos más sanos, una conversación a la vez.'
+					: 'Join thousands of people who are building healthier habits, one conversation at a time.'
 				}
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
 				<a
-					href={`${lang === 'es' ? '/es' : ''}#pricing`}
+					href={import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com'}
 					class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-colors shadow-lg"
 				>
-					{lang === 'es' ? 'Ver Planes' : 'View Plans'}
+					{lang === 'es' ? 'Empezar Ahora' : 'Get Started'}
 				</a>
 				<a
 					href={`${lang === 'es' ? '/es' : '/'}`}
