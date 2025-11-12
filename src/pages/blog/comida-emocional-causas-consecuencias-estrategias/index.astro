@@ -48,12 +48,12 @@ if (supabase) {
 
 // Handle 404 if post not found
 if (!post) {
-	return Astro.redirect(lang === 'es' ? '/es/blog' : '/blog');
+	return Astro.redirect('/blog');
 }
 
 // SEO Meta
-const title = post.meta_title || `${post.title} | EmotionEat Blog`;
-const description = post.meta_description || post.excerpt || post.title;
+const title = 'Emotional Eating: How to Identify and Overcome It | EmotionEat Blog';
+const description = 'Discover what emotional eating is, its warning signs, physical and emotional consequences, and practical strategies to create a healthy relationship with food.';
 const image = post.cover_image_url || '/og-image.jpg';
 
 // Calculate reading time if not set
@@ -83,7 +83,7 @@ const contentHtml = marked(post.content);
 			<div class="text-center mb-8">
 				<div class="flex items-center justify-center text-sm text-gray-500 mb-4">
 					<time datetime={post.published_at}>
-						{new Date(post.published_at).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', {
+						{new Date(post.published_at).toLocaleDateString('en-US', {
 							year: 'numeric',
 							month: 'long',
 							day: 'numeric'
@@ -94,14 +94,12 @@ const contentHtml = marked(post.content);
 				</div>
 
 				<h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-					{post.title}
+					Emotional Eating: How to Identify and Overcome It
 				</h1>
 
-				{post.excerpt && (
-					<p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-						{post.excerpt}
-					</p>
-				)}
+				<p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+					Discover what emotional eating is, its warning signs, physical and emotional consequences, and practical strategies to create a healthy relationship with food.
+				</p>
 			</div>
 
 			{post.cover_image_url && (
@@ -134,23 +132,23 @@ const contentHtml = marked(post.content);
 						E
 					</div>
 					<div>
-						<p class="font-semibold text-gray-900">{post.author || (lang === 'es' ? 'Equipo EmotionEat' : 'EmotionEat Team')}</p>
+						<p class="font-semibold text-gray-900">{post.author || 'EmotionEat Team'}</p>
 						<p class="text-gray-600 text-sm">
-							{lang === 'es' ? 'Trabajando para mejorar la relación con la comida' : 'Working to improve food relationships'}
+							Working to improve food relationships
 						</p>
 					</div>
 				</div>
 
 				<div class="flex items-center space-x-4">
 					<span class="text-gray-600 text-sm">
-						{lang === 'es' ? 'Compartir:' : 'Share:'}
+						Share:
 					</span>
 					<a
 						href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(Astro.url.href)}`}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="text-gray-400 hover:text-blue-500 transition-colors"
-						aria-label={lang === 'es' ? 'Compartir en Twitter' : 'Share on Twitter'}
+						aria-label="Share on Twitter"
 					>
 						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
 							<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
@@ -161,7 +159,7 @@ const contentHtml = marked(post.content);
 						target="_blank"
 						rel="noopener noreferrer"
 						class="text-gray-400 hover:text-blue-600 transition-colors"
-						aria-label={lang === 'es' ? 'Compartir en Facebook' : 'Share on Facebook'}
+						aria-label="Share on Facebook"
 					>
 						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
 							<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -177,7 +175,7 @@ const contentHtml = marked(post.content);
 		<section class="bg-white py-16">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<h2 class="text-3xl font-bold text-gray-900 text-center mb-12">
-					{lang === 'es' ? 'Artículos Relacionados' : 'Related Articles'}
+					Related Articles
 				</h2>
 
 				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -196,7 +194,7 @@ const contentHtml = marked(post.content);
 							<div class="p-6">
 								<h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
 									<a
-										href={`${lang === 'es' ? '/es' : ''}/blog/${relatedPost.slug}`}
+										href={`/blog/${relatedPost.slug}`}
 										class="hover:text-blue-600 transition-colors"
 									>
 										{relatedPost.title}
@@ -217,26 +215,23 @@ const contentHtml = marked(post.content);
 	<section class="bg-gradient-to-r from-blue-600 to-indigo-700 py-16">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 			<h2 class="text-3xl font-bold text-white mb-4">
-				{lang === 'es' ? '¿Quieres Empezar tu Viaje?' : 'Ready to Start Your Journey?'}
+				Ready to Start Your Journey?
 			</h2>
 			<p class="text-xl text-blue-100 mb-8">
-				{lang === 'es'
-					? 'Descubre cómo EmotionEat puede acompañarte en crear hábitos más saludables.'
-					: 'Discover how EmotionEat can support you in building healthier habits.'
-				}
+				Discover how EmotionEat can support you in building healthier habits.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
 				<a
-					href={`${lang === 'es' ? '/es' : ''}#pricing`}
+					href="#pricing"
 					class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-colors shadow-lg"
 				>
-					{lang === 'es' ? 'Ver Planes' : 'View Plans'}
+					View Plans
 				</a>
 				<a
-					href={`${lang === 'es' ? '/es' : '/'}`}
+					href="/"
 					class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
 				>
-					{lang === 'es' ? 'Saber Más' : 'Learn More'}
+					Learn More
 				</a>
 			</div>
 		</div>

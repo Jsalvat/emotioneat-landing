@@ -30,10 +30,8 @@ try {
 }
 
 // SEO Meta
-const title = lang === 'es' ? 'Blog | EmotionEat - Consejos sobre Alimentación Emocional' : 'Blog | EmotionEat - Emotional Eating Tips & Advice';
-const description = lang === 'es'
-	? 'Descubre consejos expertos sobre alimentación emocional, estrategias para controlar los atracones y mejorar tu relación con la comida.'
-	: 'Discover expert tips on emotional eating, strategies to control binge eating, and improve your relationship with food.';
+const title = 'Blog | EmotionEat - Emotional Eating Tips & Advice';
+const description = 'Discover expert tips on emotional eating, strategies to control binge eating, and improve your relationship with food.';
 ---
 
 <BlogLayout
@@ -46,13 +44,10 @@ const description = lang === 'es'
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="text-center">
 				<h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-					{lang === 'es' ? 'Blog de Alimentación Emocional' : 'Emotional Eating Blog'}
+					Emotional Eating Blog
 				</h1>
 				<p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-					{lang === 'es'
-						? 'Consejos expertos, estrategias prácticas y apoyo profesional para superar la alimentación emocional y crear una relación saludable con la comida.'
-						: 'Expert tips, practical strategies, and professional support to overcome emotional eating and create a healthy relationship with food.'
-					}
+					Expert tips, practical strategies, and professional support to overcome emotional eating and create a healthy relationship with food.
 				</p>
 			</div>
 		</div>
@@ -78,7 +73,7 @@ const description = lang === 'es'
 							<div class="p-6">
 								<div class="flex items-center text-sm text-gray-500 mb-3">
 									<time datetime={post.published_at}>
-										{new Date(post.published_at).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', {
+										{new Date(post.published_at).toLocaleDateString('en-US', {
 											year: 'numeric',
 											month: 'long',
 											day: 'numeric'
@@ -109,7 +104,7 @@ const description = lang === 'es'
 									href={`/blog/emotional-eating-how-to-identify-and-overcome-it`}
 									class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
 								>
-									{lang === 'es' ? 'Leer más' : 'Read more'}
+									Read more
 									<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
 									</svg>
@@ -122,13 +117,10 @@ const description = lang === 'es'
 				<div class="text-center py-16">
 					<div class="text-6xl mb-4">📝</div>
 					<h3 class="text-2xl font-bold text-gray-900 mb-4">
-						{lang === 'es' ? 'Próximamente' : 'Coming Soon'}
+						Coming Soon
 					</h3>
 					<p class="text-gray-600 max-w-md mx-auto">
-						{lang === 'es'
-							? 'Estamos trabajando en contenido increíble sobre alimentación emocional. ¡Vuelve pronto!'
-							: 'We\'re working on amazing content about emotional eating. Check back soon!'
-						}
+						We're working on amazing content about emotional eating. Check back soon!
 					</p>
 				</div>
 			)}
@@ -139,19 +131,16 @@ const description = lang === 'es'
 	<section class="bg-gradient-to-r from-blue-600 to-indigo-700 py-16">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 			<h2 class="text-3xl font-bold text-white mb-4">
-				{lang === 'es' ? '¿Listo para Cambiar tu Relación con la Comida?' : 'Ready to Change Your Relationship with Food?'}
+				Ready to Change Your Relationship with Food?
 			</h2>
 			<p class="text-xl text-blue-100 mb-8">
-				{lang === 'es'
-					? 'Únete a miles de personas que ya han transformado su alimentación emocional con EmotionEat.'
-					: 'Join thousands of people who have already transformed their emotional eating with EmotionEat.'
-				}
+				Join thousands of people who have already transformed their emotional eating with EmotionEat.
 			</p>
 			<a
-				href={`/${lang === 'en' ? '' : lang}#pricing`}
+				href="#pricing"
 				class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-colors shadow-lg"
 			>
-				{lang === 'es' ? 'Empieza tu Transformación' : 'Start Your Transformation'}
+				Start Your Transformation
 				<svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
 				</svg>
