@@ -7,13 +7,6 @@
   # Disable secrets scanning for public configuration variables
   SECRETS_SCAN_OMIT_KEYS = "PUBLIC_GA4_ID,PUBLIC_GSC_VERIFICATION_CODE,PUBLIC_APP_URL"
 
-# Environment variables will be set in Netlify dashboard
-# Required:
-# PUBLIC_GA4_ID, PUBLIC_APP_URL
-# PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY
-# Optional:
-# PUBLIC_GSC_VERIFICATION_CODE (already verified via DNS TXT record)
-
 # Headers for security and performance
 [[headers]]
   for = "/*"
