@@ -1,9 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import netlify from '@astrojs/netlify';
+import netlify from '@astrojs/netlify/functions'; // <--- usar /functions para SSR
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://emotioneat.com',
   integrations: [
@@ -25,7 +24,6 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
+  output: 'server', // <--- importante para SSR
   adapter: netlify()
 });
-
-
