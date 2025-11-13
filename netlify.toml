@@ -7,12 +7,6 @@
   # Disable secrets scanning for public configuration variables
   SECRETS_SCAN_OMIT_KEYS = "PUBLIC_GA4_ID,PUBLIC_GSC_VERIFICATION_CODE,PUBLIC_APP_URL"
 
-# Redirects for SPA functionality (if needed)
-[[redirects]]
-  from = "/api/*"
-  to = "/api/:splat"
-  status = 200
-
 # Environment variables will be set in Netlify dashboard
 # Required:
 # PUBLIC_GA4_ID, PUBLIC_APP_URL
