@@ -2,9 +2,9 @@ import { createClient } from '@supabase/supabase-js';
 
 console.log('🔍 Verificando configuración de Supabase...');
 
-// Variables de entorno hardcodeadas para testing (deberían venir del .env)
-const supabaseUrl = 'https://stzlgcpcmafdvcwvvyvu.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN0emxnY3BjbWFmZHZjd3Z2eXZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1ODA4OTksImV4cCI6MjA3ODE1Njg5OX0.tXGT6A1wyHTAAnvDTRrFNI-ICsSPdQYczJ7lHcTEcZc';
+// Variables de entorno desde el sistema (configurar en .env para desarrollo o Netlify para producción)
+const supabaseUrl = process.env.PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.PUBLIC_SUPABASE_ANON_KEY;
 
 console.log('📋 Variables de entorno:');
 console.log('- SUPABASE_URL:', supabaseUrl ? '✅ Configurada' : '❌ Faltante');

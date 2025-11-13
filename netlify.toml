@@ -14,6 +14,10 @@
 # Optional:
 # PUBLIC_GSC_VERIFICATION_CODE (already verified via DNS TXT record)
 
+# Exclude test files and automation configs from secrets scanning
+[build.environment]
+  SECRETS_SCAN_OMIT_PATHS = "test-env.js,test-supabase-config.js,ZAPIER_AUTOMATION_SETUP.md,n8n-workflow-emotioneat-blog.json"
+
 # Headers for security and performance
 [[headers]]
   for = "/*"

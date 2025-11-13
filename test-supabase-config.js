@@ -3,8 +3,8 @@
 
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = 'https://stzlgcpcmafdvcwvvyvu.supabase.co'
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN0emxnY3BjbWFmZHZjd3Z2eXZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1ODA4OTksImV4cCI6MjA3ODE1Njg5OX0.tXGT6A1wyHTAAnvDTRrFNI-ICsSPdQYczJ7lHcTEcZc'
+const supabaseUrl = process.env.PUBLIC_SUPABASE_URL
+const supabaseAnonKey = process.env.PUBLIC_SUPABASE_ANON_KEY
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
