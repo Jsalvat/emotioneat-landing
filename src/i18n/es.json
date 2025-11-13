@@ -1,103 +1,103 @@
 {
   "meta": {
-    "title": "Deja de Comer por Emociones | Chat con IA y Análisis Gratuito",
-    "description": "Transforma tu relación con la comida hablando cada día con IA. Descubre qué desencadena tus hábitos, recibe retos personalizados y consigue un cambio duradero. Empieza gratis.",
-    "ogTitle": "Deja de Comer por Emociones para Siempre | IA y Retos Personalizados",
-    "ogDescription": "Habla cada día con IA para entender tus patrones alimentarios, descubrir tus desencadenantes y recibir retos que funcionan de verdad. Únete a miles de personas que están cambiando sus hábitos."
+    "title": "Deja de Comer por Emociones | Habla con tu Guía IA y Analiza tus Hábitos",
+    "description": "Descubre por qué comes cuando no tienes hambre hablando cada día con tu guía IA. Identifica tus patrones, recibe retos diarios adaptados a ti y empieza a transformar tu relación con la comida. Comienza gratis.",
+    "ogTitle": "Comprende tus Hábitos Alimentarios | Retos Personalizados con IA",
+    "ogDescription": "Habla cada día con tu guía IA para entender tus patrones alimentarios, descubrir tus desencadenantes y recibir retos que realmente funcionan. Únete a miles de personas que ya están cambiando sus hábitos."
   },
   "header": {
     "features": "Funciones",
     "faq": "Preguntas Frecuentes",
-    "startNow": "Empezar"
+    "startNow": "Comenzar"
   },
   "hero": {
-    "headline": "Toma el Control de lo Que Comes",
-    "subheadline": "Habla cada día con IA para entender por qué comes, descubre tus patrones y recibe retos que te ayudan a construir una relación más sana con la comida.",
-    "cta": "Empieza Tu Viaje",
-    "ctaSecondary": "Ver Cómo Funciona",
-    "trustSignal": "Más de 5.000 personas construyendo hábitos más sanos",
+    "headline": "Recupera el Control de lo que Comes",
+    "subheadline": "Habla cada día con tu guía IA para entender tus hábitos, descubrir tus patrones emocionales y recibir retos diarios que te ayudan a construir una relación más saludable con la comida.",
+    "cta": "Empieza Hoy",
+    "ctaSecondary": "Descubre Cómo Funciona",
+    "trustSignal": "Más de 5.000 personas ya están entendiendo sus hábitos y comiendo de forma más consciente",
     "noCard": ""
   },
   "howItWorks": {
-    "title": "Cómo Funciona en 3 Pasos Sencillos",
-    "subtitle": "Tu camino hacia una relación más sana con la comida empieza aquí",
+    "title": "Tu Camino hacia Hábitos más Saludables en 3 Pasos",
+    "subtitle": "Empieza a comprender tus patrones y a cambiar tu relación con la comida",
     "step1": {
-      "title": "Habla de Tu Día",
-      "description": "Conversa de forma natural con nuestra IA sobre tus hábitos alimentarios, sentimientos y desencadenantes. Sin formularios complicados—solo una conversación honesta."
+      "title": "Comparte tu Día",
+      "description": "Conversa de manera natural con tu guía IA sobre tus emociones, antojos y situaciones que te llevan a comer. Sin cuestionarios complicados, solo una charla honesta y cercana."
     },
     "step2": {
-      "title": "Descubre Tus Patrones",
-      "description": "Nuestra IA detecta qué está impulsando realmente tus hábitos alimentarios—lo bueno y lo que no tanto. Verás patrones que nunca habías notado y entenderás qué desencadena tus decisiones."
+      "title": "Descubre tus Patrones",
+      "description": "La IA analiza tus mensajes y detecta qué está motivando realmente tus hábitos. Identifica desencadenantes que quizá no habías visto y comprende por qué comes de ciertas maneras."
     },
     "step3": {
-      "title": "Construye Nuevos Hábitos con Retos Diarios",
-      "description": "Recibe retos personalizados cada día basados en tus patrones únicos. Complétalos, sigue tu progreso y observa cómo se transforma tu relación con la comida."
+      "title": "Crea Nuevos Hábitos con Retos Diarios",
+      "description": "Recibe retos personalizados cada día basados en tus patrones. Cumple cada reto, sigue tu progreso y observa cómo tu relación con la comida empieza a cambiar de forma sostenible."
     }
   },
   "features": {
-    "title": "Todo lo que Necesitas para Cambiar Tu Relación con la Comida",
-    "subtitle": "Herramientas inteligentes que te ayudan a entenderte mejor y construir hábitos duraderos",
+    "title": "Herramientas que te Ayudan a Entenderte y Cambiar",
+    "subtitle": "Todo lo que necesitas para construir hábitos duraderos de manera cercana y personalizada",
     "feature1": {
-      "title": "Descubre Qué Impulsa Realmente Tus Decisiones",
-      "description": "Nuestra IA detecta los patrones que te estabas perdiendo. Por fin entenderás qué desencadena tus hábitos alimentarios y cuándo eres más vulnerable—para tomar mejores decisiones en el momento."
+      "title": "Comprende Qué Motiva tus Decisiones",
+      "description": "Tu guía IA detecta patrones que quizá no habías visto. Por fin entenderás qué dispara tus antojos y cuándo eres más vulnerable, para tomar decisiones más conscientes en el momento."
     },
     "feature2": {
-      "title": "Recibe Retos que Funcionan de Verdad para Ti",
-      "description": "Olvídate de los consejos genéricos. Recibirás 5 retos diarios basados en tus patrones y comportamientos específicos. Cada uno está diseñado para ayudarte a romper los hábitos que no te sirven."
+      "title": "Recibe Retos que de Verdad Funcionan para Ti",
+      "description": "Olvídate de consejos genéricos. Cada día recibirás 5 retos diseñados según tus hábitos y emociones. Están pensados para ayudarte a romper patrones que no te sirven y fortalecer los que sí."
     },
     "feature3": {
-      "title": "Observa Tu Progreso con el Tiempo",
-      "description": "Ve hasta dónde has llegado. Sigue tu camino, revisa conversaciones pasadas y celebra las pequeñas victorias que suman un gran cambio. Tu progreso es la prueba de que estás avanzando."
+      "title": "Sigue tu Progreso y Celebra tus Victorias",
+      "description": "Observa cómo avanzas día a día. Revisa conversaciones pasadas y celebra cada pequeño logro. Cada paso cuenta en tu camino hacia una relación más sana con la comida."
     },
     "feature4": {
-      "title": "Recibe Consejos Hechos Solo para Ti",
-      "description": "Aquí no hay consejos universales. Recibirás orientación ilimitada y personalizada basada en lo que realmente está pasando en tu vida—no en lo que le funciona a otra persona."
+      "title": "Consejos Personalizados Solo para Ti",
+      "description": "Aquí no hay recomendaciones genéricas. La guía IA te ofrece orientación basada en lo que realmente está pasando en tu vida, adaptada a tus patrones y necesidades."
     },
     "feature5": {
-      "title": "Entiende el 'Por Qué' de Cada Reto",
-      "description": "Descubre exactamente por qué se elige cada reto para ti. Conectarás los puntos entre tus patrones y tu camino a seguir, haciendo cada paso más significativo."
+      "title": "Entiende el Porqué de Cada Reto",
+      "description": "Cada reto que recibes tiene sentido según tus hábitos. Conecta los puntos entre tus patrones y tus objetivos, haciendo que cada acción tenga un significado claro."
     },
     "feature6": {
-      "title": "Tu Historia Queda Entre Tú y la IA",
-      "description": "Lo que compartes es solo tuyo. Tus conversaciones están protegidas con el mismo cifrado que usan los bancos, y nunca venderemos ni compartiremos tus datos. Punto."
+      "title": "Tu Información es Privada",
+      "description": "Todo lo que compartes es solo tuyo. Las conversaciones están protegidas con cifrado de nivel bancario y nunca se venderán ni compartirán tus datos. Punto."
     }
   },
   "faq": {
-    "title": "Preguntas Habituales",
+    "title": "Preguntas Frecuentes",
     "subtitle": "Todo lo que necesitas saber antes de empezar",
     "question1": {
       "q": "¿Mis datos están seguros y son privados?",
-      "a": "Totalmente. Todo lo que compartes está cifrado con la misma seguridad que usan los bancos. Tus conversaciones son completamente privadas—nunca compartiremos ni venderemos tus datos a nadie. Lo que le cuentas a la IA se queda con la IA."
+      "a": "Totalmente. Todo lo que compartes está cifrado con la misma seguridad que usan los bancos. Tus conversaciones son completamente privadas y nunca se venderán ni compartirán con terceros. Lo que cuentas a la IA se queda con la IA."
     },
     "question2": {
       "q": "¿Cómo me ayuda esto realmente a cambiar?",
-      "a": "Piensa en ello como tener un amigo muy perspicaz que nota patrones que tú no ves. Nuestra IA analiza tus conversaciones diarias para detectar qué está impulsando realmente tus hábitos alimentarios. Luego te da retos personalizados que te ayudan a construir mejores patrones. Es como tener un entrenador que conoce tu historia."
+      "a": "Piensa en ello como tener un amigo muy atento que detecta patrones que tú no ves. La IA analiza tus conversaciones diarias, identifica qué está impulsando tus hábitos y te propone retos adaptados a ti para crear cambios reales."
     },
     "question3": {
       "q": "¿Cuánto cuesta?",
-      "a": "EmotionEat ofrece precios flexibles que se adaptan a tus necesidades. Puedes explorar todas las funciones y encontrar el plan que mejor te funcione directamente en la app."
+      "a": "EmotionEat ofrece planes flexibles que se adaptan a tus necesidades. Puedes explorar todas las funciones y decidir cuál se ajusta mejor a ti directamente desde la app."
     },
     "question4": {
-      "q": "Se me da fatal escribir diarios. ¿Funcionará esto para mí?",
-      "a": "Buenas noticias: ¡esto no es un diario! Es más como enviar mensajes a un amigo sobre tu día. Solo habla con naturalidad sobre qué pasó, cómo te sentiste y qué comiste. La IA te hará preguntas útiles para mantener la conversación. Sin presión, sin páginas en blanco."
+      "q": "Se me da mal escribir diarios. ¿Funcionará esto para mí?",
+      "a": "¡No te preocupes! Esto no es un diario tradicional. Es como charlar con un amigo sobre tu día: solo comparte lo que pasó, cómo te sentiste y qué comiste. La IA hará preguntas útiles para guiar la conversación, sin presión ni páginas en blanco."
     },
     "question5": {
       "q": "¿Qué funciones incluye EmotionEat?",
-      "a": "EmotionEat te da todo lo que necesitas: conversaciones diarias con IA para seguir tus patrones alimentarios, retos personalizados basados en tus hábitos únicos, consejos ilimitados adaptados a tu camino, y seguimiento completo del progreso para que veas hasta dónde has llegado."
+      "a": "EmotionEat te ofrece todo lo que necesitas: conversaciones diarias con IA, retos personalizados basados en tus hábitos, consejos adaptados a tu camino y seguimiento completo del progreso para que veas cómo avanzas."
     },
     "question6": {
       "q": "¿Esto sustituye a la terapia?",
-      "a": "No, y somos claros con eso. EmotionEat te ayuda a entender tus patrones y construir mejores hábitos, pero es una herramienta—no un terapeuta. Si tienes un trastorno alimentario grave, por favor trabaja con un profesional sanitario cualificado. Estamos aquí para apoyar tu camino, no para reemplazar la atención profesional."
+      "a": "No, y somos claros con eso. EmotionEat te ayuda a entender tus patrones y crear hábitos mejores, pero no es un terapeuta. Si tienes un trastorno alimentario grave, por favor consulta con un profesional sanitario. Nuestra herramienta está para acompañarte, no para reemplazar la atención profesional."
     }
   },
   "cta": {
-    "title": "¿Listo para Cambiar Tu Relación con la Comida?",
-    "subtitle": "Únete a más de 5.000 personas que están construyendo hábitos más sanos, una conversación a la vez",
-    "button": "Empieza Tu Viaje",
+    "title": "¿Listo para Recuperar tu Relación con la Comida?",
+    "subtitle": "Únete a más de 5.000 personas que están construyendo hábitos más conscientes, una conversación a la vez",
+    "button": "Empieza Hoy",
     "noCard": ""
   },
   "footer": {
-    "tagline": "Ayudándote a construir una relación más sana con la comida, una conversación a la vez.",
+    "tagline": "Ayudándote a crear una relación más sana con la comida, una conversación a la vez.",
     "product": "Producto",
     "features": "Funciones",
     "support": "Soporte",

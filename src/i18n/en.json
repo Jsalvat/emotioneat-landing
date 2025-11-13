@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Stop Emotional Eating with AI Chat | Free Pattern Analysis",
-    "description": "Transform your relationship with food through daily AI conversations. Discover what triggers your eating habits, get personalized challenges, and build lasting change. Start free.",
-    "ogTitle": "Stop Emotional Eating for Good | AI-Powered Support & Challenges",
-    "ogDescription": "Chat daily with AI to understand your eating patterns, discover your triggers, and get personalized challenges that actually work. Join thousands building healthier habits."
+    "title": "Stop Emotional Eating | Chat with Your AI Guide and Analyze Your Habits",
+    "description": "Discover why you eat when you're not hungry by chatting daily with your AI guide. Identify your patterns, get personalized daily challenges, and start transforming your relationship with food. Start for free.",
+    "ogTitle": "Understand Your Eating Habits | Personalized Challenges with AI",
+    "ogDescription": "Chat daily with your AI guide to understand your eating patterns, discover triggers, and receive challenges that actually work. Join thousands of people already changing their habits."
   },
   "header": {
     "features": "Features",
@@ -11,89 +11,89 @@
     "startNow": "Get Started"
   },
   "hero": {
-    "headline": "Take Control of Emotional Eating",
-    "subheadline": "Chat with AI daily to understand why you eat, discover your patterns, and get challenges that help you build a healthier relationship with food.",
-    "cta": "Start Your Journey",
+    "headline": "Take Control of What You Eat",
+    "subheadline": "Chat daily with your AI guide to understand your habits, discover emotional patterns, and receive daily challenges that help you build a healthier relationship with food.",
+    "cta": "Start Today",
     "ctaSecondary": "See How It Works",
-    "trustSignal": "Join 5,000+ people building healthier habits",
+    "trustSignal": "Over 5,000 people are already understanding their habits and eating more mindfully",
     "noCard": ""
   },
   "howItWorks": {
-    "title": "How It Works in 3 Simple Steps",
-    "subtitle": "Your journey to a healthier relationship with food starts here",
+    "title": "Your Path to Healthier Habits in 3 Simple Steps",
+    "subtitle": "Start understanding your patterns and changing your relationship with food",
     "step1": {
-      "title": "Chat About Your Day",
-      "description": "Talk naturally with our AI about your eating habits, feelings, and triggers. No complicated forms—just an honest conversation."
+      "title": "Share Your Day",
+      "description": "Have a natural conversation with your AI guide about your emotions, cravings, and situations that lead to eating. No complicated forms—just an honest and friendly chat."
     },
     "step2": {
-      "title": "Uncover Your Patterns",
-      "description": "Our AI spots what's really driving your eating habits—the good and the not-so-good. You'll see patterns you never noticed and understand what triggers your choices."
+      "title": "Discover Your Patterns",
+      "description": "The AI analyzes your messages and identifies what really drives your habits. Spot triggers you may not have noticed and understand why you eat the way you do."
     },
     "step3": {
       "title": "Build New Habits with Daily Challenges",
-      "description": "Get personalized challenges every day based on your unique patterns. Complete them, track your progress, and watch your relationship with food transform."
+      "description": "Receive personalized daily challenges based on your patterns. Complete them, track your progress, and watch your relationship with food gradually transform."
     }
   },
   "features": {
-    "title": "Everything You Need to Change Your Relationship with Food",
-    "subtitle": "Smart tools that help you understand yourself and build lasting habits",
+    "title": "Tools to Help You Understand Yourself and Change",
+    "subtitle": "Everything you need to build lasting habits in a personal and supportive way",
     "feature1": {
-      "title": "See What's Really Driving Your Choices",
-      "description": "Our AI spots the patterns you've been missing. You'll finally understand what triggers your eating habits and when you're most vulnerable—so you can make better choices in the moment."
+      "title": "Understand What Drives Your Decisions",
+      "description": "Your AI guide detects patterns you may have missed. Finally understand what triggers your cravings and when you're most vulnerable, so you can make conscious choices in the moment."
     },
     "feature2": {
       "title": "Get Challenges That Actually Work for You",
-      "description": "Forget generic advice. You'll receive 5 daily challenges based on your specific patterns and behaviors. Each one is designed to help you break the habits that aren't serving you."
+      "description": "Forget generic advice. Each day you'll receive 5 challenges tailored to your habits and emotions, designed to help you break unhelpful patterns and strengthen the ones that serve you."
     },
     "feature3": {
-      "title": "Watch Your Progress Over Time",
-      "description": "See how far you've come. Track your journey, revisit past conversations, and celebrate the small wins that add up to big change. Your progress is proof you're moving forward."
+      "title": "Track Your Progress and Celebrate Wins",
+      "description": "See how you're improving day by day. Review past conversations and celebrate every small victory. Each step counts toward a healthier relationship with food."
     },
     "feature4": {
-      "title": "Get Advice Made Just for You",
-      "description": "No one-size-fits-all tips here. You'll receive unlimited personalized guidance based on what's actually happening in your life—not what works for someone else."
+      "title": "Personalized Guidance Just for You",
+      "description": "No generic recommendations here. Your AI guide offers advice based on what's really happening in your life, tailored to your patterns and needs."
     },
     "feature5": {
-      "title": "Understand the 'Why' Behind Every Challenge",
-      "description": "Discover exactly why each challenge is chosen for you. You'll connect the dots between your patterns and your path forward, making every step more meaningful."
+      "title": "Understand the Reason Behind Every Challenge",
+      "description": "Each challenge has a purpose linked to your habits. Connect the dots between your patterns and your goals, making every action meaningful."
     },
     "feature6": {
-      "title": "Your Story Stays Between You and the AI",
-      "description": "What you share is yours alone. Your conversations are protected with bank-level encryption, and we'll never sell or share your data. Period."
+      "title": "Your Information Stays Private",
+      "description": "Everything you share is yours alone. Conversations are protected with bank-level encryption and will never be sold or shared. Period."
     }
   },
   "faq": {
-    "title": "Common Questions",
-    "subtitle": "Everything you need to know before you start",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know before getting started",
     "question1": {
-      "q": "Is my data private and secure?",
-      "a": "Absolutely. Everything you share is encrypted with the same security banks use. Your conversations are completely private—we'll never share or sell your data to anyone. What you tell the AI stays with the AI."
+      "q": "Are my data safe and private?",
+      "a": "Absolutely. Everything you share is encrypted with the same security banks use. Your conversations are completely private and will never be sold or shared with third parties. What you share with the AI stays with the AI."
     },
     "question2": {
-      "q": "How does this actually help me change?",
-      "a": "Think of it as having a really insightful friend who notices patterns you don't. Our AI analyzes your daily conversations to spot what's really driving your eating habits. Then it gives you personalized challenges to help you build better patterns. It's like having a coach who knows your story."
+      "q": "How does this really help me change?",
+      "a": "Think of it as having a very attentive friend who notices patterns you can't see. The AI analyzes your daily conversations, identifies what drives your eating habits, and gives you personalized challenges to create real change."
     },
     "question3": {
       "q": "How much does it cost?",
-      "a": "EmotionEat offers flexible pricing to fit your needs. You can explore all features and find the plan that works best for you directly in the app."
+      "a": "EmotionEat offers flexible plans to suit your needs. You can explore all features and choose the plan that fits you best directly in the app."
     },
     "question4": {
-      "q": "I'm terrible at journaling. Will this work for me?",
-      "a": "Good news—this isn't journaling! It's more like texting a friend about your day. Just chat naturally about what happened, how you felt, and what you ate. The AI will ask helpful questions to keep the conversation going. No pressure, no blank pages."
+      "q": "I'm not good at writing journals. Will this work for me?",
+      "a": "Don't worry! This isn't a traditional journal. It's like chatting with a friend about your day: just share what happened, how you felt, and what you ate. The AI asks helpful questions to guide the conversation, without pressure or blank pages."
     },
     "question5": {
       "q": "What features does EmotionEat include?",
-      "a": "EmotionEat gives you everything you need: daily AI conversations to track your eating patterns, personalized challenges based on your unique habits, unlimited advice tailored to your journey, and full progress tracking so you can see how far you've come."
+      "a": "EmotionEat gives you everything you need: daily chats with the AI to track your eating patterns, personalized challenges based on your habits, unlimited advice tailored to your journey, and full progress tracking to see how far you've come."
     },
     "question6": {
-      "q": "Is this a replacement for therapy?",
-      "a": "No, and we're upfront about that. EmotionEat helps you understand your patterns and build better habits, but it's a tool—not a therapist. If you're dealing with a serious eating disorder, please work with a qualified healthcare professional. We're here to support your journey, not replace professional care."
+      "q": "Does this replace therapy?",
+      "a": "No, and we are clear about that. EmotionEat helps you understand your patterns and build better habits, but it is not a therapist. If you have a serious eating disorder, please consult a qualified professional. We are here to support your journey, not replace professional care."
     }
   },
   "cta": {
-    "title": "Ready to Change Your Relationship with Food?",
-    "subtitle": "Join 5,000+ people who are building healthier habits, one conversation at a time",
-    "button": "Start Your Journey",
+    "title": "Ready to Transform Your Relationship with Food?",
+    "subtitle": "Join over 5,000 people building healthier habits, one conversation at a time",
+    "button": "Start Today",
     "noCard": ""
   },
   "footer": {
