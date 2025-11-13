@@ -59,13 +59,13 @@ if (currentPath.startsWith('/es')) {
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
-        <a href="#features" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+        <a href={lang === 'es' ? '/es#features' : '/#features'} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
           {translations.header.features}
         </a>
         <a href={lang === 'es' ? '/es/blog' : '/blog'} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
           Blog
         </a>
-        <a href="#faq" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+        <a href={lang === 'es' ? '/es#faq' : '/#faq'} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
           {translations.header.faq}
         </a>
       </nav>
@@ -126,7 +126,9 @@ if (currentPath.startsWith('/es')) {
     link.addEventListener('click', () => {
       const toLang = link.getAttribute('data-lang-switch');
       const fromLang = document.documentElement.lang;
+      
       if (toLang && fromLang !== toLang) {
+        // Track in Mixpanel
         trackLanguageSwitch(fromLang, toLang);
       }
     });

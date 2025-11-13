@@ -1,0 +1,161 @@
+{
+  "name": "EmotionEat Blog Auto-Publisher",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 3
+            }
+          ]
+        }
+      },
+      "name": "Schedule Every 3 Days",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "options": {},
+        "headerParametersJson": "{\n  \"Content-Type\": \"application/json\"\n}",
+        "bodyParametersJson": "={\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an expert content writer specializing in emotional eating and wellness. Always return valid JSON.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Write a comprehensive blog post about emotional eating in English. Choose one topic randomly: understanding triggers, stress eating science, mindful eating techniques, physical vs emotional hunger, breaking comfort eating, or social situations. Return JSON with: title (60-80 chars), excerpt (150-180 chars), content (1500+ words Markdown with ## H2 and ### H3 headings), keywords array. Mention EmotionEat in conclusion.\"\n    }\n  ],\n  \"temperature\": 0.8,\n  \"max_tokens\": 3000,\n  \"response_format\": { \"type\": \"json_object\" }\n}"
+      },
+      "name": "Generate English Content (OpenAI)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [450, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "1",
+          "name": "OpenAI API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = JSON.parse($input.item.json.choices[0].message.content);\n\n// Generate slug\nconst title = response.title;\nconst slug = title\n  .toLowerCase()\n  .replace(/[^\\w\\s-]/g, '')\n  .replace(/[\\s_-]+/g, '-')\n  .substring(0, 80);\n\n// Calculate reading time\nconst wordCount = response.content.split(' ').length;\nconst readingTime = Math.max(5, Math.round(wordCount / 200));\n\nreturn {\n  title_en: response.title,\n  excerpt_en: response.excerpt,\n  content_en: response.content,\n  keywords: response.keywords,\n  slug: slug,\n  reading_time: readingTime,\n  timestamp: new Date().toISOString()\n};"
+      },
+      "name": "Parse English Content",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "options": {},
+        "headerParametersJson": "{\n  \"Content-Type\": \"application/json\"\n}",
+        "bodyParametersJson": "={\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an expert translator specializing in Spanish (Spain) localization for wellness content. Use tú form. Always return valid JSON.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Translate this blog post to natural Spanish (Spain). Keep Markdown format. Title: {{ $json.title_en }}. Excerpt: {{ $json.excerpt_en }}. Content: {{ $json.content_en }}. Return JSON with: title, excerpt, content.\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 3000,\n  \"response_format\": { \"type\": \"json_object\" }\n}"
+      },
+      "name": "Translate to Spanish (OpenAI)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [850, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "1",
+          "name": "OpenAI API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = JSON.parse($input.item.json.choices[0].message.content);\nconst prevData = $('Parse English Content').item.json;\n\nreturn {\n  ...prevData,\n  title_es: response.title,\n  excerpt_es: response.excerpt,\n  content_es: response.content\n};"
+      },
+      "name": "Parse Spanish Translation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "url": "https://stzlgcpcmafdvcwvvyvu.supabase.co/rest/v1/blog_posts",
+        "options": {},
+        "headerParametersJson": "={\n  \"Content-Type\": \"application/json\",\n  \"Prefer\": \"return=representation\"\n}",
+        "bodyParametersJson": "={\n  \"slug\": \"{{ $json.slug }}\",\n  \"title\": \"{{ $json.title_en }}\",\n  \"excerpt\": \"{{ $json.excerpt_en }}\",\n  \"content\": \"{{ $json.content_en }}\",\n  \"title_en\": \"{{ $json.title_en }}\",\n  \"title_es\": \"{{ $json.title_es }}\",\n  \"excerpt_en\": \"{{ $json.excerpt_en }}\",\n  \"excerpt_es\": \"{{ $json.excerpt_es }}\",\n  \"content_en\": \"{{ $json.content_en }}\",\n  \"content_es\": \"{{ $json.content_es }}\",\n  \"meta_title_en\": \"{{ $json.title_en }} | EmotionEat Blog\",\n  \"meta_title_es\": \"{{ $json.title_es }} | Blog EmotionEat\",\n  \"meta_description_en\": \"{{ $json.excerpt_en }}\",\n  \"meta_description_es\": \"{{ $json.excerpt_es }}\",\n  \"keywords\": {{ $json.keywords }},\n  \"reading_time\": {{ $json.reading_time }},\n  \"cover_image_url\": \"https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1200&h=630&fit=crop&q=80\",\n  \"author\": \"EmotionEat Team\",\n  \"status\": \"published\",\n  \"published_at\": \"{{ $json.timestamp }}\"\n}"
+      },
+      "name": "Insert into Supabase",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1250, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "2",
+          "name": "Supabase Service Role"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule Every 3 Days": {
+      "main": [
+        [
+          {
+            "node": "Generate English Content (OpenAI)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate English Content (OpenAI)": {
+      "main": [
+        [
+          {
+            "node": "Parse English Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse English Content": {
+      "main": [
+        [
+          {
+            "node": "Translate to Spanish (OpenAI)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Translate to Spanish (OpenAI)": {
+      "main": [
+        [
+          {
+            "node": "Parse Spanish Translation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Spanish Translation": {
+      "main": [
+        [
+          {
+            "node": "Insert into Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "timezone": "Europe/Madrid"
+  }
+}
+
+
