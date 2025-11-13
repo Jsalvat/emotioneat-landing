@@ -2,8 +2,15 @@
 import BlogLayout from '../../../layouts/BlogLayout.astro';
 import { supabase } from '../../../lib/supabase';
 import es from '../../../i18n/es.json';
+import { marked } from 'marked';
 
 export const prerender = false;
+
+// Configure marked for better HTML output
+marked.setOptions({
+	breaks: true,
+	gfm: true,
+});
 
 // Language is Spanish
 const lang = 'es';
@@ -58,6 +65,9 @@ if (!post) {
 const title = post.meta_title || `${post.title} | EmotionEat Blog`;
 const description = post.meta_description || post.excerpt || post.title;
 const image = post.cover_image_url || '/og-image.jpg';
+
+// Convert Markdown to HTML
+const contentHtml = await marked.parse(post.content);
 
 // Calculate reading time if not set
 const readingTime = post.reading_time || Math.ceil(post.content.split(' ').length / 200);
@@ -114,7 +124,7 @@ const readingTime = post.reading_time || Math.ceil(post.content.split(' ').lengt
 	<article class="bg-white">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 			<div class="prose prose-lg max-w-none">
-				<Fragment set:html={post.content} />
+				<Fragment set:html={contentHtml} />
 			</div>
 		</div>
 	</article>
