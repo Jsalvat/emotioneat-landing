@@ -104,7 +104,7 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
 
     <!-- Structured Data -->
     {structuredData && (
-      <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)}></script>
     )}
 
     <!-- Preconnect to external domains -->
@@ -127,8 +127,8 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <!-- Google Analytics 4 - Direct implementation (can be managed via GTM instead) -->
     {GA4_ID && !GTM_ID && (
       <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
-        <script define:vars={{ GA4_ID }} is:inline>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+        <script is:inline define:vars={{ GA4_ID }}>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());

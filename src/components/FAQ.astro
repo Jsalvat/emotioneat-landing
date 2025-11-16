@@ -80,19 +80,19 @@ const faqs = [
         const question = button.getAttribute('data-faq-question');
         const lang = document.documentElement.lang;
         
-        if (answer && icon) {
-          const isOpen = !answer.classList.contains('hidden');
-          const newState = !isOpen;
-          
-          if (!isOpen && question) {
-            trackFAQOpen(question, lang);
-          }
-          
-          answer.classList.toggle('hidden');
-          button.setAttribute('aria-expanded', String(newState));
-          const iconElement = icon;
-          iconElement.style.transform = newState ? 'rotate(180deg)' : 'rotate(0deg)';
-        }
+            if (answer && icon) {
+              const isOpen = !answer.classList.contains('hidden');
+              const newState = !isOpen;
+              
+              if (!isOpen && question) {
+                trackFAQOpen(question, lang);
+              }
+              
+              answer.classList.toggle('hidden');
+              button.setAttribute('aria-expanded', String(newState));
+              const iconElement = icon as SVGElement;
+              iconElement.style.transform = newState ? 'rotate(180deg)' : 'rotate(0deg)';
+            }
       });
     });
   }

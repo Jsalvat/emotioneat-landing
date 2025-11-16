@@ -54,7 +54,7 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 		<!-- Schema.org for Blog Post -->
-		<script type="application/ld+json" set:html={JSON.stringify({
+		<script type="application/ld+json" is:inline set:html={JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "BlogPosting",
 			"headline": title,
@@ -79,8 +79,8 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 		<!-- GA4 -->
 		{import.meta.env.PUBLIC_GA4_ID && (
 			<>
-				<script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA4_ID}`}></script>
-				<script define:vars={{ GA4_ID: import.meta.env.PUBLIC_GA4_ID }}>
+				<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA4_ID}`}></script>
+				<script is:inline define:vars={{ GA4_ID: import.meta.env.PUBLIC_GA4_ID }}>
 					window.dataLayer = window.dataLayer || [];
 					function gtag(){dataLayer.push(arguments);}
 					gtag('js', new Date());
