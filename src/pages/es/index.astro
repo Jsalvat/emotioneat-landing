@@ -36,8 +36,41 @@ const t = es;
   <script>
     import { initMixpanel, trackPageView } from '../../scripts/mixpanel';
 
-    // Initialize Mixpanel and track page view
-    initMixpanel();
-    trackPageView('home', 'es');
+    // Verificar preferencia del usuario y respetarla
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+
+      // No hacer nada si ya hay un parámetro lang (usuario eligió idioma manualmente)
+      if (urlParams.has('lang')) {
+        initMixpanel();
+        trackPageView('home', 'es');
+        return;
+      }
+
+      // Verificar si el usuario tiene una preferencia guardada
+      const savedPreference = localStorage.getItem('emotioneat-lang-preference');
+      
+      // Si hay una preferencia guardada, respetarla
+      if (savedPreference === 'en') {
+        // Usuario prefiere inglés, redirigir a la versión en inglés
+        if (window.location.pathname.startsWith('/es')) {
+          const englishPath = window.location.pathname.replace(/^\/es/, '') || '/';
+          window.location.href = englishPath;
+          return;
+        }
+      }
+      
+      if (savedPreference === 'es') {
+        // Usuario prefiere español, quedarse en /es
+        initMixpanel();
+        trackPageView('home', 'es');
+        return;
+      }
+
+      // Si no hay preferencia guardada, mantener el comportamiento actual
+      // (quedarse en /es si ya estamos aquí)
+      initMixpanel();
+      trackPageView('home', 'es');
+    })();
   </script>
 </Layout>

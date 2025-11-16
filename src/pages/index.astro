@@ -43,11 +43,35 @@ const t = en;
 
       // No hacer nada si ya hay un parámetro lang (usuario eligió idioma manualmente)
       if (urlParams.has('lang')) {
+        initMixpanel();
+        trackPageView('home', 'en');
         return;
       }
 
-      // Solo redirigir si estamos en la raíz y no hay parámetro lang
-      if (window.location.pathname === '/' && !urlParams.has('lang')) {
+      // Verificar si el usuario tiene una preferencia guardada
+      const savedPreference = localStorage.getItem('emotioneat-lang-preference');
+      
+      // Si hay una preferencia guardada, respetarla
+      if (savedPreference === 'en') {
+        // Usuario prefiere inglés, no redirigir
+        initMixpanel();
+        trackPageView('home', 'en');
+        return;
+      }
+      
+      if (savedPreference === 'es') {
+        // Usuario prefiere español, redirigir si no estamos ya en /es
+        if (!window.location.pathname.startsWith('/es')) {
+          window.location.href = '/es';
+          return;
+        }
+        initMixpanel();
+        trackPageView('home', 'es');
+        return;
+      }
+
+      // Solo redirigir si estamos en la raíz, no hay parámetro lang, y no hay preferencia guardada
+      if (window.location.pathname === '/' && !urlParams.has('lang') && !savedPreference) {
         const browserLang = navigator.language || navigator.languages?.[0] || 'en';
         const detectedLang = browserLang.startsWith('es') ? 'es' : 'en';
 

@@ -133,12 +133,14 @@ if (currentPath.startsWith('/es')) {
       });
     });
     
-    // Track language switches
+    // Track language switches and save user preference
     document.querySelectorAll('[data-lang-switch]').forEach(link => {
       link.addEventListener('click', () => {
         const toLang = link.getAttribute('data-lang-switch');
         const fromLang = link.getAttribute('data-current-lang') || document.documentElement.lang || 'en';
         if (toLang && fromLang !== toLang) {
+          // Save user's language preference to localStorage
+          localStorage.setItem('emotioneat-lang-preference', toLang);
           trackLanguageSwitch(fromLang, toLang);
         }
       });
