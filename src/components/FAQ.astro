@@ -67,61 +67,40 @@ const faqs = [
   }))
 })} />
 
-<script is:inline>
+<script>
+  import { trackFAQOpen } from '../scripts/mixpanel';
+  
   // Defer FAQ script for performance
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      import('../scripts/mixpanel').then(({ trackFAQOpen }) => {
-        document.querySelectorAll('.faq-question').forEach(button => {
-          button.addEventListener('click', () => {
-            const item = button.closest('.faq-item');
-            const answer = item?.querySelector('.faq-answer');
-            const icon = button.querySelector('.faq-icon');
-            const question = button.getAttribute('data-faq-question');
-            const lang = document.documentElement.lang;
-            
-            if (answer && icon) {
-              const isOpen = !answer.classList.contains('hidden');
-              const newState = !isOpen;
-              
-              if (!isOpen && question) {
-                trackFAQOpen(question, lang);
-              }
-              
-              answer.classList.toggle('hidden');
-              button.setAttribute('aria-expanded', String(newState));
-              const iconElement = icon;
-              iconElement.style.transform = newState ? 'rotate(180deg)' : 'rotate(0deg)';
-            }
-          });
-        });
-      });
-    });
-  } else {
-    import('../scripts/mixpanel').then(({ trackFAQOpen }) => {
-      document.querySelectorAll('.faq-question').forEach(button => {
-        button.addEventListener('click', () => {
-          const item = button.closest('.faq-item');
-          const answer = item?.querySelector('.faq-answer');
-          const icon = button.querySelector('.faq-icon');
-          const question = button.getAttribute('data-faq-question');
-          const lang = document.documentElement.lang;
+  function initFAQTracking() {
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const answer = item?.querySelector('.faq-answer');
+        const icon = button.querySelector('.faq-icon');
+        const question = button.getAttribute('data-faq-question');
+        const lang = document.documentElement.lang;
+        
+        if (answer && icon) {
+          const isOpen = !answer.classList.contains('hidden');
+          const newState = !isOpen;
           
-          if (answer && icon) {
-            const isOpen = !answer.classList.contains('hidden');
-            const newState = !isOpen;
-            
-            if (!isOpen && question) {
-              trackFAQOpen(question, lang);
-            }
-            
-            answer.classList.toggle('hidden');
-            button.setAttribute('aria-expanded', String(newState));
-            const iconElement = icon;
-            iconElement.style.transform = newState ? 'rotate(180deg)' : 'rotate(0deg)';
+          if (!isOpen && question) {
+            trackFAQOpen(question, lang);
           }
-        });
+          
+          answer.classList.toggle('hidden');
+          button.setAttribute('aria-expanded', String(newState));
+          const iconElement = icon;
+          iconElement.style.transform = newState ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
       });
     });
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQTracking);
+  } else {
+    initFAQTracking();
   }
 </script>

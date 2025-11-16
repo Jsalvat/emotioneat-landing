@@ -110,14 +110,18 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Google Analytics 4 - Deferred for performance -->
-    {GA4_ID && <script defer src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>}
-    {GA4_ID && <script define:vars={{ GA4_ID }} is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', GA4_ID);
-    </script>}
+    <!-- Google Analytics 4 - Async loading for performance -->
+    {GA4_ID && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+        <script define:vars={{ GA4_ID }} is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', GA4_ID);
+        </script>
+      </>
+    )}
     
     <!-- Performance: Optimized font loading with preload and font-display swap -->
     <!-- Preload critical font file -->
