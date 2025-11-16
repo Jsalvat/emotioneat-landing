@@ -5,7 +5,9 @@
 [build.environment]
   NODE_VERSION = "18"
   # Disable secrets scanning for public configuration variables
-  SECRETS_SCAN_OMIT_KEYS = "PUBLIC_GA4_ID,PUBLIC_GSC_VERIFICATION_CODE,PUBLIC_APP_URL,PUBLIC_SUPABASE_URL,PUBLIC_SUPABASE_ANON_KEY"
+  # These PUBLIC_* variables are intentionally exposed to the client (required for GTM, GA4, etc.)
+  # They are not secrets - they're public configuration values that must be visible in the browser
+  SECRETS_SCAN_OMIT_KEYS = "PUBLIC_GA4_ID,PUBLIC_GTM_ID,PUBLIC_GSC_VERIFICATION_CODE,PUBLIC_APP_URL,PUBLIC_SUPABASE_URL,PUBLIC_SUPABASE_ANON_KEY"
 
 # Headers for security and performance
 [[headers]]

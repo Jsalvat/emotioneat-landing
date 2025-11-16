@@ -69,6 +69,7 @@ npm run dev
 3. **Set environment variables** in Netlify dashboard:
    ```
    PUBLIC_GA4_ID=your_ga4_id_here
+   PUBLIC_GTM_ID=GTM-XXXXXXX (optional - if using GTM)
    PUBLIC_GSC_VERIFICATION_CODE=your_gsc_verification_code
    PUBLIC_APP_URL=https://your-app-url.com
    ```
@@ -95,6 +96,9 @@ Create a `.env` file in the root directory:
 # Google Analytics 4
 PUBLIC_GA4_ID=your_ga4_measurement_id
 
+# Google Tag Manager (optional - if using GTM instead of direct GA4)
+PUBLIC_GTM_ID=GTM-XXXXXXX
+
 # Google Search Console (optional - if using HTML verification)
 PUBLIC_GSC_VERIFICATION_CODE=your_gsc_verification_code
 
@@ -108,6 +112,12 @@ PUBLIC_APP_URL=https://your-app-domain.com
 - ✅ **Already configured** (set your GA4 ID in environment variables)
 - Tracks page views, user engagement, conversions
 - Multi-language support (EN/ES)
+- Can be managed via Google Tag Manager (if `PUBLIC_GTM_ID` is set)
+
+### Google Tag Manager
+- ✅ **Already configured** (set your GTM ID in environment variables)
+- Manage GA4 and other tags from GTM interface
+- When `PUBLIC_GTM_ID` is set, direct GA4 implementation is automatically disabled
 
 ### Google Search Console
 - ✅ **Already configured** via TXT record (recommended method)
