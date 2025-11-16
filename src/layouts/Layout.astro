@@ -45,11 +45,20 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <!-- SEO UPDATE: Optimized keywords based on search volume and relevance -->
-    <meta name="keywords" content="emotional eating, stress eating, binge eating, stop emotional eating, emotional eating triggers, overcome emotional eating, emotional eating patterns, ansiedad, depresión, ansiedad alimentaria, comer compulsivo, emotional eating support, binge eating disorder" />
+    <!-- SEO: Language-specific keywords -->
+    {lang === 'es' ? (
+      <meta name="keywords" content="comer por ansiedad, ansiedad alimentaria, comer emocional, comer compulsivo, dejar de comer por ansiedad, depresión y comida, hábitos alimentarios, patrones alimentarios, control alimentario, relación con la comida" />
+    ) : (
+      <meta name="keywords" content="emotional eating, stress eating, binge eating, stop emotional eating, emotional eating triggers, overcome emotional eating, emotional eating patterns, emotional eating support, binge eating disorder, food relationship, eating habits" />
+    )}
     <meta name="author" content="EmotionEat" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- hreflang tags for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href={lang === 'es' ? siteUrl : canonicalUrl} />
+    <link rel="alternate" hreflang="es" href={lang === 'es' ? canonicalUrl : `${siteUrl}/es`} />
+    <link rel="alternate" hreflang="x-default" href={siteUrl} />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -59,7 +68,7 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="EmotionEat - AI-powered emotional eating support" />
+    <meta property="og:image:alt" content={lang === 'es' ? "EmotionEat - Deja de comer por ansiedad con guía IA" : "EmotionEat - Stop emotional eating with AI guide"} />
     <meta property="og:site_name" content="EmotionEat" />
     <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
     {lang === 'es' && <meta property="og:locale:alternate" content="en_US" />}
@@ -71,7 +80,7 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={ogDescription} />
     <meta name="twitter:image" content={ogImageUrl} />
-    <meta name="twitter:image:alt" content="EmotionEat - AI-powered emotional eating support" />
+    <meta name="twitter:image:alt" content={lang === 'es' ? "EmotionEat - Deja de comer por ansiedad con guía IA" : "EmotionEat - Stop emotional eating with AI guide"} />
     
     <!-- Theme and Mobile -->
     <meta name="theme-color" content="#1890FF" />
@@ -101,17 +110,19 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Google Analytics 4 -->
-    {GA4_ID && <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>}
-    {GA4_ID && <script define:vars={{ GA4_ID }}>
+    <!-- Google Analytics 4 - Deferred for performance -->
+    {GA4_ID && <script defer src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>}
+    {GA4_ID && <script define:vars={{ GA4_ID }} is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', GA4_ID);
     </script>}
     
-    <!-- SEO UPDATE: Optimized font loading with font-display swap -->
-    <!-- Google Fonts - Inter -->
+    <!-- Performance: Optimized font loading with preload and font-display swap -->
+    <!-- Preload critical font file -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Google Fonts - Inter with display=swap -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
       /* Preload critical font weights */
@@ -155,7 +166,9 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
           "@id": `${siteUrl}/#webapp`,
           "name": "EmotionEat",
           "url": siteUrl,
-          "description": "Break free from emotional eating and stress eating with AI-powered chat. Discover binge eating triggers, analyze emotional eating patterns, and get personalized challenges to overcome anxiety-driven eating. Free plan available.",
+          "description": lang === 'es' 
+            ? "Deja de comer por ansiedad y emociones con chat de IA. Descubre tus desencadenantes, analiza tus patrones alimentarios y recibe retos personalizados para superar la ansiedad alimentaria. Plan gratis disponible."
+            : "Break free from emotional eating and stress eating with AI-powered chat. Discover binge eating triggers, analyze emotional eating patterns, and get personalized challenges to overcome anxiety-driven eating. Free plan available.",
           "applicationCategory": "HealthApplication",
           "operatingSystem": "Web",
           "browserRequirements": "Requires JavaScript. Requires HTML5.",
@@ -212,7 +225,7 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
               "@type": "ListItem",
               "position": 1,
               "name": lang === 'es' ? "Inicio" : "Home",
-              "item": siteUrl
+              "item": lang === 'es' ? `${siteUrl}/es` : siteUrl
             }
           ]
         }
@@ -220,9 +233,9 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     })} />
   </head>
   <body class="bg-gray-50 text-gray-900 antialiased">
-    <!-- SEO UPDATE: Skip link for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-500 focus:text-white focus:rounded-lg focus:shadow-lg">
-      Skip to main content
+    <!-- Accessibility: Skip link for keyboard navigation -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-500 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-300">
+      {lang === 'es' ? 'Saltar al contenido principal' : 'Skip to main content'}
     </a>
     <slot />
     

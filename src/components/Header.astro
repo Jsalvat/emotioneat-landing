@@ -51,21 +51,25 @@ if (currentPath.startsWith('/es')) {
         <a href={lang === 'en' ? '/' : '/es'} class="flex items-center space-x-2">
           <img 
             src="/Logo EmotionEat_Login - Registro.png" 
-            alt="EmotionEat Logo" 
+            alt={lang === 'es' ? "EmotionEat - Deja de comer por ansiedad" : "EmotionEat - Stop emotional eating"}
             class="h-10 w-auto"
+            width="120"
+            height="40"
+            loading="eager"
+            fetchpriority="high"
           />
         </a>
       </div>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
-        <a href="#features" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+      <nav class="hidden md:flex items-center space-x-8" aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>
+        <a href="#features" class="text-gray-600 hover:text-brand-600 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-brand-300 focus:rounded-md px-2 py-1">
           {translations.header.features}
         </a>
-        <a href={lang === 'es' ? '/es/blog' : '/blog'} class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+        <a href={lang === 'es' ? '/es/blog' : '/blog'} class="text-gray-600 hover:text-brand-600 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-brand-300 focus:rounded-md px-2 py-1">
           Blog
         </a>
-        <a href="#faq" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">
+        <a href="#faq" class="text-gray-600 hover:text-brand-600 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-brand-300 focus:rounded-md px-2 py-1">
           {translations.header.faq}
         </a>
       </nav>
@@ -76,15 +80,19 @@ if (currentPath.startsWith('/es')) {
         <div class="flex items-center space-x-1 bg-gray-100 rounded-lg p-1">
           <a
             href={englishUrl}
-            class={`px-3 py-1 rounded-md text-sm font-medium transition-all ${lang === 'en' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
+            class={`px-3 py-1 rounded-md text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-300 ${lang === 'en' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
             data-lang-switch="en"
+            aria-label={lang === 'es' ? 'Cambiar a inglés' : 'Switch to English'}
+            aria-current={lang === 'en' ? 'page' : undefined}
           >
             EN
           </a>
           <a
             href={spanishUrl}
-            class={`px-3 py-1 rounded-md text-sm font-medium transition-all ${lang === 'es' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
+            class={`px-3 py-1 rounded-md text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-300 ${lang === 'es' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
             data-lang-switch="es"
+            aria-label={lang === 'es' ? 'Cambiar a español' : 'Switch to Spanish'}
+            aria-current={lang === 'es' ? 'page' : undefined}
           >
             ES
           </a>
@@ -93,7 +101,7 @@ if (currentPath.startsWith('/es')) {
         <!-- CTA Button -->
         <a 
           href={appUrl}
-          class="hidden sm:inline-flex items-center px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5"
+          class="hidden sm:inline-flex items-center px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-300 focus:ring-offset-2"
           data-cta-location="header"
           aria-label={translations.header.startNow}
         >
@@ -104,31 +112,59 @@ if (currentPath.startsWith('/es')) {
   </nav>
 </header>
 
-<script>
-  import { initMixpanel, trackCTAClick, trackLanguageSwitch } from '../scripts/mixpanel';
-  
-  // Initialize Mixpanel
-  initMixpanel();
-  
-  // Track CTA clicks
-  document.querySelectorAll('[data-cta-location]').forEach(button => {
-    button.addEventListener('click', () => {
-      const location = button.getAttribute('data-cta-location');
-      const lang = document.documentElement.lang;
-      if (location) {
-        trackCTAClick(location, lang);
-      }
+<script is:inline>
+  // Defer Mixpanel initialization for performance
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      import('../scripts/mixpanel').then(({ initMixpanel, trackCTAClick, trackLanguageSwitch }) => {
+        initMixpanel();
+        
+        // Track CTA clicks
+        document.querySelectorAll('[data-cta-location]').forEach(button => {
+          button.addEventListener('click', () => {
+            const location = button.getAttribute('data-cta-location');
+            const lang = document.documentElement.lang;
+            if (location) {
+              trackCTAClick(location, lang);
+            }
+          });
+        });
+        
+        // Track language switches
+        document.querySelectorAll('[data-lang-switch]').forEach(link => {
+          link.addEventListener('click', () => {
+            const toLang = link.getAttribute('data-lang-switch');
+            const fromLang = document.documentElement.lang;
+            if (toLang && fromLang !== toLang) {
+              trackLanguageSwitch(fromLang, toLang);
+            }
+          });
+        });
+      });
     });
-  });
-  
-  // Track language switches
-  document.querySelectorAll('[data-lang-switch]').forEach(link => {
-    link.addEventListener('click', () => {
-      const toLang = link.getAttribute('data-lang-switch');
-      const fromLang = document.documentElement.lang;
-      if (toLang && fromLang !== toLang) {
-        trackLanguageSwitch(fromLang, toLang);
-      }
+  } else {
+    import('../scripts/mixpanel').then(({ initMixpanel, trackCTAClick, trackLanguageSwitch }) => {
+      initMixpanel();
+      
+      document.querySelectorAll('[data-cta-location]').forEach(button => {
+        button.addEventListener('click', () => {
+          const location = button.getAttribute('data-cta-location');
+          const lang = document.documentElement.lang;
+          if (location) {
+            trackCTAClick(location, lang);
+          }
+        });
+      });
+      
+      document.querySelectorAll('[data-lang-switch]').forEach(link => {
+        link.addEventListener('click', () => {
+          const toLang = link.getAttribute('data-lang-switch');
+          const fromLang = document.documentElement.lang;
+          if (toLang && fromLang !== toLang) {
+            trackLanguageSwitch(fromLang, toLang);
+          }
+        });
+      });
     });
-  });
+  }
 </script>

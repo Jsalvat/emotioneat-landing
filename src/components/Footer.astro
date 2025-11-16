@@ -42,8 +42,11 @@ const currentYear = new Date().getFullYear();
         <div class="flex items-center mb-4">
           <img 
             src="/Logo EmotionEat_Login - Registro.png" 
-            alt="EmotionEat Logo" 
+            alt={translations.footer.tagline || "EmotionEat Logo"}
             class="h-10 w-auto brightness-0 invert"
+            width="120"
+            height="40"
+            loading="lazy"
           />
         </div>
         <p class="text-gray-400 mb-6 max-w-md">
