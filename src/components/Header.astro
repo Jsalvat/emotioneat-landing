@@ -140,7 +140,12 @@ if (currentPath.startsWith('/es')) {
         const fromLang = link.getAttribute('data-current-lang') || document.documentElement.lang || 'en';
         if (toLang && fromLang !== toLang) {
           // Save user's language preference to localStorage
-          localStorage.setItem('emotioneat-lang-preference', toLang);
+          try {
+            localStorage.setItem('emotioneat-lang-preference', toLang);
+          } catch (e) {
+            // Silently fail if localStorage is not available (e.g., private browsing)
+            console.warn('Could not save language preference:', e);
+          }
           trackLanguageSwitch(fromLang, toLang);
         }
       });

@@ -48,14 +48,21 @@ const t = es;
       }
 
       // Verificar si el usuario tiene una preferencia guardada
-      const savedPreference = localStorage.getItem('emotioneat-lang-preference');
+      let savedPreference;
+      try {
+        savedPreference = localStorage.getItem('emotioneat-lang-preference');
+      } catch (e) {
+        // Si localStorage no está disponible, continuar sin preferencia
+        console.warn('Could not access localStorage:', e);
+      }
       
       // Si hay una preferencia guardada, respetarla
       if (savedPreference === 'en') {
-        // Usuario prefiere inglés, redirigir a la versión en inglés
+        // Usuario prefiere inglés, redirigir a la versión en inglés preservando contexto
         if (window.location.pathname.startsWith('/es')) {
           const englishPath = window.location.pathname.replace(/^\/es/, '') || '/';
-          window.location.href = englishPath;
+          const fullUrl = englishPath + window.location.search + window.location.hash;
+          window.location.href = fullUrl;
           return;
         }
       }
