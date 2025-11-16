@@ -3,13 +3,6 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import { supabase, getBlogPostInLanguage, type BlogPost } from '../../lib/supabase';
 import en from '../../i18n/en.json';
 import es from '../../i18n/es.json';
-import { marked } from 'marked';
-
-// Configure marked for better HTML output
-marked.setOptions({
-	breaks: true,
-	gfm: true,
-});
 
 // Detect language from URL
 const lang = Astro.url.pathname.startsWith('/es') ? 'es' : 'en';
@@ -85,8 +78,8 @@ const image = post.cover_image_url || '/og-image.jpg';
 // Calculate reading time if not set (use localized content)
 const readingTime = post.reading_time || Math.ceil(localizedPost.content.split(' ').length / 200);
 
-// Convert Markdown to HTML
-const contentHtml = await marked.parse(localizedPost.content);
+// Content is already in HTML format (no Markdown conversion needed)
+const contentHtml = localizedPost.content;
 ---
 
 <BlogLayout
@@ -166,7 +159,7 @@ const contentHtml = await marked.parse(localizedPost.content);
 						{lang === 'es' ? 'Compartir:' : 'Share:'}
 					</span>
 					<a
-						href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(Astro.url.href)}`}
+						href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(localizedPost.title)}&url=${encodeURIComponent(Astro.url.href)}`}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="text-gray-400 hover:text-blue-500 transition-colors"
