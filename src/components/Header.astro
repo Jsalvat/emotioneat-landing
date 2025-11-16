@@ -82,6 +82,7 @@ if (currentPath.startsWith('/es')) {
             href={englishUrl}
             class={`px-3 py-1 rounded-md text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-300 ${lang === 'en' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
             data-lang-switch="en"
+            data-current-lang={lang}
             aria-label={lang === 'es' ? 'Cambiar a inglés' : 'Switch to English'}
             aria-current={lang === 'en' ? 'page' : undefined}
           >
@@ -91,6 +92,7 @@ if (currentPath.startsWith('/es')) {
             href={spanishUrl}
             class={`px-3 py-1 rounded-md text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brand-300 ${lang === 'es' ? 'bg-white text-brand-600 shadow-sm' : 'text-gray-600 hover:text-gray-900'}`}
             data-lang-switch="es"
+            data-current-lang={lang}
             aria-label={lang === 'es' ? 'Cambiar a español' : 'Switch to Spanish'}
             aria-current={lang === 'es' ? 'page' : undefined}
           >
@@ -103,6 +105,7 @@ if (currentPath.startsWith('/es')) {
           href={appUrl}
           class="hidden sm:inline-flex items-center px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-300 focus:ring-offset-2"
           data-cta-location="header"
+          data-lang={lang}
           aria-label={translations.header.startNow}
         >
           {translations.header.startNow}
@@ -123,7 +126,7 @@ if (currentPath.startsWith('/es')) {
     document.querySelectorAll('[data-cta-location]').forEach(button => {
       button.addEventListener('click', () => {
         const location = button.getAttribute('data-cta-location');
-        const lang = document.documentElement.lang;
+        const lang = button.getAttribute('data-lang') || document.documentElement.lang || 'en';
         if (location) {
           trackCTAClick(location, lang);
         }
@@ -134,7 +137,7 @@ if (currentPath.startsWith('/es')) {
     document.querySelectorAll('[data-lang-switch]').forEach(link => {
       link.addEventListener('click', () => {
         const toLang = link.getAttribute('data-lang-switch');
-        const fromLang = document.documentElement.lang;
+        const fromLang = link.getAttribute('data-current-lang') || document.documentElement.lang || 'en';
         if (toLang && fromLang !== toLang) {
           trackLanguageSwitch(fromLang, toLang);
         }

@@ -47,6 +47,7 @@ const heroImage = lang === 'es' ? '/landing_es.png' : '/landing_en.png';
             href={appUrl}
             class="inline-flex items-center justify-center px-8 py-3 bg-brand-500 hover:bg-brand-600 text-white text-base font-semibold rounded-2xl transition-all hover:shadow-xl hover:-translate-y-1 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-brand-300 focus:ring-offset-2"
             data-cta-location="hero-primary"
+            data-lang={lang}
             aria-label={t.hero.cta + (t.hero.noCard ? " - " + t.hero.noCard : "")}
           >
             {t.hero.cta}
