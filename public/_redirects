@@ -1,2 +1,5 @@
 # Netlify redirects
-/es /es/index.html 200
+
+# Redirect /en to root (English is default)
+/en/* /:splat 301
+/en / 301

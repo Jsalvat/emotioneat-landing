@@ -5,6 +5,8 @@ const pages = [
   { path: '/blog', priority: '0.9', changefreq: 'daily' },
   { path: '/blog/comida-emocional-causas-consecuencias-estrategias', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog/emotional-eating-how-to-identify-and-overcome-it', priority: '0.8', changefreq: 'monthly' },
+  { path: '/privacy', priority: '0.5', changefreq: 'yearly' },
+  { path: '/terms', priority: '0.5', changefreq: 'yearly' },
 ];
 
 export const GET: APIRoute = async ({ site }) => {
@@ -49,11 +51,3 @@ ${englishUrls}${spanishUrls}
     },
   });
 };
-
-
-
-
-
-
-
-
