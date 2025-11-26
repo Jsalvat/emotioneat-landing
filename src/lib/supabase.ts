@@ -36,8 +36,7 @@ export interface BlogPost {
 
 // Helper function to get blog post content (English only)
 export function getBlogPostInLanguage(
-  post: BlogPost,
-  lang: 'en' = 'en'
+  post: BlogPost
 ): {
   title: string
   content: string

@@ -5,29 +5,27 @@ import Footer from '../components/Footer.astro';
 import en from '../i18n/en.json';
 
 const t = en;
-const lang = 'en';
 ---
 
-<Layout 
-  title="Page Not Found - EmotionEat" 
+<Layout
+  title="Page Not Found - EmotionEat"
   description="The page you are looking for does not exist."
-  lang={lang}
 >
-  <Header lang={lang} t={t} />
-  <main class="min-h-[60vh] flex items-center justify-center bg-gray-50 px-4 sm:px-6 lg:px-8">
+  <Header t={t} />
+  <main class="min-h-[60vh] flex items-center justify-center bg-neutral-50 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8 text-center">
       <div>
-        <h1 class="mt-6 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        <h1 class="mt-6 text-3xl font-extrabold text-neutral-900 sm:text-4xl">
           404
         </h1>
-        <h2 class="mt-2 text-xl text-gray-600">
+        <h2 class="mt-2 text-xl text-neutral-600">
           Page not found
         </h2>
-        <p class="mt-4 text-gray-500">
+        <p class="mt-4 text-neutral-500">
           The page you are looking for doesn't exist or has been moved.
         </p>
         <div class="mt-8">
-          <a href="/" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700">
+          <a href="/" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-400 hover:bg-primary-500">
             Go back home
           </a>
         </div>
@@ -36,4 +34,3 @@ const lang = 'en';
   </main>
   <Footer t={t} />
 </Layout>
-

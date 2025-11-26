@@ -1,13 +1,8 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { supabase } from '../../lib/supabase';
-import en from '../../i18n/en.json';
 
-// Language is English for this page
-const lang: 'en' | 'es' = 'en';
-const t = en;
-
-// Fetch blog posts with bilingual fields
+// Fetch blog posts (English only)
 let posts: any[] = [];
 try {
 	if (supabase) {
@@ -20,9 +15,7 @@ try {
 				reading_time,
 				cover_image_url,
 				title_en,
-				title_es,
-				excerpt_en,
-				excerpt_es
+				excerpt_en
 			`)
 			.eq('status', 'published')
 			.order('published_at', { ascending: false });
@@ -30,11 +23,10 @@ try {
 		if (error) {
 			console.error('Error fetching blog posts:', error);
 		} else {
-			// Localize posts for English
 			posts = (data || []).map((post: any) => ({
 				...post,
-				title: post.title_en || post.title_es || '',
-				excerpt: post.excerpt_en || post.excerpt_es || ''
+				title: post.title_en || '',
+				excerpt: post.excerpt_en || ''
 			}));
 		}
 	} else {
@@ -52,16 +44,15 @@ const description = 'Discover expert tips on emotional eating, strategies to con
 <BlogLayout
 	title={title}
 	description={description}
-	lang={lang}
 >
 	<!-- Hero Section -->
-	<section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+	<section class="bg-gradient-to-br from-primary-50 to-secondary-50 py-20">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="text-center">
-				<h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+				<h1 class="text-4xl md:text-6xl font-bold text-neutral-900 mb-6">
 					Emotional Eating Blog
 				</h1>
-				<p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+				<p class="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
 					Expert tips, practical strategies, and professional support to overcome emotional eating and create a healthy relationship with food.
 				</p>
 			</div>
@@ -74,7 +65,7 @@ const description = 'Discover expert tips on emotional eating, strategies to con
 			{posts && posts.length > 0 ? (
 				<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 					{posts.map((post) => (
-						<article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+						<article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-neutral-100">
 							{post.cover_image_url && (
 								<div class="aspect-video overflow-hidden">
 									<img
@@ -86,7 +77,7 @@ const description = 'Discover expert tips on emotional eating, strategies to con
 								</div>
 							)}
 							<div class="p-6">
-								<div class="flex items-center text-sm text-gray-500 mb-3">
+								<div class="flex items-center text-sm text-neutral-500 mb-3">
 									<time datetime={post.published_at}>
 										{new Date(post.published_at).toLocaleDateString('en-US', {
 											year: 'numeric',
@@ -102,24 +93,24 @@ const description = 'Discover expert tips on emotional eating, strategies to con
 									)}
 								</div>
 
-								<h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+								<h2 class="text-xl font-bold text-neutral-900 mb-3 line-clamp-2">
 									<a
 										href={`/blog/${post.slug}`}
-										class="hover:text-blue-600 transition-colors"
+										class="hover:text-primary-400 transition-colors"
 									>
 										{post.title}
 									</a>
 								</h2>
 
 								{post.excerpt && (
-									<p class="text-gray-600 line-clamp-3 mb-4">
+									<p class="text-neutral-600 line-clamp-3 mb-4">
 										{post.excerpt}
 									</p>
 								)}
 
 								<a
 									href={`/blog/${post.slug}`}
-									class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors"
+									class="inline-flex items-center text-primary-400 font-medium hover:text-primary-500 transition-colors"
 								>
 									Read more
 									<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,10 +124,10 @@ const description = 'Discover expert tips on emotional eating, strategies to con
 			) : (
 				<div class="text-center py-16">
 					<div class="text-6xl mb-4">📝</div>
-					<h3 class="text-2xl font-bold text-gray-900 mb-4">
+					<h3 class="text-2xl font-bold text-neutral-900 mb-4">
 						Coming Soon
 					</h3>
-					<p class="text-gray-600 max-w-md mx-auto">
+					<p class="text-neutral-600 max-w-md mx-auto">
 						We're working on amazing content about emotional eating. Check back soon!
 					</p>
 				</div>
@@ -145,17 +136,17 @@ const description = 'Discover expert tips on emotional eating, strategies to con
 	</section>
 
 	<!-- CTA Section -->
-	<section class="bg-gradient-to-r from-blue-600 to-indigo-700 py-16">
+	<section class="bg-gradient-to-r from-primary-400 to-secondary-400 py-16">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 			<h2 class="text-3xl font-bold text-white mb-4">
 				Ready to Change Your Relationship with Food?
 			</h2>
-			<p class="text-xl text-blue-100 mb-8">
-				Join thousands of people building healthier habits, one conversation at a time.
+			<p class="text-xl text-primary-50 mb-8">
+				Start understanding your eating habits today, one conversation at a time.
 			</p>
 			<a
 				href={import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com'}
-				class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-colors shadow-lg"
+				class="inline-flex items-center px-8 py-4 bg-white text-primary-500 font-semibold rounded-lg hover:bg-neutral-50 transition-colors shadow-lg"
 			>
 				Get Started
 				<svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
