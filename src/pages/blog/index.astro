@@ -39,6 +39,9 @@ try {
 // SEO Meta
 const title = 'Blog | EmotionEat - Emotional Eating Tips & Advice';
 const description = 'Discover expert tips on emotional eating, strategies to control binge eating, and improve your relationship with food.';
+
+// Emojis temáticos para las tarjetas del blog
+const emojis = ['🍽️', '💚', '🧠', '🌱', '✨', '💪', '🥗', '🍎', '💭', '🤗', '❤️‍🩹', '🌈'];
 ---
 
 <BlogLayout
@@ -64,18 +67,11 @@ const description = 'Discover expert tips on emotional eating, strategies to con
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			{posts && posts.length > 0 ? (
 				<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-					{posts.map((post) => (
+					{posts.map((post, index) => (
 						<article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-neutral-100">
-							{post.cover_image_url && (
-								<div class="aspect-video overflow-hidden">
-									<img
-										src={post.cover_image_url}
-										alt={post.title}
-										class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-										loading="lazy"
-									/>
-								</div>
-							)}
+							<div class="aspect-video bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center">
+								<span class="text-6xl">{emojis[index % emojis.length]}</span>
+							</div>
 							<div class="p-6">
 								<div class="flex items-center text-sm text-neutral-500 mb-3">
 									<time datetime={post.published_at}>

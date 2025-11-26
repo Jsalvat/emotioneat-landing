@@ -1,6 +1,7 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { supabase, getBlogPostInLanguage, type BlogPost } from '../../lib/supabase';
+import { marked } from 'marked';
 
 // Get slug from URL
 const { slug } = Astro.params;
@@ -70,8 +71,14 @@ const image = post.cover_image_url || '/og-image.jpg';
 // Calculate reading time if not set
 const readingTime = post.reading_time || Math.ceil(localizedPost.content.split(' ').length / 200);
 
-// Content is already in HTML format
-const contentHtml = localizedPost.content;
+// Configure marked options for better rendering
+marked.setOptions({
+	gfm: true, // GitHub Flavored Markdown
+	breaks: true, // Convert \n to <br>
+});
+
+// Parse markdown content to HTML
+const contentHtml = await marked.parse(localizedPost.content);
 ---
 
 <BlogLayout
