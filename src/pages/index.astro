@@ -10,89 +10,30 @@ import Footer from '../components/Footer.astro';
 
 import en from '../i18n/en.json';
 
-const lang = 'en';
 const t = en;
 ---
 
-<!-- SEO UPDATE: Proper canonical URL for English version -->
-<Layout 
+<Layout
   title={t.meta.title}
   description={t.meta.description}
   ogTitle={t.meta.ogTitle}
   ogDescription={t.meta.ogDescription}
-  lang={lang}
   canonical="https://emotioneat.com"
 >
-  <Header lang={lang} t={t} />
+  <Header t={t} />
   <main id="main-content">
-    <Hero t={t} lang={lang} />
+    <Hero t={t} />
     <HowItWorks t={t} />
     <Features t={t} />
     <FAQ t={t} />
-    <CTA t={t} lang={lang} />
+    <CTA t={t} />
   </main>
   <Footer t={t} />
 
   <script>
     import { initMixpanel, trackPageView } from '../scripts/mixpanel';
-    
-    // Detección de idioma en el cliente (fallback si el middleware no funciona)
-    // SOLO para primera visita sin parámetro lang
+
     (function() {
-      const urlParams = new URLSearchParams(window.location.search);
-
-      // No hacer nada si ya hay un parámetro lang (usuario eligió idioma manualmente)
-      if (urlParams.has('lang')) {
-        initMixpanel();
-        trackPageView('home', 'en');
-        return;
-      }
-
-      // Verificar si el usuario tiene una preferencia guardada
-      let savedPreference;
-      try {
-        savedPreference = localStorage.getItem('emotioneat-lang-preference');
-      } catch (e) {
-        // Si localStorage no está disponible, continuar sin preferencia
-        console.warn('Could not access localStorage:', e);
-      }
-      
-      // Si hay una preferencia guardada, respetarla
-      if (savedPreference === 'en') {
-        // Usuario prefiere inglés, no redirigir
-        initMixpanel();
-        trackPageView('home', 'en');
-        return;
-      }
-      
-      if (savedPreference === 'es') {
-        // Usuario prefiere español, redirigir a la ruta equivalente en español
-        if (!window.location.pathname.startsWith('/es')) {
-          const spanishPath = `/es${window.location.pathname}`;
-          const fullUrl = spanishPath + window.location.search + window.location.hash;
-          window.location.href = fullUrl;
-          return;
-        }
-        initMixpanel();
-        trackPageView('home', 'es');
-        return;
-      }
-
-      // Solo redirigir si estamos en la raíz, no hay parámetro lang, y no hay preferencia guardada
-      if (window.location.pathname === '/' && !urlParams.has('lang') && !savedPreference) {
-        const browserLang = navigator.language || navigator.languages?.[0] || 'en';
-        const detectedLang = browserLang.startsWith('es') ? 'es' : 'en';
-
-        // Si detecta español y no estamos ya en /es, redirigir
-        if (detectedLang === 'es' && !window.location.pathname.startsWith('/es')) {
-          const spanishPath = `/es${window.location.pathname}`;
-          const fullUrl = spanishPath + window.location.search + window.location.hash;
-          window.location.href = fullUrl;
-          return;
-        }
-      }
-      
-      // Initialize Mixpanel and track page view
       initMixpanel();
       trackPageView('home', 'en');
     })();

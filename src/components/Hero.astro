@@ -1,99 +1,58 @@
 ---
 interface Props {
   t: any;
-  lang?: string;
 }
 
-const { t, lang = 'en' } = Astro.props;
+const { t } = Astro.props;
 const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
-
-// SEO UPDATE: Select appropriate hero image based on language
-const heroImage = lang === 'es' ? '/landing_es.png' : '/landing_en.png';
 ---
 
 <section class="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
   <!-- Background Gradient -->
-  <div class="absolute inset-0 bg-gradient-to-br from-brand-50 via-calm-50 to-lavender-50 opacity-50"></div>
-  
+  <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 opacity-60"></div>
+
+  <!-- Decorative Elements -->
+  <div class="absolute top-20 right-10 w-72 h-72 bg-primary-200 rounded-full opacity-20 blur-3xl"></div>
+  <div class="absolute bottom-20 left-10 w-96 h-96 bg-secondary-200 rounded-full opacity-20 blur-3xl"></div>
+
   <!-- Content -->
-  <div class="relative container mx-auto max-w-7xl">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <!-- Left Column - Text -->
-      <div class="text-center lg:text-left animate-on-scroll">
-        <!-- Trust Signal -->
-        <div class="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-8 shadow-sm">
-          <div class="flex -space-x-2">
-            <div class="w-6 h-6 rounded-full bg-gradient-to-br from-brand-400 to-calm-400 border-2 border-white"></div>
-            <div class="w-6 h-6 rounded-full bg-gradient-to-br from-mint-400 to-lavender-400 border-2 border-white"></div>
-            <div class="w-6 h-6 rounded-full bg-gradient-to-br from-lavender-400 to-brand-400 border-2 border-white"></div>
-          </div>
-          <span class="text-sm font-medium text-gray-700">{t.hero.trustSignal}</span>
-        </div>
+  <div class="relative container mx-auto max-w-4xl text-center">
+    <!-- Headline -->
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-neutral-900 mb-6 leading-tight animate-on-scroll">
+      {t.hero.headline}
+    </h1>
 
-        <!-- Headline -->
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-          {t.hero.headline}
-        </h1>
-        <!-- SEO IMPROVEMENT: H1 contains main keyword "emotional eating" -->
+    <!-- Subheadline -->
+    <p class="text-xl text-neutral-600 mb-10 leading-relaxed max-w-2xl mx-auto animate-on-scroll delay-100">
+      {t.hero.subheadline}
+    </p>
 
-        <!-- Subheadline -->
-        <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-          {t.hero.subheadline}
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
-          <a
-            href={appUrl}
-            class="inline-flex items-center justify-center px-8 py-3 bg-brand-500 hover:bg-brand-600 text-white text-base font-semibold rounded-2xl transition-all hover:shadow-xl hover:-translate-y-1 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-brand-300 focus:ring-offset-2"
-            data-cta-location="hero-primary"
-            data-lang={lang}
-            aria-label={t.hero.cta + (t.hero.noCard ? " - " + t.hero.noCard : "")}
-          >
-            {t.hero.cta}
-            <svg class="ml-2 w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-            </svg>
-          </a>
-          <a
-            href="#how-it-works"
-            class="inline-flex items-center justify-center px-8 py-3 bg-white hover:bg-gray-50 text-brand-600 text-base font-semibold rounded-2xl border-2 border-brand-200 transition-all hover:shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-brand-300 focus:ring-offset-2"
-            aria-label={t.hero.ctaSecondary}
-          >
-            {t.hero.ctaSecondary}
-          </a>
-        </div>
-
-        <!-- No Card Required -->
-        <p class="text-sm text-gray-500">{t.hero.noCard}</p>
-      </div>
-
-      <!-- Right Column - Visual -->
-      <div class="relative animate-on-scroll delay-200">
-        <!-- Hero image -->
-        <div class="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-          <!-- SEO: Optimized alt text with keywords, width/height to prevent CLS -->
-          <img
-            src={heroImage}
-            alt={lang === 'es' ? "Deja de comer por ansiedad con guía IA - EmotionEat ayuda a identificar patrones alimentarios y superar la ansiedad alimentaria" : "Stop emotional eating with AI guide - EmotionEat helps identify eating patterns and overcome binge eating"}
-            class="w-full h-full object-cover"
-            loading="eager"
-            width="1200"
-            height="900"
-            fetchpriority="high"
-          />
-        </div>
-
-        <!-- Floating cards decoration -->
-        <div class="hidden lg:block absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-mint-400 to-mint-500 rounded-2xl opacity-20 blur-2xl"></div>
-        <div class="hidden lg:block absolute -bottom-6 -left-6 w-40 h-40 bg-gradient-to-br from-lavender-400 to-lavender-500 rounded-2xl opacity-20 blur-2xl"></div>
-      </div>
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6 animate-on-scroll delay-200">
+      <a
+        href={appUrl}
+        class="inline-flex items-center justify-center px-8 py-4 bg-primary-400 hover:bg-primary-500 text-white text-lg font-semibold rounded-2xl transition-all hover:shadow-xl hover:-translate-y-1 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2"
+        data-cta-location="hero-primary"
+        aria-label={t.hero.cta}
+      >
+        {t.hero.cta}
+        <svg class="ml-2 w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+      <a
+        href="#how-it-works"
+        class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-50 text-primary-500 text-lg font-semibold rounded-2xl border-2 border-primary-200 transition-all hover:shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2"
+        aria-label={t.hero.ctaSecondary}
+      >
+        {t.hero.ctaSecondary}
+      </a>
     </div>
   </div>
 
   <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" aria-hidden="true">
-    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <svg class="w-6 h-6 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
     </svg>
   </div>

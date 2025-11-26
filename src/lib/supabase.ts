@@ -8,25 +8,19 @@ export const supabase = supabaseUrl && supabaseAnonKey
   ? createClient(supabaseUrl, supabaseAnonKey)
   : null
 
-// Types for blog posts (bilingual support)
+// Types for blog posts (English only)
 export interface BlogPost {
   id: string
-  // Legacy fields (maintained for backward compatibility)
   title: string
   slug: string
   content: string
   excerpt?: string
-  // Bilingual fields
+  // English fields (primary)
   title_en?: string
-  title_es?: string
   excerpt_en?: string
-  excerpt_es?: string
   content_en?: string
-  content_es?: string
   meta_title_en?: string
-  meta_title_es?: string
   meta_description_en?: string
-  meta_description_es?: string
   // Common fields
   published_at: string
   created_at: string
@@ -40,10 +34,10 @@ export interface BlogPost {
   reading_time?: number
 }
 
-// Helper function to get blog post content in preferred language
+// Helper function to get blog post content (English only)
 export function getBlogPostInLanguage(
   post: BlogPost,
-  lang: 'en' | 'es' = 'en'
+  lang: 'en' = 'en'
 ): {
   title: string
   content: string
@@ -51,21 +45,11 @@ export function getBlogPostInLanguage(
   meta_title: string
   meta_description: string
 } {
-  if (lang === 'es') {
-    return {
-      title: post.title_es || post.title_en || post.title || '',
-      content: post.content_es || post.content_en || post.content || '',
-      excerpt: post.excerpt_es || post.excerpt_en || post.excerpt || '',
-      meta_title: post.meta_title_es || post.meta_title_en || post.meta_title || post.title_es || post.title_en || post.title || '',
-      meta_description: post.meta_description_es || post.meta_description_en || post.meta_description || post.excerpt_es || post.excerpt_en || post.excerpt || ''
-    }
-  } else {
-    return {
-      title: post.title_en || post.title_es || post.title || '',
-      content: post.content_en || post.content_es || post.content || '',
-      excerpt: post.excerpt_en || post.excerpt_es || post.excerpt || '',
-      meta_title: post.meta_title_en || post.meta_title_es || post.meta_title || post.title_en || post.title_es || post.title || '',
-      meta_description: post.meta_description_en || post.meta_description_es || post.meta_description || post.excerpt_en || post.excerpt_es || post.excerpt || ''
-    }
+  return {
+    title: post.title_en || post.title || '',
+    content: post.content_en || post.content || '',
+    excerpt: post.excerpt_en || post.excerpt || '',
+    meta_title: post.meta_title_en || post.meta_title || post.title_en || post.title || '',
+    meta_description: post.meta_description_en || post.meta_description || post.excerpt_en || post.excerpt || ''
   }
 }

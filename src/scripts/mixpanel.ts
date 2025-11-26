@@ -8,7 +8,7 @@ export function initMixpanel() {
   if (initialized || !token) {
     return;
   }
-  
+
   try {
     mixpanel.init(token, {
       debug: import.meta.env.DEV,
@@ -25,7 +25,7 @@ export function trackEvent(eventName: string, properties?: Record<string, any>) 
   if (!initialized) {
     initMixpanel();
   }
-  
+
   try {
     mixpanel.track(eventName, properties);
   } catch (error) {
@@ -33,7 +33,7 @@ export function trackEvent(eventName: string, properties?: Record<string, any>) 
   }
 }
 
-export function trackPageView(pageName: string, language: string) {
+export function trackPageView(pageName: string, language: string = 'en') {
   trackEvent('landing_page_view', {
     page: pageName,
     language: language,
@@ -41,7 +41,7 @@ export function trackPageView(pageName: string, language: string) {
   });
 }
 
-export function trackCTAClick(location: string, language: string) {
+export function trackCTAClick(location: string, language: string = 'en') {
   trackEvent('cta_clicked', {
     location: location,
     language: language,
@@ -49,15 +49,7 @@ export function trackCTAClick(location: string, language: string) {
   });
 }
 
-export function trackLanguageSwitch(fromLang: string, toLang: string) {
-  trackEvent('language_switched', {
-    from: fromLang,
-    to: toLang,
-    timestamp: new Date().toISOString()
-  });
-}
-
-export function trackPricingView(plan: string, language: string) {
+export function trackPricingView(plan: string, language: string = 'en') {
   trackEvent('pricing_plan_viewed', {
     plan: plan,
     language: language,
@@ -65,7 +57,7 @@ export function trackPricingView(plan: string, language: string) {
   });
 }
 
-export function trackFAQOpen(question: string, language: string) {
+export function trackFAQOpen(question: string, language: string = 'en') {
   trackEvent('faq_opened', {
     question: question,
     language: language,

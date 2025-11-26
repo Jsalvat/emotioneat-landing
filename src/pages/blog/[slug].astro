@@ -2,11 +2,8 @@
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { supabase, getBlogPostInLanguage, type BlogPost } from '../../lib/supabase';
 import en from '../../i18n/en.json';
-import es from '../../i18n/es.json';
 
-// Detect language from URL
-const lang = Astro.url.pathname.startsWith('/es') ? 'es' : 'en';
-const t = lang === 'es' ? es : en;
+const t = en;
 
 // Get slug from URL
 const { slug } = Astro.params;
@@ -30,8 +27,8 @@ if (supabase && slug) {
 			console.error('Error fetching blog post:', postError);
 		} else {
 			post = postData as BlogPost;
-			// Get localized version with fallback
-			localizedPost = getBlogPostInLanguage(post, lang);
+			// Get localized version (English only)
+			localizedPost = getBlogPostInLanguage(post, 'en');
 		}
 
 		// Get related posts if we have the current post
@@ -44,9 +41,7 @@ if (supabase && slug) {
 					cover_image_url,
 					published_at,
 					title_en,
-					title_es,
-					excerpt_en,
-					excerpt_es
+					excerpt_en
 				`)
 				.eq('status', 'published')
 				.neq('id', post.id)
@@ -56,8 +51,8 @@ if (supabase && slug) {
 			// Localize related posts
 			relatedPosts = relatedPostsData?.map((rp: any) => ({
 				...rp,
-				title: lang === 'es' ? (rp.title_es || rp.title_en) : (rp.title_en || rp.title_es),
-				excerpt: lang === 'es' ? (rp.excerpt_es || rp.excerpt_en) : (rp.excerpt_en || rp.excerpt_es)
+				title: rp.title_en,
+				excerpt: rp.excerpt_en
 			})) || null;
 		}
 	} catch (error) {
@@ -67,7 +62,7 @@ if (supabase && slug) {
 
 // Handle 404 if post not found
 if (!post || !localizedPost) {
-	return Astro.redirect(lang === 'es' ? '/es/blog' : '/blog');
+	return Astro.redirect('/blog');
 }
 
 // SEO Meta with localized content
@@ -75,10 +70,10 @@ const title = localizedPost.meta_title || `${localizedPost.title} | EmotionEat B
 const description = localizedPost.meta_description || localizedPost.excerpt || localizedPost.title;
 const image = post.cover_image_url || '/og-image.jpg';
 
-// Calculate reading time if not set (use localized content)
+// Calculate reading time if not set
 const readingTime = post.reading_time || Math.ceil(localizedPost.content.split(' ').length / 200);
 
-// Content is already in HTML format (no Markdown conversion needed)
+// Content is already in HTML format
 const contentHtml = localizedPost.content;
 ---
 
@@ -86,7 +81,6 @@ const contentHtml = localizedPost.content;
 	title={title}
 	description={description}
 	image={image}
-	lang={lang}
 	published_at={post.published_at}
 	updated_at={post.updated_at}
 >
@@ -94,9 +88,9 @@ const contentHtml = localizedPost.content;
 	<section class="bg-white py-16">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="text-center mb-8">
-				<div class="flex items-center justify-center text-sm text-gray-500 mb-4">
+				<div class="flex items-center justify-center text-sm text-neutral-500 mb-4">
 					<time datetime={post.published_at}>
-						{new Date(post.published_at).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', {
+						{new Date(post.published_at).toLocaleDateString('en-US', {
 							year: 'numeric',
 							month: 'long',
 							day: 'numeric'
@@ -106,12 +100,12 @@ const contentHtml = localizedPost.content;
 					<span>{readingTime} min read</span>
 				</div>
 
-				<h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+				<h1 class="text-3xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
 					{localizedPost.title}
 				</h1>
 
 				{localizedPost.excerpt && (
-					<p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+					<p class="text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
 						{localizedPost.excerpt}
 					</p>
 				)}
@@ -139,31 +133,27 @@ const contentHtml = localizedPost.content;
 	</article>
 
 	<!-- Author & Share Section -->
-	<section class="bg-gray-50 py-12">
+	<section class="bg-neutral-50 py-12">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="flex flex-col md:flex-row items-center justify-between">
 				<div class="flex items-center mb-6 md:mb-0">
-					<div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+					<div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
 						E
 					</div>
 					<div>
-						<p class="font-semibold text-gray-900">{post.author || (lang === 'es' ? 'Equipo EmotionEat' : 'EmotionEat Team')}</p>
-						<p class="text-gray-600 text-sm">
-							{lang === 'es' ? 'Expertos en Alimentación Emocional' : 'Emotional Eating Experts'}
-						</p>
+						<p class="font-semibold text-neutral-900">{post.author || 'EmotionEat Team'}</p>
+						<p class="text-neutral-600 text-sm">Emotional Eating Experts</p>
 					</div>
 				</div>
 
 				<div class="flex items-center space-x-4">
-					<span class="text-gray-600 text-sm">
-						{lang === 'es' ? 'Compartir:' : 'Share:'}
-					</span>
+					<span class="text-neutral-600 text-sm">Share:</span>
 					<a
 						href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(localizedPost.title)}&url=${encodeURIComponent(Astro.url.href)}`}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-gray-400 hover:text-blue-500 transition-colors"
-						aria-label={lang === 'es' ? 'Compartir en Twitter' : 'Share on Twitter'}
+						class="text-neutral-400 hover:text-primary-400 transition-colors"
+						aria-label="Share on Twitter"
 					>
 						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
 							<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
@@ -173,8 +163,8 @@ const contentHtml = localizedPost.content;
 						href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.href)}`}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-gray-400 hover:text-blue-600 transition-colors"
-						aria-label={lang === 'es' ? 'Compartir en Facebook' : 'Share on Facebook'}
+						class="text-neutral-400 hover:text-primary-400 transition-colors"
+						aria-label="Share on Facebook"
 					>
 						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
 							<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -189,13 +179,13 @@ const contentHtml = localizedPost.content;
 	{relatedPosts && relatedPosts.length > 0 && (
 		<section class="bg-white py-16">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<h2 class="text-3xl font-bold text-gray-900 text-center mb-12">
-					{lang === 'es' ? 'Artículos Relacionados' : 'Related Articles'}
+				<h2 class="text-3xl font-bold text-neutral-900 text-center mb-12">
+					Related Articles
 				</h2>
 
 				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 					{relatedPosts.map((relatedPost) => (
-						<article class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300">
+						<article class="bg-neutral-50 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300">
 							{relatedPost.cover_image_url && (
 								<div class="aspect-video overflow-hidden">
 									<img
@@ -207,15 +197,15 @@ const contentHtml = localizedPost.content;
 								</div>
 							)}
 							<div class="p-6">
-								<h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+								<h3 class="text-lg font-semibold text-neutral-900 mb-2 line-clamp-2">
 									<a
-										href={`${lang === 'es' ? '/es' : ''}/blog/${relatedPost.slug}`}
-										class="hover:text-blue-600 transition-colors"
+										href={`/blog/${relatedPost.slug}`}
+										class="hover:text-primary-400 transition-colors"
 									>
 										{relatedPost.title}
 									</a>
 								</h3>
-								<p class="text-gray-600 text-sm line-clamp-2">
+								<p class="text-neutral-600 text-sm line-clamp-2">
 									{relatedPost.excerpt}
 								</p>
 							</div>
@@ -227,29 +217,26 @@ const contentHtml = localizedPost.content;
 	)}
 
 	<!-- CTA Section -->
-	<section class="bg-gradient-to-r from-blue-600 to-indigo-700 py-16">
+	<section class="bg-gradient-to-r from-primary-400 to-secondary-400 py-16">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 			<h2 class="text-3xl font-bold text-white mb-4">
-				{lang === 'es' ? '¿Listo para Cambiar Tu Relación con la Comida?' : 'Ready to Change Your Relationship with Food?'}
+				Ready to Change Your Relationship with Food?
 			</h2>
-			<p class="text-xl text-blue-100 mb-8">
-				{lang === 'es'
-					? 'Únete a miles de personas que están construyendo hábitos más sanos, una conversación a la vez.'
-					: 'Join thousands of people who are building healthier habits, one conversation at a time.'
-				}
+			<p class="text-xl text-primary-50 mb-8">
+				Start understanding your eating habits today, one conversation at a time.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
 				<a
 					href={import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com'}
-					class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-colors shadow-lg"
+					class="inline-flex items-center px-8 py-4 bg-white text-primary-500 font-semibold rounded-lg hover:bg-neutral-50 transition-colors shadow-lg"
 				>
-					{lang === 'es' ? 'Empezar Ahora' : 'Get Started'}
+					Get Started
 				</a>
 				<a
-					href={`${lang === 'es' ? '/es' : '/'}`}
-					class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
+					href="/"
+					class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-500 transition-colors"
 				>
-					{lang === 'es' ? 'Saber Más' : 'Learn More'}
+					Learn More
 				</a>
 			</div>
 		</div>

@@ -12,7 +12,7 @@ const features = [
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
     </svg>`,
-    gradient: "from-brand-500 to-calm-500"
+    gradient: "from-primary-400 to-primary-500"
   },
   {
     title: t.features.feature2.title,
@@ -20,7 +20,7 @@ const features = [
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
     </svg>`,
-    gradient: "from-calm-500 to-mint-500"
+    gradient: "from-secondary-300 to-secondary-400"
   },
   {
     title: t.features.feature3.title,
@@ -28,7 +28,7 @@ const features = [
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
     </svg>`,
-    gradient: "from-mint-500 to-lavender-500"
+    gradient: "from-accent-300 to-accent-400"
   },
   {
     title: t.features.feature4.title,
@@ -36,7 +36,7 @@ const features = [
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
     </svg>`,
-    gradient: "from-lavender-500 to-brand-500"
+    gradient: "from-primary-300 to-secondary-300"
   },
   {
     title: t.features.feature5.title,
@@ -44,7 +44,7 @@ const features = [
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
     </svg>`,
-    gradient: "from-brand-500 to-mint-500"
+    gradient: "from-secondary-300 to-accent-300"
   },
   {
     title: t.features.feature6.title,
@@ -52,19 +52,19 @@ const features = [
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
     </svg>`,
-    gradient: "from-calm-500 to-lavender-500"
+    gradient: "from-neutral-500 to-neutral-600"
   }
 ];
 ---
 
-<section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+<section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-neutral-50">
   <div class="container mx-auto max-w-7xl">
     <!-- Section Header -->
     <div class="text-center mb-20">
-      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+      <h2 class="text-4xl sm:text-5xl font-bold text-neutral-900 mb-4">
         {t.features.title}
       </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+      <p class="text-xl text-neutral-600 max-w-3xl mx-auto">
         {t.features.subtitle}
       </p>
     </div>
@@ -74,9 +74,9 @@ const features = [
       {features.map((feature, index) => (
         <div class={`group relative animate-on-scroll delay-${(index + 1) * 100}`}>
           <!-- Card -->
-          <div class="relative bg-white rounded-3xl p-8 lg:p-10 border-2 border-gray-100 hover:border-transparent transition-all hover:shadow-2xl group-hover:-translate-y-1 h-full flex flex-col">
+          <div class="relative bg-white rounded-2xl p-8 lg:p-10 border-2 border-neutral-100 hover:border-transparent transition-all hover:shadow-2xl group-hover:-translate-y-1 h-full flex flex-col">
             <!-- Gradient border on hover -->
-            <div class={`absolute inset-0 rounded-3xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity -z-10`}></div>
+            <div class={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity -z-10`}></div>
 
             <!-- Icon -->
             <div class={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform`} aria-hidden="true">
@@ -85,11 +85,10 @@ const features = [
 
             <!-- Content -->
             <div class="flex-1">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-4">
                 {feature.title}
               </h3>
-              <!-- SEO IMPROVEMENT: Feature descriptions contain keywords like "chat conversations", "pattern analysis", "daily challenges" -->
-              <p class="text-gray-600 leading-relaxed text-lg">
+              <p class="text-neutral-600 leading-relaxed text-lg">
                 {feature.description}
               </p>
             </div>

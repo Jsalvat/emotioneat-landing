@@ -4,7 +4,6 @@ interface Props {
   description: string;
   ogTitle?: string;
   ogDescription?: string;
-  lang?: string;
   canonical?: string;
   structuredData?: object;
 }
@@ -14,53 +13,38 @@ const {
   description,
   ogTitle = title,
   ogDescription = description,
-  lang = 'en',
   canonical,
   structuredData
 } = Astro.props;
 
-// SEO UPDATE: Improved canonical URLs and meta tags
 const siteUrl = 'https://emotioneat.com';
 const currentUrl = Astro.url.href;
-// SEO UPDATE: Proper canonical URLs for multi-language support
-const canonicalUrl = canonical || (lang === 'es' ? `${siteUrl}/es` : siteUrl);
+const canonicalUrl = canonical || siteUrl;
 
 // Analytics configuration
 const GA4_ID = import.meta.env.PUBLIC_GA4_ID;
-const GTM_ID = import.meta.env.PUBLIC_GTM_ID; // Only load when explicitly configured
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
 const GSC_VERIFICATION_CODE = import.meta.env.PUBLIC_GSC_VERIFICATION_CODE;
 
-// Build absolute URLs for OG images
 const ogImageUrl = `${siteUrl}/og-image.jpg`;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    
-    <!-- SEO UPDATE: Enhanced meta tags for better SEO -->
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <!-- SEO: Language-specific keywords -->
-    {lang === 'es' ? (
-      <meta name="keywords" content="comer por ansiedad, ansiedad alimentaria, comer emocional, comer compulsivo, dejar de comer por ansiedad, depresión y comida, hábitos alimentarios, patrones alimentarios, control alimentario, relación con la comida" />
-    ) : (
-      <meta name="keywords" content="emotional eating, stress eating, binge eating, stop emotional eating, emotional eating triggers, overcome emotional eating, emotional eating patterns, emotional eating support, binge eating disorder, food relationship, eating habits" />
-    )}
+    <meta name="keywords" content="emotional eating, stress eating, binge eating, stop emotional eating, emotional eating triggers, overcome emotional eating, emotional eating patterns, emotional eating support, binge eating disorder, food relationship, eating habits" />
     <meta name="author" content="EmotionEat" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
-    
-    <!-- hreflang tags for multilingual SEO -->
-    <link rel="alternate" hreflang="en" href={lang === 'es' ? siteUrl : canonicalUrl} />
-    <link rel="alternate" hreflang="es" href={lang === 'es' ? canonicalUrl : `${siteUrl}/es`} />
-    <link rel="alternate" hreflang="x-default" href={siteUrl} />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={currentUrl} />
@@ -69,33 +53,31 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={lang === 'es' ? "EmotionEat - Deja de comer por ansiedad con guía IA" : "EmotionEat - Stop emotional eating with AI guide"} />
+    <meta property="og:image:alt" content="EmotionEat - Stop emotional eating with AI guide" />
     <meta property="og:site_name" content="EmotionEat" />
-    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
-    {lang === 'es' && <meta property="og:locale:alternate" content="en_US" />}
-    {lang === 'en' && <meta property="og:locale:alternate" content="es_ES" />}
-    
+    <meta property="og:locale" content="en_US" />
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={currentUrl} />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={ogDescription} />
     <meta name="twitter:image" content={ogImageUrl} />
-    <meta name="twitter:image:alt" content={lang === 'es' ? "EmotionEat - Deja de comer por ansiedad con guía IA" : "EmotionEat - Stop emotional eating with AI guide"} />
-    
+    <meta name="twitter:image:alt" content="EmotionEat - Stop emotional eating with AI guide" />
+
     <!-- Theme and Mobile -->
-    <meta name="theme-color" content="#1890FF" />
+    <meta name="theme-color" content="#E8847C" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="EmotionEat" />
-    
+
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-    
+
     <!-- PWA Manifest -->
     <link rel="manifest" href="/manifest.json" />
 
@@ -120,9 +102,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');`}></script>
     )}
-    <!-- End Google Tag Manager -->
 
-    <!-- Google Analytics 4 - Direct implementation (can be managed via GTM instead) -->
+    <!-- Google Analytics 4 -->
     {GA4_ID && !GTM_ID && (
       <>
         <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
@@ -134,24 +115,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </script>
       </>
     )}
-    
-    <!-- Performance: Optimized font loading with preload and font-display swap -->
-    <!-- Preload critical font file -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin />
-    <!-- Google Fonts - Inter with display=swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <style>
-      /* Preload critical font weights */
-      @font-face {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
-      }
-    </style>
-    
-    <!-- SEO UPDATE: Enhanced Schema.org with Organization and improved WebApplication -->
+
+    <!-- Google Fonts - Plus Jakarta Sans -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qU79TR_V.woff2" as="font" type="font/woff2" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
     <!-- Schema.org -->
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -182,28 +150,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           "@id": `${siteUrl}/#webapp`,
           "name": "EmotionEat",
           "url": siteUrl,
-          "description": lang === 'es' 
-            ? "Deja de comer por ansiedad y emociones con chat de IA. Descubre tus desencadenantes, analiza tus patrones alimentarios y recibe retos personalizados para superar la ansiedad alimentaria. Plan gratis disponible."
-            : "Break free from emotional eating and stress eating with AI-powered chat. Discover binge eating triggers, analyze emotional eating patterns, and get personalized challenges to overcome anxiety-driven eating. Free plan available.",
+          "description": "Break free from emotional eating with AI-powered chat. Discover your triggers, analyze your eating patterns, and get personalized challenges to build a healthier relationship with food.",
           "applicationCategory": "HealthApplication",
           "operatingSystem": "Web",
           "browserRequirements": "Requires JavaScript. Requires HTML5.",
           "softwareVersion": "2.0",
           "releaseNotes": "AI-powered pattern analysis and daily challenges",
           "featureList": [
-            "Daily AI chat conversations (10 messages/day free, 50/day premium)",
+            "Daily AI chat conversations",
             "Behavioral pattern analysis from chat conversations",
             "Detection of positive and problematic eating patterns",
-            "5 personalized daily challenges with regeneration",
-            "Pattern explanations for challenges (Premium)",
-            "Unlimited personalized advice based on detected patterns"
+            "5 personalized daily challenges",
+            "Pattern explanations for challenges",
+            "Personalized advice based on detected patterns"
           ],
           "offers": [
             {
               "@type": "Offer",
               "name": "Free Plan",
               "price": "0",
-              "priceCurrency": "EUR",
+              "priceCurrency": "USD",
               "description": "10 chat messages per day, 1 pattern analysis per week, 5 daily challenges",
               "availability": "https://schema.org/InStock"
             },
@@ -211,24 +177,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "@type": "Offer",
               "name": "Premium Plan",
               "price": "7.99",
-              "priceCurrency": "EUR",
+              "priceCurrency": "USD",
               "priceSpecification": {
                 "@type": "UnitPriceSpecification",
                 "price": "7.99",
-                "priceCurrency": "EUR",
+                "priceCurrency": "USD",
                 "billingDuration": "P1M"
               },
-              "description": "50 chat messages per day, 1 pattern analysis per day, pattern explanations for challenges",
+              "description": "50 chat messages per day, daily pattern analysis, pattern explanations for challenges",
               "availability": "https://schema.org/InStock"
             }
           ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "127",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
           "publisher": {
             "@id": `${siteUrl}/#organization`
           }
@@ -240,15 +199,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             {
               "@type": "ListItem",
               "position": 1,
-              "name": lang === 'es' ? "Inicio" : "Home",
-              "item": lang === 'es' ? `${siteUrl}/es` : siteUrl
+              "name": "Home",
+              "item": siteUrl
             }
           ]
         }
       ]
     })} />
   </head>
-  <body class="bg-gray-50 text-gray-900 antialiased">
+  <body class="bg-neutral-50 text-neutral-900 antialiased">
     <!-- Google Tag Manager (noscript) -->
     {GTM_ID && (
       <noscript>
@@ -256,16 +215,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           height="0" width="0" style="display:none;visibility:hidden"></iframe>
       </noscript>
     )}
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <!-- Accessibility: Skip link for keyboard navigation -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-500 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-300">
-      {lang === 'es' ? 'Saltar al contenido principal' : 'Skip to main content'}
+
+    <!-- Accessibility: Skip link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-400 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-300">
+      Skip to main content
     </a>
     <slot />
-    
+
     <style is:global>
-      /* SEO UPDATE: Skip link styles for accessibility */
       .sr-only {
         position: absolute;
         width: 1px;
@@ -277,7 +234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         white-space: nowrap;
         border-width: 0;
       }
-      
+
       .sr-only:focus {
         position: absolute;
         width: auto;
@@ -288,13 +245,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         clip: auto;
         white-space: normal;
       }
-      
-      /* Smooth scroll behavior */
+
       html {
         scroll-behavior: smooth;
       }
-      
-      /* Fade in animation on scroll */
+
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -305,7 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           transform: translateY(0);
         }
       }
-      
+
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -314,7 +269,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           opacity: 1;
         }
       }
-      
+
       @keyframes float {
         0%, 100% {
           transform: translateY(0px);
@@ -323,39 +278,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           transform: translateY(-10px);
         }
       }
-      
-      /* Animation delays for staggered effects */
+
       .animate-on-scroll {
         animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         opacity: 0;
       }
-      
+
       .delay-100 { animation-delay: 0.1s; }
       .delay-200 { animation-delay: 0.2s; }
       .delay-300 { animation-delay: 0.3s; }
       .delay-400 { animation-delay: 0.4s; }
-      
-      /* Enhanced button hover effects */
+
       button, a {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      
-      /* Smooth gradient transitions */
+
       .bg-gradient-to-br,
       .bg-gradient-to-r,
       .bg-gradient-to-l {
         background-size: 200% 200%;
         transition: background-position 0.5s ease;
       }
-      
-      /* Card hover effects */
+
       [class*="rounded-"] {
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                     border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      
-      /* Reduce motion for accessibility */
+
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
