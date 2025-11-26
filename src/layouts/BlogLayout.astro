@@ -12,7 +12,7 @@ export interface Props {
 	updated_at?: string;
 }
 
-const { title, description, image = '/og-image.jpg', canonical } = Astro.props;
+const { title, description, image = '/og_emotionEat.png', canonical } = Astro.props;
 const t = en;
 
 const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
