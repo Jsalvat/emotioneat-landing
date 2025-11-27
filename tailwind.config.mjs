@@ -1,9 +1,44 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  safelist: [
+    'delay-100',
+    'delay-200',
+    'delay-300',
+    'delay-400',
+  ],
   theme: {
     extend: {
       colors: {
+        // Custom brand colors for Pricing section
+        gray: {
+          50: '#F9FAFB',
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#374151',
+          800: '#1F2937',
+          900: '#111827',
+        },
+        mint: {
+          300: '#6EE7B7',
+          500: '#10B981',
+        },
+        brand: {
+          100: '#FEE2E2',
+          500: '#EF4444',
+          600: '#DC2626',
+        },
+        calm: {
+          500: '#8B5CF6',
+        },
+        indigo: {
+          600: '#4F46E5',
+          800: '#3730A3',
+        },
         primary: {
           50: '#FFF5F5',
           100: '#FFE4E1',
