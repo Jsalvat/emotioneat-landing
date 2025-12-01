@@ -6,6 +6,10 @@ interface Props {
 const { t } = Astro.props;
 
 const faqs = [
+  {
+    q: "Will this work if I've already tried everything?",
+    a: "We get it—diets, apps, willpower, guilt... you've been through it. EmotionEat is different because we don't fight your patterns. We help you understand them. Many of our members felt exactly like you do now. They weren't broken. Neither are you."
+  },
   { q: t.faq.question1.q, a: t.faq.question1.a },
   { q: t.faq.question2.q, a: t.faq.question2.a },
   { q: t.faq.question3.q, a: t.faq.question3.a },
@@ -15,14 +19,24 @@ const faqs = [
 ];
 ---
 
-<section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-  <div class="container mx-auto max-w-4xl">
+<section id="faq" class="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-neutral-50 via-primary-50/20 to-white"></div>
+
+  <!-- Decorative elements -->
+  <div class="absolute top-1/3 -left-20 w-40 h-40 bg-primary-100/30 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-1/3 -right-20 w-40 h-40 bg-secondary-100/30 rounded-full blur-3xl"></div>
+
+  <div class="relative container mx-auto max-w-4xl">
     <!-- Section Header -->
-    <div class="text-center mb-16">
-      <h2 class="text-4xl sm:text-5xl font-bold text-neutral-900 mb-4">
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block px-4 py-2 bg-white text-neutral-600 text-sm font-semibold rounded-full border border-neutral-200 mb-6 shadow-sm">
+        Questions & Answers
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
         {t.faq.title}
       </h2>
-      <p class="text-xl text-neutral-600">
+      <p class="text-lg sm:text-xl text-neutral-500">
         {t.faq.subtitle}
       </p>
     </div>
@@ -30,24 +44,55 @@ const faqs = [
     <!-- FAQ Items -->
     <div class="space-y-4">
       {faqs.map((faq, index) => (
-        <div class={`faq-item bg-neutral-50 rounded-2xl overflow-hidden border-2 border-transparent hover:border-primary-200 transition-all animate-on-scroll delay-${Math.min((index + 1) * 100, 400)}`}>
+        <div class={`faq-item bg-white rounded-2xl overflow-hidden border border-neutral-100 shadow-sm hover:shadow-md hover:border-primary-100 transition-all duration-300 animate-on-scroll delay-${Math.min((index + 1) * 50, 300)}`}>
           <button
-            class="faq-question w-full text-left px-6 py-5 flex items-center justify-between"
+            class="faq-question w-full text-left px-6 sm:px-8 py-6 flex items-center justify-between gap-4 group"
             data-faq-question={faq.q}
             aria-expanded="false"
             aria-controls={`faq-answer-${index}`}
             id={`faq-question-${index}`}
           >
-            <span class="font-semibold text-neutral-900 text-lg pr-8">{faq.q}</span>
-            <svg class="faq-icon w-6 h-6 text-primary-400 flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
+            <span class="font-semibold text-neutral-800 text-lg leading-snug group-hover:text-primary-600 transition-colors">
+              {faq.q}
+            </span>
+            <span class="faq-icon flex-shrink-0 w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center text-primary-400 transition-all duration-300 group-hover:bg-primary-100">
+              <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"></path>
+              </svg>
+            </span>
           </button>
-          <div class="faq-answer hidden px-6 pb-5" id={`faq-answer-${index}`} role="region" aria-labelledby={`faq-question-${index}`}>
-            <p class="text-neutral-600 leading-relaxed">{faq.a}</p>
+          <div class="faq-answer hidden" id={`faq-answer-${index}`} role="region" aria-labelledby={`faq-question-${index}`}>
+            <div class="px-6 sm:px-8 pb-6">
+              <div class="pt-2 border-t border-neutral-100">
+                <p class="text-neutral-600 leading-relaxed pt-4">
+                  {faq.a}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       ))}
+    </div>
+
+    <!-- Still have questions? -->
+    <div class="mt-12 text-center animate-on-scroll delay-400">
+      <div class="inline-flex flex-col sm:flex-row items-center gap-4 px-8 py-6 bg-white rounded-2xl border border-neutral-100 shadow-sm">
+        <div class="w-12 h-12 rounded-full bg-secondary-50 flex items-center justify-center text-secondary-500">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+          </svg>
+        </div>
+        <div class="text-center sm:text-left">
+          <p class="font-semibold text-neutral-800">Still have questions?</p>
+          <p class="text-neutral-500 text-sm">We're here to help.</p>
+        </div>
+        <a
+          href="mailto:support@emotioneat.com"
+          class="px-6 py-2.5 bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-semibold rounded-xl transition-colors"
+        >
+          Contact us
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -66,6 +111,20 @@ const faqs = [
   }))
 })} />
 
+<style>
+  .faq-item.open .faq-icon {
+    @apply bg-primary-500 text-white;
+  }
+
+  .faq-item.open .faq-icon svg {
+    @apply rotate-45;
+  }
+
+  .faq-answer.open {
+    @apply block;
+  }
+</style>
+
 <script>
   import { trackFAQOpen } from '../scripts/mixpanel';
 
@@ -74,21 +133,29 @@ const faqs = [
       button.addEventListener('click', () => {
         const item = button.closest('.faq-item');
         const answer = item?.querySelector('.faq-answer');
-        const icon = button.querySelector('.faq-icon');
         const question = button.getAttribute('data-faq-question');
 
-        if (answer && icon) {
-          const isOpen = !answer.classList.contains('hidden');
+        if (answer && item) {
+          const isOpen = item.classList.contains('open');
           const newState = !isOpen;
 
-          if (!isOpen && question) {
-            trackFAQOpen(question, 'en');
-          }
+          // Close all other FAQs
+          document.querySelectorAll('.faq-item').forEach(i => {
+            i.classList.remove('open');
+            i.querySelector('.faq-answer')?.classList.remove('open');
+            i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+          });
 
-          answer.classList.toggle('hidden');
-          button.setAttribute('aria-expanded', String(newState));
-          const iconElement = icon as SVGElement;
-          iconElement.style.transform = newState ? 'rotate(180deg)' : 'rotate(0deg)';
+          // Toggle current
+          if (newState) {
+            item.classList.add('open');
+            answer.classList.add('open');
+            button.setAttribute('aria-expanded', 'true');
+
+            if (question) {
+              trackFAQOpen(question, 'en');
+            }
+          }
         }
       });
     });

@@ -1,0 +1,148 @@
+---
+interface Props {
+  t?: any;
+}
+
+const { t } = Astro.props;
+
+const painPoints = [
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+    </svg>`,
+    title: "The fridge calls when stress does",
+    subtitle: "Late nights. Deadlines. Emotions you can't name.",
+    color: "primary"
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+    </svg>`,
+    title: "Eating when you're not really hungry",
+    subtitle: "Because something else needs filling.",
+    color: "secondary"
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+    </svg>`,
+    title: "The shame spiral afterward",
+    subtitle: "'Why did I do that again?' on repeat.",
+    color: "accent"
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>`,
+    title: "Feeling broken when diets don't work",
+    subtitle: "It's not about willpower. It never was.",
+    color: "primary"
+  }
+];
+
+const colorClasses = {
+  primary: {
+    bg: "bg-primary-50",
+    icon: "text-primary-400",
+    border: "border-primary-100",
+    hover: "hover:border-primary-200 hover:shadow-primary-100/50"
+  },
+  secondary: {
+    bg: "bg-secondary-50",
+    icon: "text-secondary-400",
+    border: "border-secondary-100",
+    hover: "hover:border-secondary-200 hover:shadow-secondary-100/50"
+  },
+  accent: {
+    bg: "bg-accent-50",
+    icon: "text-accent-400",
+    border: "border-accent-100",
+    hover: "hover:border-accent-200 hover:shadow-accent-100/50"
+  }
+};
+---
+
+<section class="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-white via-primary-50/20 to-white"></div>
+
+  <!-- Decorative elements -->
+  <div class="absolute top-0 left-1/4 w-64 h-64 bg-primary-100/30 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-secondary-100/30 rounded-full blur-3xl"></div>
+
+  <div class="relative container mx-auto max-w-6xl">
+    <!-- Section Header -->
+    <div class="text-center mb-16 sm:mb-20 animate-on-scroll">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6 leading-tight">
+        If this sounds familiar,
+        <span class="block text-primary-500">you're in the right place</span>
+      </h2>
+      <p class="text-lg sm:text-xl text-neutral-500 max-w-2xl mx-auto">
+        You're not alone. These patterns are more common than you think.
+      </p>
+    </div>
+
+    <!-- Pain Points Grid -->
+    <div class="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-16 sm:mb-20">
+      {painPoints.map((point, index) => {
+        const colors = colorClasses[point.color as keyof typeof colorClasses];
+        return (
+          <div
+            class={`group relative bg-white rounded-3xl p-8 border-2 ${colors.border} ${colors.hover} transition-all duration-500 hover:shadow-xl hover:-translate-y-1 animate-on-scroll delay-${(index + 1) * 100}`}
+          >
+            <!-- Icon -->
+            <div class={`w-14 h-14 ${colors.bg} rounded-2xl flex items-center justify-center mb-6 ${colors.icon} group-hover:scale-110 transition-transform duration-300`}>
+              <Fragment set:html={point.icon} />
+            </div>
+
+            <!-- Content -->
+            <h3 class="text-xl sm:text-2xl font-bold text-neutral-800 mb-3 leading-snug">
+              {point.title}
+            </h3>
+            <p class="text-neutral-500 text-lg italic">
+              {point.subtitle}
+            </p>
+
+            <!-- Decorative corner -->
+            <div class={`absolute top-4 right-4 w-2 h-2 rounded-full ${colors.bg} opacity-60`}></div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Empathy Message -->
+    <div class="relative animate-on-scroll delay-400">
+      <!-- Decorative line -->
+      <div class="absolute left-1/2 -translate-x-1/2 -top-10 w-px h-10 bg-gradient-to-b from-transparent via-primary-200 to-primary-300"></div>
+
+      <div class="relative bg-gradient-to-br from-primary-50 via-white to-secondary-50 rounded-3xl p-8 sm:p-12 border border-primary-100/50 shadow-lg shadow-primary-100/20">
+        <!-- Quote decoration -->
+        <div class="absolute -top-4 left-8 sm:left-12 text-6xl sm:text-8xl font-serif text-primary-200 leading-none">"</div>
+
+        <div class="relative max-w-3xl mx-auto text-center">
+          <p class="text-xl sm:text-2xl lg:text-3xl text-neutral-700 leading-relaxed mb-6">
+            These aren't character flaws.
+            <span class="block mt-2">They're <span class="text-primary-500 font-semibold">coping patterns</span>.</span>
+          </p>
+          <p class="text-lg sm:text-xl text-secondary-600 font-medium">
+            And here's the good news: patterns can be understood,
+            <span class="block mt-1">and when you understand them, they begin to <span class="underline decoration-secondary-300 decoration-2 underline-offset-4">change</span>.</span>
+          </p>
+        </div>
+
+        <!-- Quote decoration end -->
+        <div class="absolute -bottom-4 right-8 sm:right-12 text-6xl sm:text-8xl font-serif text-primary-200 leading-none rotate-180">"</div>
+      </div>
+    </div>
+
+    <!-- Transition element to next section -->
+    <div class="flex justify-center mt-16">
+      <div class="flex flex-col items-center gap-3 text-neutral-400">
+        <span class="text-sm uppercase tracking-widest">Here's how</span>
+        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>

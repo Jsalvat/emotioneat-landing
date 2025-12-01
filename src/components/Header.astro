@@ -15,98 +15,355 @@ const translations = t || {
   header: {
     features: 'Features',
     faq: 'FAQ',
-    startNow: 'Get Started'
+    startNow: 'Start Your Journey'
   }
 };
 
 const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+
+// SEO Links organized by category
+const resourceLinks = {
+  emotionalEating: [
+    { href: '/stop-emotional-eating', label: 'Stop Emotional Eating' },
+    { href: '/overcoming-emotional-eating', label: 'Overcoming Emotional Eating' },
+    { href: '/emotional-eating-support', label: 'Emotional Eating Support' },
+    { href: '/emotional-eating-app', label: 'Emotional Eating App' },
+    { href: '/comfort-eating', label: 'Comfort Eating' },
+    { href: '/emotional-overeating', label: 'Emotional Overeating' },
+  ],
+  stressAndBoredom: [
+    { href: '/stress-eating-help', label: 'Stress Eating Help' },
+    { href: '/stress-eating-help-for-anxiety', label: 'Anxiety Eating Help' },
+    { href: '/boredom-eating', label: 'Boredom Eating' },
+    { href: '/eating-out-of-boredom', label: 'Eating Out of Boredom' },
+    { href: '/how-to-stop-comfort-eating', label: 'How to Stop Comfort Eating' },
+  ],
+  understandingTriggers: [
+    { href: '/binge-eating-triggers', label: 'Binge Eating Triggers' },
+    { href: '/emotional-trigger-journal', label: 'Emotional Trigger Journal' },
+    { href: '/stress-eating-vs-emotional-eating', label: 'Stress vs Emotional Eating' },
+    { href: '/why-do-i-eat-when-stressed', label: 'Why Do I Eat When Stressed' },
+  ]
+};
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-neutral-200 transition-all duration-300">
-  <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" id="main-header">
+  <div class="absolute inset-0 bg-white/80 backdrop-blur-xl border-b border-primary-100/60 shadow-sm shadow-primary-100/20"></div>
+
+  <nav class="relative container mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <div class="flex items-center">
-        <a href="/" class="flex items-center space-x-2">
-          <img
-            src="/Logo EmotionEat_Login - Registro.png"
-            alt="EmotionEat - Stop emotional eating"
-            class="h-10 w-auto"
-            width="120"
-            height="40"
-            loading="eager"
-            fetchpriority="high"
-          />
-        </a>
-      </div>
+      <a href="/" class="flex items-center group">
+        <img
+          src="/Logo EmotionEat_Login - Registro.png"
+          alt="EmotionEat - You're not alone in this"
+          class="h-11 w-auto transition-transform duration-300 group-hover:scale-105"
+          width="130"
+          height="44"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
-        <a href="#features" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
+      <nav class="hidden lg:flex items-center space-x-2" aria-label="Main navigation">
+        <a href="#how-it-works" class="nav-link">
+          How It Works
+        </a>
+
+        <a href="#features" class="nav-link">
           {translations.header.features}
         </a>
-        <a href="/stop-emotional-eating" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Stop Emotional Eating
-        </a>
-        <a href="/overcoming-emotional-eating" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Overcoming Emotional Eating
-        </a>
-        <a href="/emotional-eating-support" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Emotional Eating Support
-        </a>
-        <a href="/emotional-eating-app" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Emotional Eating App
-        </a>
-        <a href="/stress-eating-help" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Stress Eating
-        </a>
-        <a href="/boredom-eating" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Boredom Eating
-        </a>
-        <a href="/eating-out-of-boredom" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Eating Out of Boredom
-        </a>
-        <a href="/binge-eating-triggers" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Binge Triggers
-        </a>
-        <a href="/emotional-trigger-journal" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Trigger Journal
-        </a>
-        <a href="/how-to-stop-comfort-eating" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Stop Comfort Eating
-        </a>
-        <a href="/why-do-i-eat-when-stressed" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
-          Why Stress Eating
-        </a>
-        <a href="/blog" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
+
+        <!-- Resources Mega Menu -->
+        <div class="relative group" id="resources-dropdown">
+          <button
+            class="nav-link inline-flex items-center gap-1.5"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Resources
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <!-- Mega Menu Dropdown -->
+          <div class="mega-menu opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 absolute top-full left-1/2 -translate-x-1/2 pt-4">
+            <div class="bg-white rounded-3xl shadow-2xl shadow-primary-200/30 border border-primary-100/50 p-8 min-w-[700px]">
+              <!-- Decorative top accent -->
+              <div class="absolute top-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-primary-300 to-secondary-300 rounded-full"></div>
+
+              <div class="grid grid-cols-3 gap-8">
+                <!-- Column 1: Emotional Eating -->
+                <div>
+                  <h3 class="text-xs font-bold uppercase tracking-wider text-primary-400 mb-4 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-lg bg-primary-50 flex items-center justify-center">
+                      <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                      </svg>
+                    </span>
+                    Emotional Eating
+                  </h3>
+                  <ul class="space-y-2">
+                    {resourceLinks.emotionalEating.map(link => (
+                      <li>
+                        <a href={link.href} class="mega-menu-link">
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <!-- Column 2: Stress & Boredom -->
+                <div>
+                  <h3 class="text-xs font-bold uppercase tracking-wider text-secondary-400 mb-4 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-lg bg-secondary-50 flex items-center justify-center">
+                      <svg class="w-3.5 h-3.5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                      </svg>
+                    </span>
+                    Stress & Boredom
+                  </h3>
+                  <ul class="space-y-2">
+                    {resourceLinks.stressAndBoredom.map(link => (
+                      <li>
+                        <a href={link.href} class="mega-menu-link">
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <!-- Column 3: Understanding Triggers -->
+                <div>
+                  <h3 class="text-xs font-bold uppercase tracking-wider text-accent-400 mb-4 flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-lg bg-accent-50 flex items-center justify-center">
+                      <svg class="w-3.5 h-3.5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                      </svg>
+                    </span>
+                    Understanding Triggers
+                  </h3>
+                  <ul class="space-y-2">
+                    {resourceLinks.understandingTriggers.map(link => (
+                      <li>
+                        <a href={link.href} class="mega-menu-link">
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Bottom CTA in mega menu -->
+              <div class="mt-8 pt-6 border-t border-neutral-100">
+                <div class="flex items-center justify-between">
+                  <p class="text-sm text-neutral-500">
+                    Ready to understand your patterns?
+                  </p>
+                  <a href={appUrl} class="text-sm font-semibold text-primary-500 hover:text-primary-600 transition-colors inline-flex items-center gap-1">
+                    Start free
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="/blog" class="nav-link">
           Blog
         </a>
-        <a href="#faq" class="text-neutral-600 hover:text-primary-500 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-300 focus:rounded-md px-2 py-1">
+
+        <a href="#faq" class="nav-link">
           {translations.header.faq}
         </a>
       </nav>
 
-      <!-- CTA Button -->
-      <div class="flex items-center">
+      <!-- CTA Button (Desktop) -->
+      <div class="hidden lg:flex items-center">
         <a
           href={appUrl}
-          class="inline-flex items-center px-6 py-2.5 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2"
+          class="group relative inline-flex items-center px-7 py-3 overflow-hidden rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary-300/30 hover:-translate-y-0.5"
           data-cta-location="header"
           aria-label={translations.header.startNow}
         >
-          {translations.header.startNow}
+          <span class="absolute inset-0 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 bg-[length:200%_100%] animate-gradient-shift"></span>
+          <span class="relative font-semibold text-white flex items-center gap-2">
+            {translations.header.startNow}
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
         </a>
       </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-xl bg-primary-50 hover:bg-primary-100 transition-colors"
+        id="mobile-menu-button"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <span class="hamburger-icon">
+          <span class="hamburger-line top-line"></span>
+          <span class="hamburger-line middle-line"></span>
+          <span class="hamburger-line bottom-line"></span>
+        </span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    class="lg:hidden fixed inset-0 top-20 bg-white/98 backdrop-blur-xl z-40 opacity-0 invisible transition-all duration-300"
+    id="mobile-menu"
+  >
+    <div class="container mx-auto px-6 py-8 h-full overflow-y-auto">
+      <nav class="space-y-2">
+        <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+        <a href="#features" class="mobile-nav-link">{translations.header.features}</a>
+
+        <!-- Mobile Accordion: Resources -->
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-trigger">
+            <span>Resources</span>
+            <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="mobile-accordion-content">
+            <!-- Emotional Eating -->
+            <div class="mb-6">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-primary-400 mb-3 px-4">Emotional Eating</h4>
+              <div class="space-y-1">
+                {resourceLinks.emotionalEating.map(link => (
+                  <a href={link.href} class="mobile-sub-link">{link.label}</a>
+                ))}
+              </div>
+            </div>
+            <!-- Stress & Boredom -->
+            <div class="mb-6">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-secondary-400 mb-3 px-4">Stress & Boredom</h4>
+              <div class="space-y-1">
+                {resourceLinks.stressAndBoredom.map(link => (
+                  <a href={link.href} class="mobile-sub-link">{link.label}</a>
+                ))}
+              </div>
+            </div>
+            <!-- Understanding Triggers -->
+            <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-accent-400 mb-3 px-4">Understanding Triggers</h4>
+              <div class="space-y-1">
+                {resourceLinks.understandingTriggers.map(link => (
+                  <a href={link.href} class="mobile-sub-link">{link.label}</a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="/blog" class="mobile-nav-link">Blog</a>
+        <a href="#faq" class="mobile-nav-link">{translations.header.faq}</a>
+      </nav>
+
+      <!-- Mobile CTA -->
+      <div class="mt-8 pt-8 border-t border-primary-100">
+        <a
+          href={appUrl}
+          class="block w-full text-center px-8 py-4 bg-gradient-to-r from-primary-400 to-primary-500 text-white font-semibold rounded-2xl shadow-lg shadow-primary-300/30 hover:shadow-xl transition-all"
+          data-cta-location="header-mobile"
+        >
+          {translations.header.startNow}
+        </a>
+        <p class="text-center text-sm text-neutral-400 mt-4">No credit card required</p>
+      </div>
+    </div>
+  </div>
 </header>
+
+<style>
+  .nav-link {
+    @apply px-4 py-2 text-neutral-600 font-medium rounded-xl transition-all duration-300;
+    @apply hover:text-primary-500 hover:bg-primary-50/50;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-300/50 focus:ring-offset-2;
+  }
+
+  .mega-menu-link {
+    @apply block py-2 px-3 text-sm text-neutral-600 rounded-lg transition-all duration-200;
+    @apply hover:text-primary-600 hover:bg-primary-50 hover:translate-x-1;
+  }
+
+  .mobile-nav-link {
+    @apply block py-4 px-4 text-lg font-medium text-neutral-700 rounded-xl transition-all;
+    @apply hover:bg-primary-50 hover:text-primary-600;
+  }
+
+  .mobile-accordion-trigger {
+    @apply w-full flex items-center justify-between py-4 px-4 text-lg font-medium text-neutral-700 rounded-xl transition-all;
+    @apply hover:bg-primary-50 hover:text-primary-600;
+  }
+
+  .mobile-accordion-content {
+    @apply hidden py-4 px-2 bg-neutral-50/50 rounded-2xl mt-2;
+  }
+
+  .mobile-accordion-content.open {
+    @apply block;
+  }
+
+  .mobile-accordion-trigger.open svg {
+    @apply rotate-180;
+  }
+
+  .mobile-sub-link {
+    @apply block py-2.5 px-4 text-sm text-neutral-600 rounded-lg transition-all;
+    @apply hover:bg-white hover:text-primary-600 hover:shadow-sm;
+  }
+
+  .hamburger-icon {
+    @apply relative w-5 h-4 flex flex-col justify-between;
+  }
+
+  .hamburger-line {
+    @apply w-full h-0.5 bg-neutral-700 rounded-full transition-all duration-300 origin-center;
+  }
+
+  .hamburger-icon.open .top-line {
+    @apply rotate-45 translate-y-[7px];
+  }
+
+  .hamburger-icon.open .middle-line {
+    @apply opacity-0 scale-0;
+  }
+
+  .hamburger-icon.open .bottom-line {
+    @apply -rotate-45 -translate-y-[7px];
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .animate-gradient-shift {
+    animation: gradient-shift 3s ease infinite;
+  }
+</style>
 
 <script>
   import { initMixpanel, trackCTAClick } from '../scripts/mixpanel';
 
-  function initTracking() {
+  function initHeader() {
     initMixpanel();
 
+    // CTA Tracking
     document.querySelectorAll('[data-cta-location]').forEach(button => {
       button.addEventListener('click', () => {
         const location = button.getAttribute('data-cta-location');
@@ -115,11 +372,79 @@ const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
         }
       });
     });
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = mobileMenuButton?.querySelector('.hamburger-icon');
+
+    mobileMenuButton?.addEventListener('click', () => {
+      const isOpen = mobileMenu?.classList.contains('visible');
+
+      if (isOpen) {
+        mobileMenu?.classList.remove('opacity-100', 'visible');
+        mobileMenu?.classList.add('opacity-0', 'invisible');
+        hamburgerIcon?.classList.remove('open');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      } else {
+        mobileMenu?.classList.remove('opacity-0', 'invisible');
+        mobileMenu?.classList.add('opacity-100', 'visible');
+        hamburgerIcon?.classList.add('open');
+        mobileMenuButton.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    // Close mobile menu on link click
+    mobileMenu?.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.remove('opacity-100', 'visible');
+        mobileMenu?.classList.add('opacity-0', 'invisible');
+        hamburgerIcon?.classList.remove('open');
+        mobileMenuButton?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Mobile Accordion
+    document.querySelectorAll('.mobile-accordion-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const content = trigger.nextElementSibling;
+        const isOpen = content?.classList.contains('open');
+
+        // Close all accordions
+        document.querySelectorAll('.mobile-accordion-content').forEach(c => c.classList.remove('open'));
+        document.querySelectorAll('.mobile-accordion-trigger').forEach(t => t.classList.remove('open'));
+
+        // Open clicked one if it was closed
+        if (!isOpen) {
+          content?.classList.add('open');
+          trigger.classList.add('open');
+        }
+      });
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('main-header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > 50) {
+        header?.classList.add('scrolled');
+      } else {
+        header?.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    });
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTracking);
+    document.addEventListener('DOMContentLoaded', initHeader);
   } else {
-    initTracking();
+    initHeader();
   }
 </script>
