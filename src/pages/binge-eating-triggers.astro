@@ -1,0 +1,674 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+import en from '../i18n/en.json';
+
+const t = en;
+const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+const siteUrl = 'https://emotioneat.com';
+
+const pageTitle = "Binge Eating Triggers — Understand What Leads to Urges | EmotionEat";
+const pageDescription = "Discover your binge eating triggers and understand what leads to urges. EmotionEat's AI helps map emotional patterns, recognize warning signs, and build healthier responses.";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I really identify my binge eating triggers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Triggers often follow patterns that become visible when tracked over time. EmotionEat's AI helps you see connections between emotions, situations, and binge urges that you might not notice on your own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this appropriate for people with eating disorders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EmotionEat is a supportive tool for building awareness, not a clinical treatment. If you have a diagnosed eating disorder, please work with a healthcare professional. EmotionEat can complement professional care but doesn't replace it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can I identify my triggers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most users start seeing patterns within 1-2 weeks of consistent check-ins. The more you share, the better the AI can map your unique trigger profile."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will identifying triggers stop binge episodes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Awareness is the first step, not a cure. Knowing your triggers helps you intervene earlier and develop alternative responses, but changing behavior takes time and practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does EmotionEat judge my eating behaviors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never. The app is designed to be completely non-judgmental. It's a supportive space to explore your patterns without shame or criticism."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my triggers are complex or multiple?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most people have multiple, interconnected triggers. EmotionEat's pattern analysis is designed to handle complexity and show you how different triggers interact."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteUrl
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Binge Eating Triggers",
+      "item": `${siteUrl}/binge-eating-triggers`
+    }
+  ]
+};
+
+const combinedSchema = {
+  "@context": "https://schema.org",
+  "@graph": [faqSchema, breadcrumbSchema]
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  ogTitle="Binge Eating Triggers — Understand What Leads to Urges | EmotionEat"
+  ogDescription={pageDescription}
+  canonical="https://emotioneat.com/binge-eating-triggers"
+  structuredData={combinedSchema}
+>
+  <Header t={t} />
+
+  <main id="main-content" class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 via-white to-accent-50 overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-100/40 via-transparent to-transparent"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <nav class="text-sm text-neutral-500 mb-6" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-2">
+            <li><a href="/" class="hover:text-primary-500 transition-colors">Home</a></li>
+            <li><span class="mx-2">/</span></li>
+            <li class="text-neutral-700">Binge Eating Triggers</li>
+          </ol>
+        </nav>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight animate-on-scroll">
+          Binge Eating Triggers — Understand What Leads to Urges
+        </h1>
+
+        <p class="text-lg md:text-xl text-neutral-600 mb-8 leading-relaxed animate-on-scroll delay-100">
+          Binge eating rarely happens out of nowhere. There's usually a trigger — an emotion, situation, or thought pattern that sets off the urge. Understanding these triggers is the key to breaking the cycle. EmotionEat helps you identify what leads to binge urges, map your emotional patterns, and develop healthier responses — all without judgment.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 animate-on-scroll delay-200">
+          <a
+            href={appUrl}
+            class="inline-flex items-center justify-center px-8 py-4 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5"
+            data-cta-location="binge-eating-triggers-hero"
+          >
+            Start Understanding Your Triggers
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="#how-it-works"
+            class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold rounded-xl border-2 border-neutral-200 transition-all hover:border-primary-300"
+          >
+            See How It Works
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Are Binge Eating Triggers -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          What Are Binge Eating Triggers?
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+          Binge eating triggers are the emotional, psychological, or situational cues that precede and spark binge episodes. They're the "why" behind the urge — the feelings or circumstances that make you want to eat uncontrollably.
+        </p>
+
+        <div class="bg-neutral-50 rounded-2xl p-6 md:p-8">
+          <h3 class="text-xl font-semibold text-neutral-800 mb-4">Common types of triggers include:</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-500 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600"><strong class="text-neutral-800">Emotional triggers</strong> — stress, anxiety, sadness, loneliness, anger</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-500 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600"><strong class="text-neutral-800">Psychological triggers</strong> — perfectionism, negative self-talk, all-or-nothing thinking</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-500 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600"><strong class="text-neutral-800">Situational triggers</strong> — certain places, times of day, social situations</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-500 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600"><strong class="text-neutral-800">Physical triggers</strong> — restrictive dieting, hunger, fatigue</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-500 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600"><strong class="text-neutral-800">Behavioral triggers</strong> — specific routines or habits paired with eating</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Binge Episodes Happen -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-accent-50 to-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          Why Binge Episodes Happen
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+          Understanding the mechanisms behind binge eating urges:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Emotional Overload</h3>
+            <p class="text-neutral-600">When emotions become overwhelming, eating provides a temporary escape. Food numbs difficult feelings and offers momentary relief — until guilt and shame follow.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Restriction Backlash</h3>
+            <p class="text-neutral-600">Strict diets often backfire. When you deny yourself certain foods, the deprivation builds until it explodes into a binge. Your body fights restriction with powerful urges.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Stress Response</h3>
+            <p class="text-neutral-600">Chronic stress elevates cortisol, which drives cravings for high-calorie comfort foods. Bingeing becomes a stress-relief mechanism.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Emotional Avoidance</h3>
+            <p class="text-neutral-600">Sometimes bingeing isn't about the food — it's about avoiding something else. Difficult conversations, uncomfortable emotions, or overwhelming responsibilities.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow md:col-span-2">
+            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Habit Loops</h3>
+            <p class="text-neutral-600">Over time, triggers and bingeing become wired together. A stressful day automatically leads to eating, without conscious decision-making.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How EmotionEat Helps -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          How EmotionEat Helps With Binge Eating Triggers
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+          EmotionEat provides personalized support for understanding and managing binge eating triggers:
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start p-4 bg-primary-50 rounded-xl">
+            <div class="w-10 h-10 bg-primary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Recognizing emotional peaks</h3>
+              <p class="text-neutral-600">Daily check-ins help you notice when emotions are escalating before they trigger a binge</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-accent-50 rounded-xl">
+            <div class="w-10 h-10 bg-accent-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Mapping patterns</h3>
+              <p class="text-neutral-600">AI analysis reveals which specific triggers precede your binge episodes</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-secondary-50 rounded-xl">
+            <div class="w-10 h-10 bg-secondary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Supportive conversations</h3>
+              <p class="text-neutral-600">Non-judgmental dialogue helps you process difficult emotions without turning to food</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-primary-50 rounded-xl">
+            <div class="w-10 h-10 bg-primary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Coping strategies</h3>
+              <p class="text-neutral-600">Personalized alternatives for moments when triggers appear</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-accent-50 rounded-xl">
+            <div class="w-10 h-10 bg-accent-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Awareness tools</h3>
+              <p class="text-neutral-600">Track your trigger patterns over time and see what's really driving your urges</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-neutral-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          How It Works
+        </h2>
+
+        <div class="space-y-8">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              1
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Start a Conversation</h3>
+              <p class="text-neutral-600">Open the app and talk to your AI guide about how you're feeling. Share what's happening emotionally, what urges you're experiencing, and what preceded them.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              2
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Discover Your Triggers</h3>
+              <p class="text-neutral-600">The AI analyzes your conversations over time to identify which emotions, situations, and patterns consistently precede binge urges.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              3
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Get Daily Challenges</h3>
+              <p class="text-neutral-600">Receive 5 personalized challenges designed to help you recognize triggers earlier and develop alternative responses.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              4
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Build Awareness</h3>
+              <p class="text-neutral-600">With consistent practice, learn to notice your triggers before they escalate, giving you the chance to respond differently.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          Key Features
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Free Plan -->
+          <div class="bg-neutral-50 rounded-2xl p-8 border-2 border-neutral-200">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-800 mb-2">Free Plan</h3>
+              <p class="text-4xl font-bold text-neutral-900">$0<span class="text-lg font-normal text-neutral-500">/month</span></p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">10 chat messages per day</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">1 pattern analysis per week</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">5 daily challenges</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Basic trigger tracking</span>
+              </li>
+            </ul>
+            <a
+              href={appUrl}
+              class="mt-8 block w-full text-center px-6 py-3 bg-neutral-200 hover:bg-neutral-300 text-neutral-800 font-semibold rounded-xl transition-all"
+              data-cta-location="binge-eating-triggers-free"
+            >
+              Start Free
+            </a>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 border-2 border-primary-300 relative">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span class="bg-primary-400 text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
+            </div>
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-800 mb-2">Premium Plan</h3>
+              <p class="text-4xl font-bold text-neutral-900">$7.99<span class="text-lg font-normal text-neutral-500">/month</span></p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">50 chat messages per day</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Daily pattern analysis</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Detailed trigger mapping</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Personalized coping strategies</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Full progress history</span>
+              </li>
+            </ul>
+            <a
+              href={appUrl}
+              class="mt-8 block w-full text-center px-6 py-3 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg"
+              data-cta-location="binge-eating-triggers-premium"
+            >
+              Start Premium
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Most Common Binge Triggers -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          Most Common Binge Triggers
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-800 mb-2">Stress Spikes</h3>
+            <p class="text-neutral-600 text-sm">Acute stress — a difficult workday, an argument, unexpected bad news — can trigger immediate urges to binge as a coping mechanism.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-800 mb-2">Loneliness</h3>
+            <p class="text-neutral-600 text-sm">Isolation and disconnection often drive binge eating. Food becomes a companion, a way to fill emotional emptiness.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-800 mb-2">Overwhelming Emotions</h3>
+            <p class="text-neutral-600 text-sm">When feelings become too intense to process — grief, anger, anxiety — bingeing offers temporary numbness.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-800 mb-2">Perfectionism Pressure</h3>
+            <p class="text-neutral-600 text-sm">The pressure to be perfect, followed by any perceived failure, can trigger a "what's the point" mentality that leads to bingeing.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-800 mb-2">Restrictive Dieting</h3>
+            <p class="text-neutral-600 text-sm">Cutting out foods or severely limiting calories creates deprivation that eventually explodes into uncontrolled eating.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-800 mb-2">Negative Self-Talk</h3>
+            <p class="text-neutral-600 text-sm">Critical inner dialogue ("I'm worthless," "I already failed") creates emotional pain that bingeing temporarily soothes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          Frequently Asked Questions
+        </h2>
+
+        <div class="space-y-4">
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Can I really identify my binge eating triggers?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Yes. Triggers often follow patterns that become visible when tracked over time. EmotionEat's AI helps you see connections between emotions, situations, and binge urges that you might not notice on your own.</p>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Is this appropriate for people with eating disorders?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">EmotionEat is a supportive tool for building awareness, not a clinical treatment. If you have a diagnosed eating disorder, please work with a healthcare professional. EmotionEat can complement professional care but doesn't replace it.</p>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>How quickly can I identify my triggers?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Most users start seeing patterns within 1-2 weeks of consistent check-ins. The more you share, the better the AI can map your unique trigger profile.</p>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Will identifying triggers stop binge episodes?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Awareness is the first step, not a cure. Knowing your triggers helps you intervene earlier and develop alternative responses, but changing behavior takes time and practice.</p>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Does EmotionEat judge my eating behaviors?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Never. The app is designed to be completely non-judgmental. It's a supportive space to explore your patterns without shame or criticism.</p>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>What if my triggers are complex or multiple?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Most people have multiple, interconnected triggers. EmotionEat's pattern analysis is designed to handle complexity and show you how different triggers interact.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-400 to-primary-500">
+      <div class="container mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Ready to understand your binge eating triggers?
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Start with a free emotional check-in and discover what's really driving your urges.
+        </p>
+        <a
+          href={appUrl}
+          class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-50 text-primary-500 font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 text-lg"
+          data-cta-location="binge-eating-triggers-bottom"
+        >
+          Start understanding your triggers
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer t={t} />
+
+  <script>
+    import { initMixpanel, trackPageView, trackCTAClick } from '../scripts/mixpanel';
+
+    (function() {
+      initMixpanel();
+      trackPageView('binge-eating-triggers', 'en');
+
+      document.querySelectorAll('[data-cta-location]').forEach(button => {
+        button.addEventListener('click', () => {
+          const location = button.getAttribute('data-cta-location');
+          if (location) {
+            trackCTAClick(location, 'en');
+          }
+        });
+      });
+    })();
+  </script>
+</Layout>

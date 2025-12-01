@@ -1,0 +1,624 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import en from '../i18n/en.json';
+
+const t = en;
+const canonicalUrl = 'https://emotioneat.com/comfort-eating';
+const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+
+// FAQPage structured data for rich snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is comfort eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comfort eating is the practice of turning to food for emotional relief rather than physical hunger. It often involves eating specific 'comfort foods' in response to feelings like sadness, loneliness, stress, or anxiety. The food provides temporary soothing, but doesn't address the underlying emotional need."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I turn to food for comfort?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Food becomes comforting for several reasons: childhood associations with food and love, the dopamine release that certain foods trigger, the sensory distraction from difficult emotions, and learned habits over time. It's a natural coping mechanism that many people develop."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is comfort eating bad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comfort eating itself isn't inherently bad—it's a human response to emotional distress. However, when it becomes your primary coping mechanism or leads to negative physical or emotional consequences, it's worth exploring other ways to meet your emotional needs alongside food."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can EmotionEat help with comfort eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EmotionEat helps you understand the emotions driving your comfort eating through daily AI conversations. It identifies your personal triggers, reveals patterns you might miss, and offers personalized grounding strategies to help you respond to difficult emotions in new ways."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private and secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. EmotionEat uses bank-level encryption to protect your conversations and data. We never sell or share your personal information with third parties. Your emotional journey stays completely private."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does EmotionEat replace therapy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. EmotionEat is a supportive tool for building awareness and understanding your comfort eating patterns, but it's not a replacement for professional mental health care. If you have a serious eating disorder or mental health condition, please consult a healthcare professional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until I notice changes in my comfort eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many users start recognizing their comfort eating patterns within the first week of daily check-ins. Building new responses to emotional triggers typically takes 2-4 weeks of consistent awareness practice. Everyone's journey is different."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use EmotionEat for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EmotionEat offers a free plan that includes 1 emotional check-in per day and weekly pattern analysis. Premium plans offer more check-ins, daily analysis, and personalized coping strategies for those who want deeper support."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Comfort Eating — Understand Why Food Becomes Emotional Comfort | EmotionEat"
+  description="Discover why you turn to food for comfort and learn to understand your emotional eating triggers. EmotionEat helps you build awareness with daily AI check-ins and personalized insights."
+  canonical={canonicalUrl}
+  structuredData={faqSchema}
+>
+  <Header t={t} />
+  <main id="main-content">
+
+    <!-- Hero Section with H1 -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 relative overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+      <div class="absolute bottom-20 right-10 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style="animation-delay: 2s;"></div>
+
+      <div class="container mx-auto max-w-4xl text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 animate-on-scroll">
+          Comfort Eating — Understand Why Food Becomes Emotional Comfort
+        </h1>
+        <p class="text-lg md:text-xl text-neutral-600 mb-8 max-w-3xl mx-auto animate-on-scroll delay-100">
+          There's a reason you reach for certain foods when life feels hard. Comfort eating is your mind's way of seeking relief—and there's nothing wrong with wanting to feel better. But when food becomes your only source of comfort, it might be time to explore what's really going on. EmotionEat helps you understand the emotions behind your eating, so you can find balance without judgment.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll delay-200">
+          <a
+            href={appUrl}
+            class="inline-flex items-center justify-center px-8 py-4 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2"
+          >
+            Start Your First Check-In
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Is Comfort Eating Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 text-center animate-on-scroll">
+          What Is Comfort Eating?
+        </h2>
+        <div class="prose prose-lg max-w-none text-neutral-600 animate-on-scroll delay-100">
+          <p class="mb-4">
+            Comfort eating is when you turn to food to soothe emotional pain rather than to satisfy physical hunger. It's reaching for ice cream after a stressful day, eating chips when you're lonely, or craving your favorite childhood meal when you're feeling down.
+          </p>
+          <p class="mb-4">
+            Unlike eating because you're hungry, comfort eating is driven by a need for emotional relief. The food itself isn't the problem—it's that food has become one of your primary ways to cope with difficult feelings.
+          </p>
+          <p>
+            This pattern is incredibly common and deeply human. Food has been intertwined with comfort, celebration, and connection throughout human history. The goal isn't to eliminate comfort eating entirely, but to understand it—so you have more choices in how you respond to your emotions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why We Turn to Food Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-8 text-center animate-on-scroll">
+          Why We Turn to Food for Comfort
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Understanding why food feels comforting helps you approach your eating with compassion instead of criticism.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll delay-200">
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Childhood Associations</h3>
+            <p class="text-neutral-600">Many of us learned early that food equals love and care. A cookie when we fell, a special meal when we were sick—these memories run deep.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Dopamine Release</h3>
+            <p class="text-neutral-600">Certain foods—especially those high in sugar, fat, or salt—trigger dopamine release in the brain, creating a temporary feeling of pleasure and relief.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Emotional Distraction</h3>
+            <p class="text-neutral-600">Eating gives your mind something else to focus on. It's a way to temporarily escape uncomfortable feelings you don't know how to process.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Sensory Comfort</h3>
+            <p class="text-neutral-600">The warmth, texture, and taste of food can be genuinely soothing. There's real physical comfort in the sensory experience of eating.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Habitual Patterns</h3>
+            <p class="text-neutral-600">Over time, the connection between emotions and eating becomes automatic. Your brain creates shortcuts: feel bad → eat → feel better (temporarily).</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Lack of Alternatives</h3>
+            <p class="text-neutral-600">Sometimes we turn to food because we simply don't have other coping tools. Food is available, immediate, and doesn't require learning a new skill.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How EmotionEat Helps Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-8 text-center animate-on-scroll">
+          How EmotionEat Helps With Comfort Eating
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 animate-on-scroll delay-100">
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Daily Emotional Dialogue</h3>
+            <p class="text-neutral-600">Have meaningful conversations with your AI companion about how you're feeling. No judgment, no forms—just honest exploration of your emotional state.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Identifying Comfort-Seeking Triggers</h3>
+            <p class="text-neutral-600">Discover which specific emotions, situations, or times of day drive your comfort eating. The AI notices patterns you might miss.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Personalized Grounding Strategies</h3>
+            <p class="text-neutral-600">Get coping techniques tailored to your specific triggers. These aren't generic tips—they're based on your unique emotional patterns.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Emotional Awareness Building</h3>
+            <p class="text-neutral-600">Learn to recognize the early signs of emotional distress before they become overwhelming. Awareness creates choice.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1 lg:mx-auto lg:max-w-md">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Progress Tracking</h3>
+            <p class="text-neutral-600">See your journey unfold over time. Review past conversations, celebrate small wins, and notice how your relationship with comfort eating evolves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 to-secondary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center animate-on-scroll">
+          How It Works
+        </h2>
+        <div class="space-y-8">
+          <div class="flex items-start gap-6 animate-on-scroll delay-100">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Start Your Emotional Check-In</h3>
+              <p class="text-neutral-600">Open EmotionEat and begin a conversation with your AI companion. It only takes a few minutes to connect with how you're really feeling.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-200">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Share What's Driving Your Need for Comfort</h3>
+              <p class="text-neutral-600">Talk about your day, your emotions, what you're craving. The AI asks thoughtful questions to help you explore what's beneath the surface.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-300">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Discover Your Comfort Eating Patterns</h3>
+              <p class="text-neutral-600">Over time, the app reveals connections you might have missed—like always seeking comfort food when feeling lonely or after difficult conversations.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-400">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Build Healthier Coping Strategies</h3>
+              <p class="text-neutral-600">With awareness comes choice. Learn new ways to comfort yourself that work alongside—not instead of—the occasional comfort food.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center animate-on-scroll">
+          Key Features
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 animate-on-scroll delay-100">
+          <!-- Free Plan -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-neutral-200">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-2">Free Plan</h3>
+              <p class="text-neutral-600">Start understanding your patterns</p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">1 emotional check-in per day</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Weekly pattern analysis</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Basic trigger detection</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Progress tracking</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-primary-400 relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="bg-primary-400 text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
+            </div>
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-2">Premium Plan</h3>
+              <p class="text-neutral-600">Deep insights & daily support</p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">5 emotional check-ins per day</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Daily pattern analysis</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Advanced trigger insights</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Personalized coping strategies</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Full progress history</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Triggers Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 text-center animate-on-scroll">
+          Common Comfort Eating Triggers
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Understanding what drives your need for comfort is the first step toward finding balance.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll delay-200">
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Stress & Overwhelm</h3>
+            <p class="text-neutral-600 text-sm">When life feels like too much, food offers a moment of relief and something you can control.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Loneliness & Isolation</h3>
+            <p class="text-neutral-600 text-sm">Food can fill the empty space when human connection is missing. It's company when you're alone.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Sadness & Grief</h3>
+            <p class="text-neutral-600 text-sm">Comfort food is called that for a reason—it provides warmth when the heart feels cold.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Fatigue & Exhaustion</h3>
+            <p class="text-neutral-600 text-sm">When you're depleted, food feels like an easy source of energy and reward for getting through the day.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow sm:col-span-2 lg:col-span-1">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Anxiety & Worry</h3>
+            <p class="text-neutral-600 text-sm">Eating can quiet an anxious mind temporarily, giving you something to focus on besides your worries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="faq">
+      <div class="container mx-auto max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 text-center animate-on-scroll">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Common questions about comfort eating and how EmotionEat can help.
+        </p>
+        <div class="space-y-4 animate-on-scroll delay-200">
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">What is comfort eating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Comfort eating is the practice of turning to food for emotional relief rather than physical hunger. It often involves eating specific "comfort foods" in response to feelings like sadness, loneliness, stress, or anxiety. The food provides temporary soothing, but doesn't address the underlying emotional need.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Why do I turn to food for comfort?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Food becomes comforting for several reasons: childhood associations with food and love, the dopamine release that certain foods trigger, the sensory distraction from difficult emotions, and learned habits over time. It's a natural coping mechanism that many people develop.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Is comfort eating bad?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Comfort eating itself isn't inherently bad—it's a human response to emotional distress. However, when it becomes your primary coping mechanism or leads to negative physical or emotional consequences, it's worth exploring other ways to meet your emotional needs alongside food.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">How can EmotionEat help with comfort eating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              EmotionEat helps you understand the emotions driving your comfort eating through daily AI conversations. It identifies your personal triggers, reveals patterns you might miss, and offers personalized grounding strategies to help you respond to difficult emotions in new ways.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Is my data private and secure?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Absolutely. EmotionEat uses bank-level encryption to protect your conversations and data. We never sell or share your personal information with third parties. Your emotional journey stays completely private.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Does EmotionEat replace therapy?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              No. EmotionEat is a supportive tool for building awareness and understanding your comfort eating patterns, but it's not a replacement for professional mental health care. If you have a serious eating disorder or mental health condition, please consult a healthcare professional.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">How long until I notice changes in my comfort eating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Many users start recognizing their comfort eating patterns within the first week of daily check-ins. Building new responses to emotional triggers typically takes 2-4 weeks of consistent awareness practice. Everyone's journey is different.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Can I use EmotionEat for free?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Yes, EmotionEat offers a free plan that includes 1 emotional check-in per day and weekly pattern analysis. Premium plans offer more check-ins, daily analysis, and personalized coping strategies for those who want deeper support.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-400 to-primary-500 relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+
+      <div class="container mx-auto max-w-3xl text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate-on-scroll">
+          Ready to Understand Your Comfort Eating?
+        </h2>
+        <p class="text-lg text-white/90 mb-8 animate-on-scroll delay-100">
+          Start with a simple conversation. No judgment, no pressure—just a compassionate space to explore why you turn to food for comfort.
+        </p>
+        <a
+          href={appUrl}
+          class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-100 text-primary-500 font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500 animate-on-scroll delay-200"
+        >
+          Start Your First Emotional Check-In
+        </a>
+      </div>
+    </section>
+
+  </main>
+  <Footer t={t} />
+
+  <script>
+    import { initMixpanel, trackPageView } from '../scripts/mixpanel';
+
+    (function() {
+      initMixpanel();
+      trackPageView('comfort-eating', 'en');
+    })();
+  </script>
+</Layout>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

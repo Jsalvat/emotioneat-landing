@@ -1,0 +1,624 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import en from '../i18n/en.json';
+
+const t = en;
+const canonicalUrl = 'https://emotioneat.com/emotional-overeating';
+const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+
+// FAQPage structured data for rich snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is emotional overeating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emotional overeating is eating beyond the point of fullness in response to emotions rather than physical hunger. It's using food to cope with feelings like stress, sadness, anxiety, or boredom, often consuming more than your body needs because the eating is driven by emotional rather than physical signals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between emotional overeating and binge eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While both involve eating more than needed, binge eating disorder is a clinical condition characterized by consuming large amounts rapidly, feeling out of control, and experiencing significant distress. Emotional overeating is more common and may involve smaller amounts eaten over time in response to emotions. If you experience frequent loss of control, consider consulting a healthcare professional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I overeat when I'm emotional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emotional overeating develops as a coping mechanism. Food triggers dopamine release, providing temporary pleasure. Eating distracts from uncomfortable feelings and can feel like filling an emotional void. Over time, this response becomes automatic—your brain learns that eating reduces emotional discomfort, even if only temporarily."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can EmotionEat help with emotional overeating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EmotionEat helps you trace the emotional triggers behind your overeating through daily AI conversations. It identifies patterns you might miss—like specific emotions, times, or situations that lead to overeating—and offers personalized strategies to respond differently to those triggers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is emotional overeating an eating disorder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emotional overeating itself is not classified as an eating disorder, though it can be a symptom of one. It's a common behavior that many people experience. However, if overeating feels out of control, causes significant distress, or affects your health, it's worth speaking with a healthcare professional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private and secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. EmotionEat uses bank-level encryption to protect your conversations and data. We never sell or share your personal information with third parties. Your emotional journey stays completely private."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until I see changes in my overeating patterns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many users start recognizing their overeating triggers within the first week of daily check-ins. Building new responses to emotions typically takes 2-4 weeks of consistent awareness practice. The key is daily engagement—awareness grows with consistency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I try EmotionEat for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EmotionEat offers a free plan that includes 1 emotional check-in per day and weekly pattern analysis. Premium plans offer more check-ins, daily analysis, and personalized strategies for those who want deeper support."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Emotional Overeating — Understand Why Emotions Lead to Overeating | EmotionEat"
+  description="Discover why emotions trigger overeating and learn to recognize your patterns. EmotionEat helps you trace triggers, build awareness, and develop healthier responses with daily AI check-ins."
+  canonical={canonicalUrl}
+  structuredData={faqSchema}
+>
+  <Header t={t} />
+  <main id="main-content">
+
+    <!-- Hero Section with H1 -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 relative overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+      <div class="absolute bottom-20 right-10 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style="animation-delay: 2s;"></div>
+
+      <div class="container mx-auto max-w-4xl text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 animate-on-scroll">
+          Emotional Overeating — Understand Why Emotions Lead to Overeating
+        </h1>
+        <p class="text-lg md:text-xl text-neutral-600 mb-8 max-w-3xl mx-auto animate-on-scroll delay-100">
+          You know the feeling—you're not hungry, but you keep eating anyway. Something inside needs soothing, and food seems like the answer. Emotional overeating is more common than you think, and it's not about willpower. It's about understanding why emotions drive you to eat beyond fullness. EmotionEat helps you trace those triggers and build awareness, one conversation at a time.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll delay-200">
+          <a
+            href={appUrl}
+            class="inline-flex items-center justify-center px-8 py-4 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2"
+          >
+            Begin Your Emotional Insight Journey
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Is Emotional Overeating Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 text-center animate-on-scroll">
+          What Is Emotional Overeating?
+        </h2>
+        <div class="prose prose-lg max-w-none text-neutral-600 animate-on-scroll delay-100">
+          <p class="mb-4">
+            Emotional overeating is eating past the point of fullness—not because your body needs more fuel, but because your emotions are asking for something. It's different from simply enjoying food or having a big meal; it's eating that continues even when you're physically satisfied because the emotional hunger hasn't been addressed.
+          </p>
+          <p class="mb-4">
+            While comfort eating might involve reaching for specific foods when you're down, emotional overeating specifically involves the <em>quantity</em>—consuming more than your body needs as a way to cope with feelings. You might not even taste the food after the first few bites. The eating itself becomes the focus, not the food.
+          </p>
+          <p>
+            This pattern often leaves you feeling worse afterward—physically uncomfortable and emotionally guilty. But here's the important thing: emotional overeating isn't a character flaw. It's a learned coping mechanism, and with awareness, you can develop new ways to respond to emotional triggers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Emotions Trigger Overeating Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-8 text-center animate-on-scroll">
+          Why Emotions Trigger Overeating
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Understanding the emotional mechanics behind overeating is the first step to changing the pattern.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll delay-200">
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Numbing Uncomfortable Feelings</h3>
+            <p class="text-neutral-600">Overeating can temporarily dull emotional pain. The physical sensation of fullness distracts from emotional discomfort.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Self-Soothing Patterns</h3>
+            <p class="text-neutral-600">From childhood, we learn that food provides comfort. These early associations can lead to overeating when we need soothing as adults.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Temporary Dopamine Boost</h3>
+            <p class="text-neutral-600">Food—especially high-calorie foods—triggers dopamine release. Overeating prolongs this pleasure response, creating temporary relief.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Distraction from Pain</h3>
+            <p class="text-neutral-600">The act of eating gives your mind something to focus on besides difficult emotions. It's an escape, even if temporary.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Filling Emotional Emptiness</h3>
+            <p class="text-neutral-600">When something feels missing inside—connection, purpose, joy—food can feel like it's filling that void, even though it can't.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Habitual Response</h3>
+            <p class="text-neutral-600">Over time, emotional overeating becomes automatic. Stress triggers eating without conscious thought—it's a learned response that can be unlearned.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How EmotionEat Helps Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-8 text-center animate-on-scroll">
+          How EmotionEat Helps With Emotional Overeating
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 animate-on-scroll delay-100">
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Trace Emotional Triggers</h3>
+            <p class="text-neutral-600">Discover which specific emotions, situations, and times lead to overeating. The AI identifies patterns you might not see on your own.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Supportive Check-In Conversations</h3>
+            <p class="text-neutral-600">Talk through your feelings with an AI companion that listens without judgment. Daily conversations build awareness over time.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Personalized Advice</h3>
+            <p class="text-neutral-600">Get strategies tailored to your specific overeating patterns—not generic tips that don't fit your life and triggers.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Track Overeating Patterns</h3>
+            <p class="text-neutral-600">See when and why overeating happens most. Visual insights help you understand your unique relationship with emotional eating.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1 lg:mx-auto lg:max-w-md">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Build Emotional Awareness</h3>
+            <p class="text-neutral-600">Learn to recognize emotional hunger before it leads to overeating. Awareness creates the space to choose differently.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 to-secondary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center animate-on-scroll">
+          How It Works
+        </h2>
+        <div class="space-y-8">
+          <div class="flex items-start gap-6 animate-on-scroll delay-100">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Start Your Emotional Check-In</h3>
+              <p class="text-neutral-600">Open EmotionEat and begin a conversation with your AI companion. It only takes a few minutes to connect with what you're feeling.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-200">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Explore What's Driving Your Need to Eat</h3>
+              <p class="text-neutral-600">Talk about your emotions, your day, what's on your mind. The AI helps you dig beneath the surface to understand what's really going on.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-300">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Discover Your Overeating Patterns</h3>
+              <p class="text-neutral-600">Over time, the app reveals patterns—like overeating when anxious about work, or eating past fullness every Sunday evening.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-400">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Build Awareness and New Responses</h3>
+              <p class="text-neutral-600">With understanding comes choice. Learn to recognize emotional hunger and develop alternative ways to meet your emotional needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center animate-on-scroll">
+          Key Features
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 animate-on-scroll delay-100">
+          <!-- Free Plan -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-neutral-200">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-2">Free Plan</h3>
+              <p class="text-neutral-600">Start understanding your patterns</p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">1 emotional check-in per day</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Weekly pattern analysis</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Basic trigger detection</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Progress tracking</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-primary-400 relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="bg-primary-400 text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
+            </div>
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-2">Premium Plan</h3>
+              <p class="text-neutral-600">Deep insights & daily support</p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">5 emotional check-ins per day</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Daily pattern analysis</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Advanced trigger insights</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Personalized strategies</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Full progress history</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Patterns Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 text-center animate-on-scroll">
+          Common Emotional Overeating Patterns
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Recognizing your patterns is the first step toward changing them.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll delay-200">
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Nighttime Overeating</h3>
+            <p class="text-neutral-600 text-sm">The day's accumulated stress and unprocessed emotions often surface at night, leading to overeating when defenses are down.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Weekend Overeating</h3>
+            <p class="text-neutral-600 text-sm">Weekends can bring boredom, loneliness, or the release of work-week tension—all triggers for emotional overeating.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Stress Spike Eating</h3>
+            <p class="text-neutral-600 text-sm">Sudden stressful events—deadlines, conflicts, bad news—can trigger immediate overeating as an attempt to cope.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Post-Conflict Eating</h3>
+            <p class="text-neutral-600 text-sm">Arguments or difficult conversations can leave residual emotions that trigger overeating to process what happened.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow sm:col-span-2 lg:col-span-1">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Lonely Evening Binges</h3>
+            <p class="text-neutral-600 text-sm">Evenings alone can amplify feelings of isolation, leading to overeating as a form of companionship and comfort.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="faq">
+      <div class="container mx-auto max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 text-center animate-on-scroll">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Common questions about emotional overeating and how EmotionEat can help.
+        </p>
+        <div class="space-y-4 animate-on-scroll delay-200">
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">What is emotional overeating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Emotional overeating is eating beyond the point of fullness in response to emotions rather than physical hunger. It's using food to cope with feelings like stress, sadness, anxiety, or boredom, often consuming more than your body needs because the eating is driven by emotional rather than physical signals.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">What's the difference between emotional overeating and binge eating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              While both involve eating more than needed, binge eating disorder is a clinical condition characterized by consuming large amounts rapidly, feeling out of control, and experiencing significant distress. Emotional overeating is more common and may involve smaller amounts eaten over time in response to emotions. If you experience frequent loss of control, consider consulting a healthcare professional.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Why do I overeat when I'm emotional?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Emotional overeating develops as a coping mechanism. Food triggers dopamine release, providing temporary pleasure. Eating distracts from uncomfortable feelings and can feel like filling an emotional void. Over time, this response becomes automatic—your brain learns that eating reduces emotional discomfort, even if only temporarily.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">How can EmotionEat help with emotional overeating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              EmotionEat helps you trace the emotional triggers behind your overeating through daily AI conversations. It identifies patterns you might miss—like specific emotions, times, or situations that lead to overeating—and offers personalized strategies to respond differently to those triggers.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Is emotional overeating an eating disorder?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Emotional overeating itself is not classified as an eating disorder, though it can be a symptom of one. It's a common behavior that many people experience. However, if overeating feels out of control, causes significant distress, or affects your health, it's worth speaking with a healthcare professional.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Is my data private and secure?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Absolutely. EmotionEat uses bank-level encryption to protect your conversations and data. We never sell or share your personal information with third parties. Your emotional journey stays completely private.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">How long until I see changes in my overeating patterns?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Many users start recognizing their overeating triggers within the first week of daily check-ins. Building new responses to emotions typically takes 2-4 weeks of consistent awareness practice. The key is daily engagement—awareness grows with consistency.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Can I try EmotionEat for free?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Yes, EmotionEat offers a free plan that includes 1 emotional check-in per day and weekly pattern analysis. Premium plans offer more check-ins, daily analysis, and personalized strategies for those who want deeper support.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-400 to-primary-500 relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+
+      <div class="container mx-auto max-w-3xl text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate-on-scroll">
+          Ready to Understand Your Emotional Overeating?
+        </h2>
+        <p class="text-lg text-white/90 mb-8 animate-on-scroll delay-100">
+          Start with a simple conversation. No judgment, no pressure—just a compassionate space to explore why emotions lead you to overeat.
+        </p>
+        <a
+          href={appUrl}
+          class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-100 text-primary-500 font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500 animate-on-scroll delay-200"
+        >
+          Begin Your Emotional Insight Journey
+        </a>
+      </div>
+    </section>
+
+  </main>
+  <Footer t={t} />
+
+  <script>
+    import { initMixpanel, trackPageView } from '../scripts/mixpanel';
+
+    (function() {
+      initMixpanel();
+      trackPageView('emotional-overeating', 'en');
+    })();
+  </script>
+</Layout>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

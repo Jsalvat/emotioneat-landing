@@ -7,23 +7,8 @@ export default defineConfig({
   site: 'https://emotioneat.com',
   integrations: [
     tailwind(),
-    sitemap({
-      i18n: {
-        defaultLocale: 'en',
-        locales: {
-          en: 'en-US',
-          es: 'es-ES',
-        },
-      },
-    }),
+    sitemap(),
   ],
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'es'],
-    routing: {
-      prefixDefaultLocale: false
-    }
-  },
   output: 'server', // <--- importante para SSR
   adapter: netlify()
 });

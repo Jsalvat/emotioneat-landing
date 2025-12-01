@@ -1,0 +1,624 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import en from '../i18n/en.json';
+
+const t = en;
+const canonicalUrl = 'https://emotioneat.com/stress-eating-help-for-anxiety';
+const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+
+// FAQPage structured data for rich snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is anxiety-related stress eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anxiety-related stress eating is when you turn to food specifically in response to anxious feelings, worry, or overwhelm. Unlike general emotional eating, it's triggered by anxiety symptoms like racing thoughts, future worries, or a sense of impending doom. Food becomes a way to temporarily calm the nervous system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I eat more when I'm anxious?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anxiety activates your body's stress response, releasing cortisol which can increase appetite. Eating also triggers the parasympathetic nervous system (rest and digest), which temporarily counteracts the anxiety response. Your brain learns that food provides relief, creating a cycle of anxiety → eating → temporary calm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is anxiety eating different from regular emotional eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While all emotional eating involves using food to cope with feelings, anxiety eating is specifically triggered by worry, fear, and overwhelm. It often comes with physical symptoms like restlessness, racing heart, or tension. The eating is an attempt to calm the nervous system rather than comfort sadness or fill boredom."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can EmotionEat help with anxiety eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. EmotionEat helps you identify when anxiety is driving your eating through daily check-in conversations. The AI recognizes anxiety patterns, helps you understand your specific triggers, and offers personalized grounding strategies to interrupt the anxiety-eating cycle before it takes hold."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this app help me feel less anxious?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EmotionEat is designed to help you understand the connection between anxiety and eating, not to treat anxiety itself. However, many users find that building awareness of their patterns and having grounding strategies reduces both anxiety eating and overall anxiety levels. For clinical anxiety, please consult a healthcare professional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private and secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. EmotionEat uses bank-level encryption to protect your conversations and data. We never sell or share your personal information with third parties. Your emotional journey stays completely private."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can I see results with anxiety eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many users start recognizing their anxiety-eating patterns within the first week. Learning to interrupt the cycle typically takes 2-4 weeks of consistent daily check-ins. The key is building awareness so you can catch anxiety before it leads to eating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is EmotionEat free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EmotionEat offers a free plan with 1 emotional check-in per day and weekly pattern analysis. Premium plans offer more check-ins, daily analysis, and personalized grounding strategies for those who want deeper support with anxiety eating."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Stress Eating Help for Anxiety — Understand Anxiety-Driven Cravings | EmotionEat"
+  description="Get help for stress eating caused by anxiety. Learn why anxiety triggers cravings and discover personalized strategies to break the cycle with EmotionEat's daily AI check-ins."
+  canonical={canonicalUrl}
+  structuredData={faqSchema}
+>
+  <Header t={t} />
+  <main id="main-content">
+
+    <!-- Hero Section with H1 -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 relative overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+      <div class="absolute bottom-20 right-10 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style="animation-delay: 2s;"></div>
+
+      <div class="container mx-auto max-w-4xl text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 animate-on-scroll">
+          Stress Eating Help for Anxiety — Understand Anxiety-Driven Cravings
+        </h1>
+        <p class="text-lg md:text-xl text-neutral-600 mb-8 max-w-3xl mx-auto animate-on-scroll delay-100">
+          When anxiety hits, food can feel like the only thing that helps. The racing thoughts, the worry, the overwhelming sense that something bad might happen—and then suddenly you're eating, not because you're hungry, but because you need relief. EmotionEat helps you understand why anxiety triggers cravings and gives you tools to break the cycle, one check-in at a time.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll delay-200">
+          <a
+            href={appUrl}
+            class="inline-flex items-center justify-center px-8 py-4 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2"
+          >
+            Start Your First Anxiety-Aware Check-In
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Anxiety Triggers Eating Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-8 text-center animate-on-scroll">
+          Why Anxiety Triggers Eating
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Understanding the anxiety-eating connection is the first step to breaking free from it.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll delay-200">
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Fight-or-Flight Response</h3>
+            <p class="text-neutral-600">Anxiety activates your stress response, releasing cortisol. This hormone can increase appetite and cravings, especially for high-calorie comfort foods.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Nervous System Regulation</h3>
+            <p class="text-neutral-600">Eating activates the parasympathetic nervous system—your body's "rest and digest" mode. This temporarily counteracts anxiety's physical symptoms.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Distraction from Racing Thoughts</h3>
+            <p class="text-neutral-600">When your mind is spiraling, eating gives you something else to focus on. It's a mental escape from the worry loop.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Temporary Relief from Worry</h3>
+            <p class="text-neutral-600">Food triggers dopamine release, creating a brief moment of pleasure that provides respite from anxious feelings—even if temporary.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Oral Fixation & Calming</h3>
+            <p class="text-neutral-600">The physical act of chewing and swallowing can be inherently calming. It gives anxious energy somewhere to go.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Is Anxiety-Based Stress Eating Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 text-center animate-on-scroll">
+          What Is Anxiety-Based Stress Eating?
+        </h2>
+        <div class="prose prose-lg max-w-none text-neutral-600 animate-on-scroll delay-100">
+          <p class="mb-4">
+            Anxiety-based stress eating is a specific type of emotional eating triggered by anxious feelings, worry, and overwhelm. It's different from eating because you're sad, bored, or seeking comfort—though those can overlap. With anxiety eating, the primary driver is the need to calm an activated nervous system.
+          </p>
+          <p class="mb-4">
+            You might recognize it as eating when you're worried about something that hasn't happened yet, snacking while spiraling through worst-case scenarios, or reaching for food when you feel that familiar sense of dread. The eating isn't about hunger or even enjoyment—it's about finding relief from the physical and mental discomfort of anxiety.
+          </p>
+          <p>
+            The challenge with anxiety eating is that it works—temporarily. Food does calm the nervous system momentarily. But then the anxiety returns, often with added guilt about the eating. Understanding this cycle is the first step to developing healthier coping strategies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How EmotionEat Helps Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-8 text-center animate-on-scroll">
+          How EmotionEat Helps With Anxiety Eating
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 animate-on-scroll delay-100">
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-neutral-100 hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Calming Emotional Check-Ins</h3>
+            <p class="text-neutral-600">Start your day with a supportive conversation that helps you process anxious feelings before they escalate to eating.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-neutral-100 hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Identifying Anxious Thought Cycles</h3>
+            <p class="text-neutral-600">The AI helps you recognize when you're caught in worry spirals—the thoughts that often precede anxiety eating.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-neutral-100 hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Spotting Stress-Eating Patterns</h3>
+            <p class="text-neutral-600">Discover when and why anxiety triggers your eating—specific times, situations, or thought patterns that lead to cravings.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-neutral-100 hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Personalized Grounding Strategies</h3>
+            <p class="text-neutral-600">Get techniques tailored to your anxiety triggers—ways to calm your nervous system that don't involve food.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg border border-neutral-100 hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1 lg:mx-auto lg:max-w-md">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Emotional Regulation Insights</h3>
+            <p class="text-neutral-600">Learn to recognize anxiety's early warning signs so you can intervene before the eating urge becomes overwhelming.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 to-secondary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center animate-on-scroll">
+          How It Works
+        </h2>
+        <div class="space-y-8">
+          <div class="flex items-start gap-6 animate-on-scroll delay-100">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Start Your Anxiety-Aware Check-In</h3>
+              <p class="text-neutral-600">Open EmotionEat and begin a calming conversation with your AI companion. It's designed to meet you where you are emotionally.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-200">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Share What's Worrying You</h3>
+              <p class="text-neutral-600">Talk about your anxious thoughts, what's triggering them, and how they connect to your eating. The AI listens without judgment.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-300">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Discover Your Anxiety-Eating Patterns</h3>
+              <p class="text-neutral-600">Over time, the app reveals connections—like eating whenever you think about work deadlines or snacking during anticipation anxiety.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-400">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Build Grounding Strategies That Work</h3>
+              <p class="text-neutral-600">Learn personalized techniques to calm your nervous system when anxiety strikes—alternatives to eating that actually help.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center animate-on-scroll">
+          Key Features
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 animate-on-scroll delay-100">
+          <!-- Free Plan -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-neutral-200">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-2">Free Plan</h3>
+              <p class="text-neutral-600">Start understanding anxiety eating</p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">1 calming check-in per day</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Weekly anxiety pattern analysis</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Basic trigger detection</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Progress tracking</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-primary-400 relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="bg-primary-400 text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
+            </div>
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-2">Premium Plan</h3>
+              <p class="text-neutral-600">Deep anxiety-eating support</p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">5 check-ins per day</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Daily pattern analysis</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Advanced anxiety insights</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Personalized grounding strategies</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Full progress history</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signs Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 text-center animate-on-scroll">
+          Signs You May Be Eating Because of Anxiety
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Do any of these feel familiar? You're not alone.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll delay-200">
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Eating When Worried About the Future</h3>
+            <p class="text-neutral-600 text-sm">Reaching for food when thinking about upcoming events, deadlines, or unknown outcomes.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Cravings During Anxious Spirals</h3>
+            <p class="text-neutral-600 text-sm">Sudden urges to eat while caught in a loop of worrying thoughts you can't stop.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Reaching for Food When Overwhelmed</h3>
+            <p class="text-neutral-600 text-sm">Eating when everything feels like too much and you need something to ground you.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Eating to Quiet Racing Thoughts</h3>
+            <p class="text-neutral-600 text-sm">Using food to slow down a mind that won't stop thinking, planning, or catastrophizing.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Snacking During Anticipation Anxiety</h3>
+            <p class="text-neutral-600 text-sm">Eating while waiting for news, results, or responses that make you anxious.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Eating When You Can't Relax</h3>
+            <p class="text-neutral-600 text-sm">Turning to food because you feel restless, on edge, or unable to settle down.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="faq">
+      <div class="container mx-auto max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 text-center animate-on-scroll">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Common questions about anxiety eating and how EmotionEat can help.
+        </p>
+        <div class="space-y-4 animate-on-scroll delay-200">
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">What is anxiety-related stress eating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Anxiety-related stress eating is when you turn to food specifically in response to anxious feelings, worry, or overwhelm. Unlike general emotional eating, it's triggered by anxiety symptoms like racing thoughts, future worries, or a sense of impending doom. Food becomes a way to temporarily calm the nervous system.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Why do I eat more when I'm anxious?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Anxiety activates your body's stress response, releasing cortisol which can increase appetite. Eating also triggers the parasympathetic nervous system (rest and digest), which temporarily counteracts the anxiety response. Your brain learns that food provides relief, creating a cycle of anxiety → eating → temporary calm.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">How is anxiety eating different from regular emotional eating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              While all emotional eating involves using food to cope with feelings, anxiety eating is specifically triggered by worry, fear, and overwhelm. It often comes with physical symptoms like restlessness, racing heart, or tension. The eating is an attempt to calm the nervous system rather than comfort sadness or fill boredom.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Can EmotionEat help with anxiety eating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Yes. EmotionEat helps you identify when anxiety is driving your eating through daily check-in conversations. The AI recognizes anxiety patterns, helps you understand your specific triggers, and offers personalized grounding strategies to interrupt the anxiety-eating cycle before it takes hold.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Will this app help me feel less anxious?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              EmotionEat is designed to help you understand the connection between anxiety and eating, not to treat anxiety itself. However, many users find that building awareness of their patterns and having grounding strategies reduces both anxiety eating and overall anxiety levels. For clinical anxiety, please consult a healthcare professional.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Is my data private and secure?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Absolutely. EmotionEat uses bank-level encryption to protect your conversations and data. We never sell or share your personal information with third parties. Your emotional journey stays completely private.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">How quickly can I see results with anxiety eating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Many users start recognizing their anxiety-eating patterns within the first week. Learning to interrupt the cycle typically takes 2-4 weeks of consistent daily check-ins. The key is building awareness so you can catch anxiety before it leads to eating.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Is EmotionEat free to use?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Yes, EmotionEat offers a free plan with 1 emotional check-in per day and weekly pattern analysis. Premium plans offer more check-ins, daily analysis, and personalized grounding strategies for those who want deeper support with anxiety eating.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-400 to-primary-500 relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+
+      <div class="container mx-auto max-w-3xl text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate-on-scroll">
+          Ready to Break the Anxiety-Eating Cycle?
+        </h2>
+        <p class="text-lg text-white/90 mb-8 animate-on-scroll delay-100">
+          Start with a calming conversation. No judgment, no pressure—just a supportive space to understand why anxiety drives you to eat.
+        </p>
+        <a
+          href={appUrl}
+          class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-100 text-primary-500 font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500 animate-on-scroll delay-200"
+        >
+          Start Your First Anxiety-Aware Check-In
+        </a>
+      </div>
+    </section>
+
+  </main>
+  <Footer t={t} />
+
+  <script>
+    import { initMixpanel, trackPageView } from '../scripts/mixpanel';
+
+    (function() {
+      initMixpanel();
+      trackPageView('stress-eating-help-for-anxiety', 'en');
+    })();
+  </script>
+</Layout>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

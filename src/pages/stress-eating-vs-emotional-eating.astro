@@ -1,0 +1,731 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+import en from '../i18n/en.json';
+
+const t = en;
+const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+const siteUrl = 'https://emotioneat.com';
+
+const pageTitle = "Stress Eating vs Emotional Eating — What's the Difference? | EmotionEat";
+const pageDescription = "Understand the difference between stress eating and emotional eating. Learn how both are connected, what triggers each, and how EmotionEat helps you manage both patterns.";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the main difference between stress eating and emotional eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stress eating is triggered specifically by stress and pressure, driven by cortisol and the fight-or-flight response. Emotional eating is broader — it can be triggered by any emotion including sadness, boredom, loneliness, anxiety, or even happiness. Stress eating is a subset of emotional eating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I have both stress eating and emotional eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely. Many people experience both patterns at different times. You might stress eat during work deadlines and emotionally eat when feeling lonely on weekends. EmotionEat helps you identify which patterns affect you and when."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is worse — stress eating or emotional eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neither is inherently 'worse' — both are coping mechanisms that can become problematic if they're your only way of managing difficult feelings. The key is understanding your patterns and developing alternative strategies. EmotionEat helps with both."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if I'm a stress eater or emotional eater?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pay attention to when you eat beyond hunger. If it's mainly during high-pressure situations (deadlines, conflicts), you may be a stress eater. If you eat in response to various emotions (boredom, sadness, celebration), you're more of an emotional eater. Many people are both."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can EmotionEat help with both types?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. EmotionEat's AI analyzes your daily check-ins to identify whether stress, emotions, or both drive your eating patterns. You'll receive personalized strategies tailored to your specific triggers, whether they're stress-based, emotion-based, or a combination."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We use bank-level encryption to protect your conversations. We never sell or share your data with third parties. What you share with your AI guide stays completely private."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly will I understand my patterns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many users start recognizing their stress vs. emotional eating patterns within the first week of daily check-ins. The more consistently you use EmotionEat, the more accurate and helpful the pattern insights become."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is EmotionEat free to try?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. EmotionEat offers a free plan with 10 daily messages, weekly pattern analysis, and 5 daily challenges. Premium plans offer more messages, daily analysis, and personalized advice."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteUrl
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stress Eating vs Emotional Eating",
+      "item": `${siteUrl}/stress-eating-vs-emotional-eating`
+    }
+  ]
+};
+
+const combinedSchema = {
+  "@context": "https://schema.org",
+  "@graph": [faqSchema, breadcrumbSchema]
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  ogTitle="Stress Eating vs Emotional Eating | EmotionEat"
+  ogDescription={pageDescription}
+  canonical="https://emotioneat.com/stress-eating-vs-emotional-eating"
+  structuredData={combinedSchema}
+>
+  <Header t={t} />
+
+  <main id="main-content" class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-100/40 via-transparent to-transparent"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <nav class="text-sm text-neutral-500 mb-6" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-2">
+            <li><a href="/" class="hover:text-primary-500 transition-colors">Home</a></li>
+            <li><span class="mx-2">/</span></li>
+            <li class="text-neutral-700">Stress Eating vs Emotional Eating</li>
+          </ol>
+        </nav>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight animate-on-scroll">
+          Stress Eating vs Emotional Eating — What's the Difference?
+        </h1>
+
+        <p class="text-lg md:text-xl text-neutral-600 mb-8 leading-relaxed animate-on-scroll delay-100">
+          Many people use "stress eating" and "emotional eating" interchangeably, but understanding the distinction can help you better manage your relationship with food. Both involve eating for reasons beyond hunger, but they're triggered by different internal states. EmotionEat helps you identify which patterns affect you and develop personalized strategies for each.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 animate-on-scroll delay-200">
+          <a
+            href={appUrl}
+            class="inline-flex items-center justify-center px-8 py-4 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5"
+            data-cta-location="stress-vs-emotional-hero"
+          >
+            Start Understanding Your Triggers
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="#differences"
+            class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold rounded-xl border-2 border-neutral-200 transition-all hover:border-primary-300"
+          >
+            See the Key Differences
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Is Stress Eating -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          What Is Stress Eating?
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+          Stress eating is eating triggered specifically by stress and pressure. When your body enters fight-or-flight mode, it releases cortisol — a hormone that increases appetite and drives cravings for high-calorie comfort foods. This is your body's way of seeking quick energy to handle perceived threats.
+        </p>
+
+        <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 md:p-8 border border-primary-100">
+          <h3 class="text-xl font-semibold text-neutral-800 mb-4">Characteristics of stress eating:</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Triggered specifically by stress and pressure situations</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Often occurs during high-tension moments (deadlines, conflicts, overwhelm)</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Driven by cortisol and the body's fight-or-flight response</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Usually involves cravings for high-fat, high-sugar comfort foods</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Tends to be more immediate and situational</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Is Emotional Eating -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          What Is Emotional Eating?
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+          Emotional eating is a broader pattern — eating triggered by any emotion, not just stress. This includes sadness, boredom, loneliness, anxiety, frustration, and even positive emotions like celebration or reward. Food becomes a way to soothe, distract, or cope with feelings.
+        </p>
+
+        <div class="bg-gradient-to-br from-secondary-50 to-white rounded-2xl p-6 md:p-8 border border-secondary-100">
+          <h3 class="text-xl font-semibold text-neutral-800 mb-4">Characteristics of emotional eating:</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-secondary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Triggered by any emotion — not just stress</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-secondary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Can include sadness, boredom, loneliness, anxiety, even happiness</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-secondary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Driven by a desire to soothe, distract, or reward</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-secondary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Often connected to deeper emotional patterns from childhood</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-secondary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Can be habitual rather than situational</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- How They Overlap -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          How Stress Eating and Emotional Eating Overlap
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+          While stress eating and emotional eating have different triggers, they share important connections. Understanding how they overlap can help you recognize your own patterns.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Both Are Non-Hunger Eating</h3>
+            <p class="text-neutral-600">Neither stress eating nor emotional eating is driven by physical hunger. Both involve eating for psychological or emotional reasons.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Stress Eating Is a Subset</h3>
+            <p class="text-neutral-600">Stress eating is actually a specific type of emotional eating. Stress is an emotion, so stress eating falls under the broader umbrella of emotional eating.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Both Use Food for Regulation</h3>
+            <p class="text-neutral-600">Whether it's stress or other emotions, both patterns use food as a way to regulate difficult feelings and find temporary relief.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">They Can Occur Together</h3>
+            <p class="text-neutral-600">Many people experience both patterns at different times. You might stress eat at work and emotionally eat when lonely at home.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Differences -->
+    <section id="differences" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-neutral-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          Key Differences Between Stress Eating and Emotional Eating
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+          Understanding these differences can help you identify your patterns and find the right strategies:
+        </p>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral-100">
+          <div class="grid grid-cols-3 bg-neutral-100 p-4 font-semibold text-neutral-800">
+            <div>Aspect</div>
+            <div>Stress Eating</div>
+            <div>Emotional Eating</div>
+          </div>
+
+          <div class="divide-y divide-neutral-100">
+            <div class="grid grid-cols-3 p-4">
+              <div class="font-medium text-neutral-800">Trigger</div>
+              <div class="text-neutral-600">Specific stressor or pressure</div>
+              <div class="text-neutral-600">Any emotion (sadness, boredom, joy)</div>
+            </div>
+            <div class="grid grid-cols-3 p-4 bg-neutral-50">
+              <div class="font-medium text-neutral-800">Timing</div>
+              <div class="text-neutral-600">During or right after stress</div>
+              <div class="text-neutral-600">Anytime emotions arise</div>
+            </div>
+            <div class="grid grid-cols-3 p-4">
+              <div class="font-medium text-neutral-800">Duration</div>
+              <div class="text-neutral-600">Often temporary, situational</div>
+              <div class="text-neutral-600">Can be chronic, habitual</div>
+            </div>
+            <div class="grid grid-cols-3 p-4 bg-neutral-50">
+              <div class="font-medium text-neutral-800">Root Cause</div>
+              <div class="text-neutral-600">Physiological (cortisol)</div>
+              <div class="text-neutral-600">Psychological (coping)</div>
+            </div>
+            <div class="grid grid-cols-3 p-4">
+              <div class="font-medium text-neutral-800">Foods Craved</div>
+              <div class="text-neutral-600">High-energy comfort foods</div>
+              <div class="text-neutral-600">Varies by emotion</div>
+            </div>
+            <div class="grid grid-cols-3 p-4 bg-neutral-50">
+              <div class="font-medium text-neutral-800">Awareness</div>
+              <div class="text-neutral-600">Often recognized in moment</div>
+              <div class="text-neutral-600">May be unconscious</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How EmotionEat Helps -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          How EmotionEat Helps With Both
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+          Whether you're dealing with stress eating, emotional eating, or both, EmotionEat provides personalized support:
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start p-4 bg-primary-50 rounded-xl">
+            <div class="w-10 h-10 bg-primary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Trigger mapping</h3>
+              <p class="text-neutral-600">Identifies whether stress, emotions, or both drive your eating — giving you clarity on your unique patterns</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-secondary-50 rounded-xl">
+            <div class="w-10 h-10 bg-secondary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Emotional check-ins</h3>
+              <p class="text-neutral-600">Daily conversations to process feelings before they become food urges</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-accent-50 rounded-xl">
+            <div class="w-10 h-10 bg-accent-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Coping strategies</h3>
+              <p class="text-neutral-600">Personalized alternatives to eating for different triggers — whether stress-based or emotion-based</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-primary-50 rounded-xl">
+            <div class="w-10 h-10 bg-primary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Pattern insights</h3>
+              <p class="text-neutral-600">AI analysis reveals your unique stress vs. emotional eating patterns over time</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-secondary-50 rounded-xl">
+            <div class="w-10 h-10 bg-secondary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Emotional regulation awareness</h3>
+              <p class="text-neutral-600">Learn to recognize and respond to emotions differently, building lasting change</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-neutral-50 to-secondary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          How It Works
+        </h2>
+
+        <div class="space-y-8">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              1
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Start Your Daily Check-in</h3>
+              <p class="text-neutral-600">Open the app and have a natural conversation with your AI guide. Share what's happening in your life — the stresses you're facing and the emotions you're experiencing.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              2
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Share What's Happening</h3>
+              <p class="text-neutral-600">Talk about your day — whether it's work pressure, relationship dynamics, boredom, sadness, or any other feelings. The AI listens without judgment and asks thoughtful questions.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              3
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Discover Your Patterns</h3>
+              <p class="text-neutral-600">Over time, the AI analyzes your conversations and identifies whether stress, emotions, or both drive your eating. You'll see patterns you couldn't spot on your own.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              4
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Build Targeted Strategies</h3>
+              <p class="text-neutral-600">Based on your specific patterns, you receive personalized challenges and coping techniques. Different strategies for stress-based triggers vs. emotion-based triggers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          Key Features
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Free Plan -->
+          <div class="bg-neutral-50 rounded-2xl p-8 border-2 border-neutral-200">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-800 mb-2">Free Plan</h3>
+              <p class="text-4xl font-bold text-neutral-900">$0<span class="text-lg font-normal text-neutral-500">/month</span></p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-secondary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">10 chat messages per day</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-secondary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">1 pattern analysis per week</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-secondary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">5 daily challenges</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-secondary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Basic progress tracking</span>
+              </li>
+            </ul>
+            <a
+              href={appUrl}
+              class="mt-8 block w-full text-center px-6 py-3 bg-neutral-200 hover:bg-neutral-300 text-neutral-800 font-semibold rounded-xl transition-all"
+              data-cta-location="stress-vs-emotional-free"
+            >
+              Start Free
+            </a>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 border-2 border-primary-300 relative">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span class="bg-primary-400 text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
+            </div>
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-800 mb-2">Premium Plan</h3>
+              <p class="text-4xl font-bold text-neutral-900">$7.99<span class="text-lg font-normal text-neutral-500">/month</span></p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">50 chat messages per day</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Daily pattern analysis</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Pattern explanations for challenges</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Personalized advice</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Full progress history</span>
+              </li>
+            </ul>
+            <a
+              href={appUrl}
+              class="mt-8 block w-full text-center px-6 py-3 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg"
+              data-cta-location="stress-vs-emotional-premium"
+            >
+              Start Premium
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          Frequently Asked Questions
+        </h2>
+
+        <div class="space-y-4">
+          <details class="group bg-white rounded-xl p-6 cursor-pointer shadow-sm">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>What is the main difference between stress eating and emotional eating?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Stress eating is triggered specifically by stress and pressure, driven by cortisol and the fight-or-flight response. Emotional eating is broader — it can be triggered by any emotion including sadness, boredom, loneliness, anxiety, or even happiness. Stress eating is a subset of emotional eating.</p>
+          </details>
+
+          <details class="group bg-white rounded-xl p-6 cursor-pointer shadow-sm">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Can I have both stress eating and emotional eating?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Yes, absolutely. Many people experience both patterns at different times. You might stress eat during work deadlines and emotionally eat when feeling lonely on weekends. EmotionEat helps you identify which patterns affect you and when.</p>
+          </details>
+
+          <details class="group bg-white rounded-xl p-6 cursor-pointer shadow-sm">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Which is worse — stress eating or emotional eating?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Neither is inherently "worse" — both are coping mechanisms that can become problematic if they're your only way of managing difficult feelings. The key is understanding your patterns and developing alternative strategies. EmotionEat helps with both.</p>
+          </details>
+
+          <details class="group bg-white rounded-xl p-6 cursor-pointer shadow-sm">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>How do I know if I'm a stress eater or emotional eater?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Pay attention to when you eat beyond hunger. If it's mainly during high-pressure situations (deadlines, conflicts), you may be a stress eater. If you eat in response to various emotions (boredom, sadness, celebration), you're more of an emotional eater. Many people are both.</p>
+          </details>
+
+          <details class="group bg-white rounded-xl p-6 cursor-pointer shadow-sm">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Can EmotionEat help with both types?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Yes. EmotionEat's AI analyzes your daily check-ins to identify whether stress, emotions, or both drive your eating patterns. You'll receive personalized strategies tailored to your specific triggers, whether they're stress-based, emotion-based, or a combination.</p>
+          </details>
+
+          <details class="group bg-white rounded-xl p-6 cursor-pointer shadow-sm">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Is my data private?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Yes. We use bank-level encryption to protect your conversations. We never sell or share your data with third parties. What you share with your AI guide stays completely private.</p>
+          </details>
+
+          <details class="group bg-white rounded-xl p-6 cursor-pointer shadow-sm">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>How quickly will I understand my patterns?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Many users start recognizing their stress vs. emotional eating patterns within the first week of daily check-ins. The more consistently you use EmotionEat, the more accurate and helpful the pattern insights become.</p>
+          </details>
+
+          <details class="group bg-white rounded-xl p-6 cursor-pointer shadow-sm">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Is EmotionEat free to try?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Yes. EmotionEat offers a free plan with 10 daily messages, weekly pattern analysis, and 5 daily challenges. Premium plans offer more messages, daily analysis, and personalized advice.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-400 to-primary-500">
+      <div class="container mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Start Understanding Your Emotional Triggers
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Whether it's stress, emotions, or both — discover what's really driving your eating patterns.
+        </p>
+        <a
+          href={appUrl}
+          class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-50 text-primary-500 font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 text-lg"
+          data-cta-location="stress-vs-emotional-bottom"
+        >
+          Start your first check-in
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer t={t} />
+
+  <script>
+    import { initMixpanel, trackPageView, trackCTAClick } from '../scripts/mixpanel';
+
+    (function() {
+      initMixpanel();
+      trackPageView('stress-eating-vs-emotional-eating', 'en');
+
+      document.querySelectorAll('[data-cta-location]').forEach(button => {
+        button.addEventListener('click', () => {
+          const location = button.getAttribute('data-cta-location');
+          if (location) {
+            trackCTAClick(location, 'en');
+          }
+        });
+      });
+    })();
+  </script>
+</Layout>

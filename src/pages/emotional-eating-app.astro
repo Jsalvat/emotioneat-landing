@@ -1,0 +1,593 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import en from '../i18n/en.json';
+
+const t = en;
+const canonicalUrl = 'https://emotioneat.com/emotional-eating-app';
+const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+
+// FAQPage structured data for rich snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an emotional eating app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An emotional eating app is a digital tool designed to help you understand the connection between your emotions and eating habits. It helps you recognize patterns, identify triggers like stress or boredom, and develop healthier coping strategies without judgment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does EmotionEat help with emotional eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EmotionEat provides daily AI-powered emotional check-ins where you can share how you're feeling. The app analyzes your patterns over time, identifies emotional triggers, and offers personalized coping strategies to help you build awareness and reduce emotional eating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is EmotionEat free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, EmotionEat offers a free plan that includes 1 emotional check-in per day and weekly pattern analysis. Premium plans offer more check-ins, daily analysis, and advanced insights for those who want deeper support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an app really help with emotional eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Research shows that awareness is the first step to changing any habit. By tracking your emotions and eating patterns daily, you begin to see connections you might have missed. EmotionEat helps you build this awareness in a supportive, non-judgmental way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private and secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. EmotionEat uses bank-level encryption to protect your conversations and data. We never sell or share your personal information with third parties. Your emotional journey stays completely private."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does EmotionEat replace therapy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. EmotionEat is a supportive tool for building awareness and healthier habits, but it's not a replacement for professional mental health care. If you have a serious eating disorder or mental health condition, please consult a healthcare professional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until I see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many users start noticing patterns within the first week of daily check-ins. Meaningful changes in eating habits typically develop over 2-4 weeks of consistent use as you build awareness and apply coping strategies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What emotional triggers does the app detect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EmotionEat detects common emotional eating triggers including stress, anxiety, boredom, sadness, overwhelm, loneliness, and fatigue. The AI learns your personal patterns and identifies which emotions most often lead to emotional eating for you specifically."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Emotional Eating App | Understand & Overcome Emotional Eating | EmotionEat"
+  description="Discover the emotional eating app that helps you understand triggers, track patterns, and build awareness. AI-powered daily check-ins and personalized coping strategies."
+  canonical={canonicalUrl}
+  structuredData={faqSchema}
+>
+  <Header t={t} />
+  <main id="main-content">
+
+    <!-- Hero Section with H1 -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 relative overflow-hidden">
+      <!-- Decorative blobs -->
+      <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+      <div class="absolute bottom-20 right-10 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style="animation-delay: 2s;"></div>
+
+      <div class="container mx-auto max-w-4xl text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 animate-on-scroll">
+          Emotional Eating App: Your Daily Companion for Understanding Food & Feelings
+        </h1>
+        <p class="text-lg md:text-xl text-neutral-600 mb-8 max-w-3xl mx-auto animate-on-scroll delay-100">
+          Do you reach for food when you're stressed, bored, or overwhelmed? You're not alone. Emotional eating affects millions of people, and the first step to change is understanding why it happens. EmotionEat is an AI-powered emotional eating app that helps you recognize your triggers, track your patterns, and build a healthier relationship with food—without judgment.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll delay-200">
+          <a
+            href={appUrl}
+            class="inline-flex items-center justify-center px-8 py-4 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2"
+          >
+            Start Your First Check-In
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Is an Emotional Eating App Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 text-center animate-on-scroll">
+          What Is an Emotional Eating App?
+        </h2>
+        <div class="prose prose-lg max-w-none text-neutral-600 animate-on-scroll delay-100">
+          <p class="mb-4">
+            An emotional eating app is a digital companion designed to help you understand the connection between your emotions and eating habits. Unlike calorie counters or diet trackers, an emotional eating app focuses on the <em>why</em> behind your eating—not just the what.
+          </p>
+          <p class="mb-4">
+            Emotional eating happens when we use food to cope with feelings rather than physical hunger. Maybe you snack when you're anxious, eat comfort food when you're sad, or raid the fridge when you're bored. These patterns are incredibly common and nothing to be ashamed of.
+          </p>
+          <p>
+            The right emotional eating app helps you notice these patterns with compassion, understand your personal triggers, and gradually build healthier ways to respond to difficult emotions. It's not about restriction or willpower—it's about awareness and self-understanding.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How EmotionEat Helps Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-8 text-center animate-on-scroll">
+          How EmotionEat Helps You Understand Emotional Eating
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6 animate-on-scroll delay-100">
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Daily Emotional Check-In Conversation</h3>
+            <p class="text-neutral-600">Talk to your AI companion about how you're feeling. No forms or questionnaires—just a natural conversation about your day.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Supportive AI Companion</h3>
+            <p class="text-neutral-600">An empathetic listener that understands emotional eating without judgment. Share openly and feel heard.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Pattern Recognition</h3>
+            <p class="text-neutral-600">The AI detects patterns you might miss—linking stress, boredom, anxiety, sadness, and overwhelm to your eating habits.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Emotional Trigger Insights</h3>
+            <p class="text-neutral-600">Discover exactly which emotions drive you to eat and in what situations they arise most often.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Awareness-Based Recommendations</h3>
+            <p class="text-neutral-600">Get personalized coping strategies based on your unique patterns—not generic advice that doesn't fit your life.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-900 mb-2">Progress Tracking</h3>
+            <p class="text-neutral-600">See your journey over time. Review past conversations, notice improvements, and celebrate your growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center animate-on-scroll">
+          How It Works
+        </h2>
+        <div class="space-y-8">
+          <div class="flex items-start gap-6 animate-on-scroll delay-100">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Start Your Emotional Check-In</h3>
+              <p class="text-neutral-600">Open EmotionEat and begin a conversation with your AI companion. It takes just a few minutes.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-200">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Share How You're Feeling</h3>
+              <p class="text-neutral-600">Talk about your day, your emotions, your cravings. The AI asks thoughtful questions to help you explore what's really going on.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-300">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Discover Your Patterns</h3>
+              <p class="text-neutral-600">Over time, the app reveals patterns you might have missed—like always eating when anxious about work or snacking when lonely.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-6 animate-on-scroll delay-400">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 mb-2">Build Awareness & Coping Strategies</h3>
+              <p class="text-neutral-600">With insights in hand, you'll develop healthier ways to respond to emotions—and watch your relationship with food transform.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 to-secondary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center animate-on-scroll">
+          Key Features
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 animate-on-scroll delay-100">
+          <!-- Free Plan -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-neutral-200">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-2">Free Plan</h3>
+              <p class="text-neutral-600">Start building awareness</p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">1 emotional check-in per day</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Weekly pattern analysis</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Basic trigger detection</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-secondary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Progress tracking</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-primary-400 relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="bg-primary-400 text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
+            </div>
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-900 mb-2">Premium Plan</h3>
+              <p class="text-neutral-600">Deep insights & daily support</p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">5 emotional check-ins per day</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Daily pattern analysis</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Advanced trigger insights</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Personalized coping strategies</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-neutral-600">Full progress history</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Psychology Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 text-center animate-on-scroll">
+          Emotional Eating Is Not About Food — It's About Emotions
+        </h2>
+        <div class="prose prose-lg max-w-none text-neutral-600 animate-on-scroll delay-100">
+          <p class="mb-4">
+            Here's something important to understand: emotional eating isn't a character flaw or a lack of willpower. It's a coping mechanism—a way your mind and body have learned to deal with difficult emotions.
+          </p>
+          <p class="mb-4">
+            When we're stressed, anxious, sad, or overwhelmed, food can provide temporary comfort. It releases dopamine, distracts us from uncomfortable feelings, and gives us something to do with our hands and mouths. The problem isn't that food feels good—it's that we're using it to avoid processing emotions that need our attention.
+          </p>
+          <p class="mb-4">
+            The key to changing emotional eating isn't restriction or punishment. It's <strong>awareness</strong>. When you start to notice the connection between how you feel and when you eat, something shifts. You begin to see the pattern before it plays out. You have a moment to pause and choose differently.
+          </p>
+          <p>
+            That's exactly what an emotional eating app like EmotionEat helps you build—awareness without judgment, understanding without shame, and the space to make new choices one moment at a time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 text-center animate-on-scroll">
+          Common Challenges EmotionEat Helps With
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Whatever form your emotional eating takes, EmotionEat can help you understand and address it.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll delay-200">
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Stress Eating</h3>
+            <p class="text-neutral-600 text-sm">Reaching for snacks when work pressure builds or life feels overwhelming.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Boredom Eating</h3>
+            <p class="text-neutral-600 text-sm">Eating to fill time or avoid the discomfort of having nothing to do.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Comfort Eating</h3>
+            <p class="text-neutral-600 text-sm">Turning to food for emotional comfort during sadness, loneliness, or grief.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Emotional Overeating</h3>
+            <p class="text-neutral-600 text-sm">Eating past fullness when emotions are running high, even when not hungry.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Binge Urges</h3>
+            <p class="text-neutral-600 text-sm">Intense urges to eat large amounts quickly, often followed by guilt or shame.</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-900 mb-2">Nighttime Emotional Eating</h3>
+            <p class="text-neutral-600 text-sm">Late-night eating triggered by the day's unprocessed emotions or anxiety.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="faq">
+      <div class="container mx-auto max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 text-center animate-on-scroll">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-neutral-600 text-center mb-12 animate-on-scroll delay-100">
+          Everything you need to know about using an emotional eating app.
+        </p>
+        <div class="space-y-4 animate-on-scroll delay-200">
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">What is an emotional eating app?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              An emotional eating app is a digital tool designed to help you understand the connection between your emotions and eating habits. It helps you recognize patterns, identify triggers like stress or boredom, and develop healthier coping strategies without judgment.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">How does EmotionEat help with emotional eating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              EmotionEat provides daily AI-powered emotional check-ins where you can share how you're feeling. The app analyzes your patterns over time, identifies emotional triggers, and offers personalized coping strategies to help you build awareness and reduce emotional eating.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Is EmotionEat free to use?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Yes, EmotionEat offers a free plan that includes 1 emotional check-in per day and weekly pattern analysis. Premium plans offer more check-ins, daily analysis, and advanced insights for those who want deeper support.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Can an app really help with emotional eating?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Yes. Research shows that awareness is the first step to changing any habit. By tracking your emotions and eating patterns daily, you begin to see connections you might have missed. EmotionEat helps you build this awareness in a supportive, non-judgmental way.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Is my data private and secure?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Absolutely. EmotionEat uses bank-level encryption to protect your conversations and data. We never sell or share your personal information with third parties. Your emotional journey stays completely private.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">Does EmotionEat replace therapy?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              No. EmotionEat is a supportive tool for building awareness and healthier habits, but it's not a replacement for professional mental health care. If you have a serious eating disorder or mental health condition, please consult a healthcare professional.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">How long until I see results?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              Many users start noticing patterns within the first week of daily check-ins. Meaningful changes in eating habits typically develop over 2-4 weeks of consistent use as you build awareness and apply coping strategies.
+            </div>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-neutral-900">What emotional triggers does the app detect?</h3>
+              <svg class="w-5 h-5 text-neutral-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-neutral-600">
+              EmotionEat detects common emotional eating triggers including stress, anxiety, boredom, sadness, overwhelm, loneliness, and fatigue. The AI learns your personal patterns and identifies which emotions most often lead to emotional eating for you specifically.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-400 to-primary-500 relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+
+      <div class="container mx-auto max-w-3xl text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate-on-scroll">
+          Ready to Understand Your Emotional Eating?
+        </h2>
+        <p class="text-lg text-white/90 mb-8 animate-on-scroll delay-100">
+          Start with a simple conversation. No judgment, no pressure—just a supportive space to explore your relationship with food.
+        </p>
+        <a
+          href={appUrl}
+          class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-100 text-primary-500 font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-500 animate-on-scroll delay-200"
+        >
+          Start Your First Emotional Check-In
+        </a>
+      </div>
+    </section>
+
+  </main>
+  <Footer t={t} />
+
+  <script>
+    import { initMixpanel, trackPageView } from '../scripts/mixpanel';
+
+    (function() {
+      initMixpanel();
+      trackPageView('emotional-eating-app', 'en');
+    })();
+  </script>
+</Layout>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

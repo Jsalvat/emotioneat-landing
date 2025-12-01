@@ -1,0 +1,643 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+import en from '../i18n/en.json';
+
+const t = en;
+const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+const siteUrl = 'https://emotioneat.com';
+
+const pageTitle = "Stress Eating Help — Understand Why Stress Leads to Food Urges | EmotionEat";
+const pageDescription = "Get stress eating help with EmotionEat's AI guide. Understand why stress triggers eating, identify patterns, and get personalized strategies for high-stress days.";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will this actually help with my stress eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EmotionEat uses AI pattern recognition to identify your specific stress triggers and eating patterns. Unlike generic advice, the strategies you receive are tailored to your unique situation. Many users start noticing their patterns within the first week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from a food diary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Traditional food diaries track what you eat. EmotionEat focuses on why you eat — the emotions, situations, and stress triggers behind your eating behaviors. The AI analyzes your conversations to find patterns you couldn't spot with a simple diary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this replace therapy for stress eating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EmotionEat is a supportive tool, not a replacement for professional mental health care. If you have a clinical eating disorder, please consult a healthcare professional. EmotionEat works best as a daily companion for understanding and managing stress-related eating patterns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much time does it take each day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most users spend 5-10 minutes on their daily check-in. The AI guides the conversation, so you don't need to plan what to say. Just share what's on your mind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We use bank-level encryption to protect your conversations. We never sell or share your data with third parties. What you share with your AI guide stays private."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I skip days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's okay. EmotionEat is designed to meet you where you are. While daily check-ins provide the best pattern insights, the AI adapts to your pace and continues learning from whatever you share."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteUrl
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stress Eating Help",
+      "item": `${siteUrl}/stress-eating-help`
+    }
+  ]
+};
+
+const combinedSchema = {
+  "@context": "https://schema.org",
+  "@graph": [faqSchema, breadcrumbSchema]
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  ogTitle="Stress Eating Help | EmotionEat"
+  ogDescription={pageDescription}
+  canonical="https://emotioneat.com/stress-eating-help"
+  structuredData={combinedSchema}
+>
+  <Header t={t} />
+
+  <main id="main-content" class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-100/40 via-transparent to-transparent"></div>
+      <div class="container mx-auto max-w-4xl relative z-10">
+        <nav class="text-sm text-neutral-500 mb-6" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-2">
+            <li><a href="/" class="hover:text-primary-500 transition-colors">Home</a></li>
+            <li><span class="mx-2">/</span></li>
+            <li class="text-neutral-700">Stress Eating Help</li>
+          </ol>
+        </nav>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight animate-on-scroll">
+          Stress Eating Help — Understand Why Stress Leads to Food Urges
+        </h1>
+
+        <p class="text-lg md:text-xl text-neutral-600 mb-8 leading-relaxed animate-on-scroll delay-100">
+          When stress hits, many people instinctively reach for food — not because they're hungry, but because eating provides temporary relief from overwhelming emotions. If you're looking for stress eating help, you're not alone. EmotionEat's AI guide helps you understand this pattern, identify your specific triggers, and develop personalized strategies to respond differently.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 animate-on-scroll delay-200">
+          <a
+            href={appUrl}
+            class="inline-flex items-center justify-center px-8 py-4 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5"
+            data-cta-location="stress-eating-hero"
+          >
+            Start Your First Check-in
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="#how-it-works"
+            class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold rounded-xl border-2 border-neutral-200 transition-all hover:border-primary-300"
+          >
+            See How It Works
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Is Stress Eating -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          What Is Stress Eating?
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+          Stress eating (also called emotional eating or stress-based eating) is the habit of turning to food for comfort, distraction, or relief when facing stressful situations. Unlike physical hunger that builds gradually, stress eating often comes on suddenly and craves specific comfort foods.
+        </p>
+
+        <div class="bg-neutral-50 rounded-2xl p-6 md:p-8">
+          <h3 class="text-xl font-semibold text-neutral-800 mb-4">Common signs include:</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Eating when you're not physically hungry</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Craving specific "comfort" foods during stressful moments</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Feeling guilty or ashamed after eating</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Using food to cope with work pressure, relationship issues, or anxiety</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-primary-400 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-neutral-600">Eating quickly without really tasting the food</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Stress Triggers Eating -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          Why Stress Triggers Eating Behaviors
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+          The stress-emotion-food connection is both biological and psychological:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">The Cortisol Effect</h3>
+            <p class="text-neutral-600">When you're stressed, your body releases cortisol. Elevated cortisol increases appetite and drives cravings for high-fat, high-sugar foods that provide quick energy and temporary mood relief.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Emotional Regulation</h3>
+            <p class="text-neutral-600">Food activates the brain's reward system, releasing dopamine and providing momentary relief from stress. Over time, this creates a learned pattern: stress → eat → feel better (temporarily).</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Avoidance Mechanism</h3>
+            <p class="text-neutral-600">Eating can serve as a way to avoid dealing with the underlying stressor. It shifts focus from the problem to the immediate pleasure of food.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100 hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Habit Formation</h3>
+            <p class="text-neutral-600">The more you use food to cope with stress, the stronger this neural pathway becomes. Eventually, reaching for food becomes automatic when stress appears.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How EmotionEat Helps -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+          How EmotionEat Helps With Stress Eating
+        </h2>
+
+        <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+          EmotionEat provides personalized stress eating help through:
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start p-4 bg-primary-50 rounded-xl">
+            <div class="w-10 h-10 bg-primary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Calming emotional check-ins</h3>
+              <p class="text-neutral-600">Daily conversations with your AI guide to process stress before it triggers eating urges</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-secondary-50 rounded-xl">
+            <div class="w-10 h-10 bg-secondary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Identifying stress triggers</h3>
+              <p class="text-neutral-600">Pattern recognition that reveals what specific situations, people, or thoughts lead to stress eating</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-accent-50 rounded-xl">
+            <div class="w-10 h-10 bg-accent-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Tracking emotional spikes</h3>
+              <p class="text-neutral-600">Monitoring your stress levels throughout the day to catch patterns you might miss</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-primary-50 rounded-xl">
+            <div class="w-10 h-10 bg-primary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Personalized strategies for high-stress days</h3>
+              <p class="text-neutral-600">Tailored challenges and coping techniques based on your unique stress profile</p>
+            </div>
+          </div>
+
+          <div class="flex items-start p-4 bg-secondary-50 rounded-xl">
+            <div class="w-10 h-10 bg-secondary-400 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-neutral-800 mb-1">Progress tracking</h3>
+              <p class="text-neutral-600">See how your stress-food responses change over time as you build new habits</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-neutral-50 to-primary-50">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          How It Works
+        </h2>
+
+        <div class="space-y-8">
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              1
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Start a Conversation</h3>
+              <p class="text-neutral-600">Open the app and talk to your AI guide about how you're feeling. Share what's stressing you, what you're craving, and what's happening in your life. No forms or questionnaires — just a natural conversation.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              2
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Discover Your Patterns</h3>
+              <p class="text-neutral-600">Your AI guide analyzes your conversations over time and identifies the specific stress triggers connected to your eating. You'll see patterns you couldn't spot on your own.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              3
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Get Daily Challenges</h3>
+              <p class="text-neutral-600">Based on your patterns, you receive 5 personalized challenges each day. These aren't generic tips — they're designed specifically for your stress-eating triggers.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0 mr-6 text-white font-bold text-xl">
+              4
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-neutral-800 mb-2">Build New Responses</h3>
+              <p class="text-neutral-600">With consistent practice, you'll develop healthier ways to respond to stress. Track your progress and watch your relationship with food transform.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          Key Features
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Free Plan -->
+          <div class="bg-neutral-50 rounded-2xl p-8 border-2 border-neutral-200">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-800 mb-2">Free Plan</h3>
+              <p class="text-4xl font-bold text-neutral-900">$0<span class="text-lg font-normal text-neutral-500">/month</span></p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-secondary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">10 chat messages per day</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-secondary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">1 pattern analysis per week</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-secondary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">5 daily challenges</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-secondary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Basic progress tracking</span>
+              </li>
+            </ul>
+            <a
+              href={appUrl}
+              class="mt-8 block w-full text-center px-6 py-3 bg-neutral-200 hover:bg-neutral-300 text-neutral-800 font-semibold rounded-xl transition-all"
+              data-cta-location="stress-eating-free"
+            >
+              Start Free
+            </a>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 border-2 border-primary-300 relative">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span class="bg-primary-400 text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
+            </div>
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-neutral-800 mb-2">Premium Plan</h3>
+              <p class="text-4xl font-bold text-neutral-900">$7.99<span class="text-lg font-normal text-neutral-500">/month</span></p>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">50 chat messages per day</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Daily pattern analysis</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Pattern explanations for challenges</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Personalized advice</span>
+              </li>
+              <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-600">Full progress history</span>
+              </li>
+            </ul>
+            <a
+              href={appUrl}
+              class="mt-8 block w-full text-center px-6 py-3 bg-primary-400 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all hover:shadow-lg"
+              data-cta-location="stress-eating-premium"
+            >
+              Start Premium
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-secondary-50 to-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          Use Cases
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Work Stress</h3>
+            <p class="text-neutral-600">Deadlines, difficult colleagues, overwhelming workloads — work stress is one of the most common triggers for stress eating. EmotionEat helps you identify which work situations trigger eating urges and develop strategies to respond differently during high-pressure moments.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+            <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Relationship Stress</h3>
+            <p class="text-neutral-600">Conflicts with partners, family tension, or social anxiety can all trigger stress eating. Your AI guide helps you understand these emotional patterns and find healthier ways to process relationship-related stress.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Anxiety Spirals</h3>
+            <p class="text-neutral-600">When worry builds on worry, eating can feel like the only escape. EmotionEat helps you catch anxiety early, before it escalates into eating urges, and provides calming techniques personalized to your anxiety patterns.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-neutral-100">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-neutral-800 mb-2">Chronic Stress Cycles</h3>
+            <p class="text-neutral-600">Long-term stress creates deeply ingrained eating patterns. EmotionEat's pattern analysis helps you understand your chronic stress triggers and gradually build new responses over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12 text-center">
+          Frequently Asked Questions
+        </h2>
+
+        <div class="space-y-4">
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Will this actually help with my stress eating?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">EmotionEat uses AI pattern recognition to identify your specific stress triggers and eating patterns. Unlike generic advice, the strategies you receive are tailored to your unique situation. Many users start noticing their patterns within the first week.</p>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>How is this different from a food diary?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Traditional food diaries track what you eat. EmotionEat focuses on why you eat — the emotions, situations, and stress triggers behind your eating behaviors. The AI analyzes your conversations to find patterns you couldn't spot with a simple diary.</p>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Can this replace therapy for stress eating?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">EmotionEat is a supportive tool, not a replacement for professional mental health care. If you have a clinical eating disorder, please consult a healthcare professional. EmotionEat works best as a daily companion for understanding and managing stress-related eating patterns.</p>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>How much time does it take each day?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Most users spend 5-10 minutes on their daily check-in. The AI guides the conversation, so you don't need to plan what to say. Just share what's on your mind.</p>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>Is my data private?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">Yes. We use bank-level encryption to protect your conversations. We never sell or share your data with third parties. What you share with your AI guide stays private.</p>
+          </details>
+
+          <details class="group bg-neutral-50 rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-neutral-800 list-none">
+              <span>What if I skip days?</span>
+              <svg class="w-5 h-5 text-neutral-500 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-neutral-600">That's okay. EmotionEat is designed to meet you where you are. While daily check-ins provide the best pattern insights, the AI adapts to your pace and continues learning from whatever you share.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-400 to-primary-500">
+      <div class="container mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Ready to get help with stress eating?
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Start understanding your stress-food patterns today with a free check-in.
+        </p>
+        <a
+          href={appUrl}
+          class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-50 text-primary-500 font-semibold rounded-xl transition-all hover:shadow-lg hover:-translate-y-0.5 text-lg"
+          data-cta-location="stress-eating-bottom"
+        >
+          Start your first stress-aware check-in
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer t={t} />
+
+  <script>
+    import { initMixpanel, trackPageView, trackCTAClick } from '../scripts/mixpanel';
+
+    (function() {
+      initMixpanel();
+      trackPageView('stress-eating-help', 'en');
+
+      document.querySelectorAll('[data-cta-location]').forEach(button => {
+        button.addEventListener('click', () => {
+          const location = button.getAttribute('data-cta-location');
+          if (location) {
+            trackCTAClick(location, 'en');
+          }
+        });
+      });
+    })();
+  </script>
+</Layout>

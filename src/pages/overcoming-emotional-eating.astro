@@ -1,0 +1,588 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import en from '../i18n/en.json';
+
+const t = en;
+const appUrl = import.meta.env.PUBLIC_APP_URL || 'https://app.emotioneat.com';
+
+// FAQ data for this page
+const faqs = [
+  {
+    question: "What does \"overcoming\" emotional eating actually mean?",
+    answer: "It doesn't mean you'll never eat emotionally again—it means you'll become aware of when it's happening and have the tools to choose differently. It's about building a healthier relationship with food and emotions, not achieving perfection."
+  },
+  {
+    question: "How is this different from dieting?",
+    answer: "Diets focus on what you eat and restrict foods. EmotionEat focuses on why you eat and builds awareness. We don't count calories or ban foods. We help you understand your emotional triggers so you can make conscious choices."
+  },
+  {
+    question: "Can I really overcome emotional eating without willpower?",
+    answer: "Yes. Willpower fails because it fights against your emotional brain. Awareness works because it helps you understand what's really going on. When you recognize a trigger in the moment, you create space to choose a different response."
+  },
+  {
+    question: "How long does it take to overcome emotional eating?",
+    answer: "Most users notice patterns within the first week. Meaningful change typically starts around 2-3 weeks of daily practice. Overcoming emotional eating is a journey, not a destination—but awareness builds faster than you might expect."
+  },
+  {
+    question: "Is EmotionEat a replacement for therapy?",
+    answer: "No. EmotionEat is a self-awareness tool that complements professional support. If you have an eating disorder or serious mental health concerns, please work with a healthcare provider. We're here to support your journey, not replace professional care."
+  },
+  {
+    question: "What if I slip up and eat emotionally?",
+    answer: "That's part of the process. EmotionEat isn't about perfection—it's about awareness. When you notice emotional eating, that's actually progress. You can use those moments to learn more about your triggers and build even greater awareness."
+  }
+];
+
+// FAQPage structured data for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<Layout
+  title="Overcoming Emotional Eating — Build Awareness and Break the Cycle | EmotionEat"
+  description="Discover how to overcome emotional eating by building awareness, not restriction. Understand your triggers, break patterns, and develop a healthier relationship with food. Start free."
+  ogTitle="Overcoming Emotional Eating — Build Awareness | EmotionEat"
+  ogDescription="Overcome emotional eating by understanding your emotions, not restricting food. Build awareness and break free from the cycle for good."
+  canonical="https://www.emotioneat.com/overcoming-emotional-eating"
+  structuredData={faqSchema}
+>
+  <Header t={t} />
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-secondary-50 via-white to-primary-50 relative overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style="animation-delay: 1s;"></div>
+      </div>
+
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center relative z-10">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 animate-on-scroll">
+          Overcoming Emotional Eating — Build Awareness and Break the Cycle
+        </h1>
+        <p class="text-xl text-neutral-600 mb-10 max-w-2xl mx-auto animate-on-scroll delay-100">
+          Overcoming emotional eating isn't about restriction or willpower—it's about understanding your emotions. EmotionEat helps you build awareness and break free from the cycle for good.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll delay-200">
+          <a
+            href={appUrl}
+            class="inline-flex items-center justify-center px-8 py-4 bg-secondary-500 hover:bg-secondary-600 text-white font-semibold rounded-2xl transition-all hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-secondary-300 focus:ring-offset-2"
+            data-cta-location="hero-overcoming-emotional-eating"
+          >
+            Start Your Awareness Journey
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a
+            href="#how-it-works"
+            class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold rounded-2xl border-2 border-neutral-200 hover:border-secondary-300 transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-secondary-300 focus:ring-offset-2"
+          >
+            Learn How It Works
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Emotional Eating Happens -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-8 text-center animate-on-scroll">
+          Why Emotional Eating Happens
+        </h2>
+        <div class="prose prose-lg max-w-none text-neutral-600 animate-on-scroll delay-100">
+          <p class="mb-6">
+            Emotional eating is a learned response, not a character flaw. At some point, your brain discovered that food could provide quick relief from uncomfortable emotions. Stress, boredom, loneliness, anxiety—food offered a temporary escape, and your brain filed that away as a useful coping strategy.
+          </p>
+          <p class="mb-6">
+            This happens because eating triggers the release of dopamine, the brain's reward chemical. That rush of pleasure creates a powerful association: feel bad → eat → feel better. Over time, this pattern becomes automatic. You might find yourself in the kitchen without even realizing how you got there.
+          </p>
+          <p>
+            The good news? Because emotional eating is learned, it can be unlearned. Not through willpower or restriction, but through awareness. When you understand the triggers and patterns driving your eating, you gain the power to respond differently.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What It Means to "Overcome" Emotional Eating -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-8 text-center animate-on-scroll">
+          What It Means to "Overcome" Emotional Eating
+        </h2>
+        <div class="prose prose-lg max-w-none text-neutral-600 animate-on-scroll delay-100">
+          <p class="mb-6">
+            Let's be clear: overcoming emotional eating doesn't mean you'll never eat for emotional reasons again. That's not realistic, and it's not the goal. Food is meant to be enjoyed, and sometimes eating is part of celebration, comfort, or connection.
+          </p>
+          <p class="mb-6">
+            Overcoming emotional eating means changing your relationship with food and emotions. It means becoming aware of when emotions are driving you to eat—and having the tools to pause and choose how you want to respond. Sometimes you'll still choose to eat. But it will be a conscious choice, not an automatic reaction.
+          </p>
+          <p class="mb-6">
+            This journey is about progress, not perfection. It's about approaching yourself with compassion and curiosity rather than judgment. Every time you notice an emotional eating urge—whether you act on it or not—you're building awareness. That awareness is the foundation of lasting change.
+          </p>
+          <p>
+            The goal isn't to become a person who never struggles. It's to become a person who understands their patterns, responds with intention, and treats themselves with kindness along the way.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How EmotionEat Helps You Overcome Emotional Eating -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4 animate-on-scroll">
+            How EmotionEat Helps You Overcome Emotional Eating
+          </h2>
+          <p class="text-xl text-neutral-600 max-w-2xl mx-auto animate-on-scroll delay-100">
+            Build lasting change through understanding and compassion
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div class="bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-secondary-200 hover:shadow-xl transition-all animate-on-scroll delay-100">
+            <div class="w-14 h-14 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-3">Emotional Awareness Building</h3>
+            <p class="text-neutral-600">Daily conversations help you recognize and name your emotions before they drive you to eat.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-primary-200 hover:shadow-xl transition-all animate-on-scroll delay-200">
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-3">Daily Supportive Check-ins</h3>
+            <p class="text-neutral-600">A consistent, non-judgmental space to explore how you're feeling each day.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-accent-200 hover:shadow-xl transition-all animate-on-scroll delay-300">
+            <div class="w-14 h-14 bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-3">Identifying Patterns</h3>
+            <p class="text-neutral-600">AI spots connections between specific emotions, situations, and eating behaviors you might miss.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-indigo-200 hover:shadow-xl transition-all animate-on-scroll delay-100">
+            <div class="w-14 h-14 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-3">Emotional Reframing</h3>
+            <p class="text-neutral-600">Learn to see triggers differently and respond with awareness instead of automatic eating.</p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-mint-200 hover:shadow-xl transition-all animate-on-scroll delay-200">
+            <div class="w-14 h-14 bg-gradient-to-br from-mint-100 to-mint-200 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-mint-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-3">Personalized Advice</h3>
+            <p class="text-neutral-600">Get guidance tailored to your specific patterns, triggers, and life situation.</p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-calm-200 hover:shadow-xl transition-all animate-on-scroll delay-300">
+            <div class="w-14 h-14 bg-gradient-to-br from-calm-100 to-calm-200 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-calm-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-3">Progress Tracking</h3>
+            <p class="text-neutral-600">Watch your awareness grow and celebrate wins along the way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4 animate-on-scroll">
+            How It Works
+          </h2>
+          <p class="text-xl text-neutral-600 max-w-2xl mx-auto animate-on-scroll delay-100">
+            A gentle process to understand yourself and build lasting change
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 relative">
+          <!-- Connector Line (Desktop) -->
+          <div class="hidden md:block absolute top-24 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-secondary-200 via-primary-200 to-accent-200"></div>
+
+          <!-- Step 1 -->
+          <div class="relative bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-secondary-200 hover:shadow-xl transition-all hover:-translate-y-2 animate-on-scroll delay-100">
+            <div class="absolute -top-4 left-8 px-4 py-1 bg-gradient-to-r from-secondary-400 to-secondary-500 text-white text-sm font-bold rounded-full">
+              01
+            </div>
+            <div class="w-16 h-16 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-2xl flex items-center justify-center mb-6 mt-4">
+              <svg class="w-8 h-8 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-3">Check In Daily</h3>
+            <p class="text-neutral-600">Share how you're feeling through a supportive chat conversation. No pressure, no judgment—just an honest check-in about your day.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-primary-200 hover:shadow-xl transition-all hover:-translate-y-2 animate-on-scroll delay-200">
+            <div class="absolute -top-4 left-8 px-4 py-1 bg-gradient-to-r from-primary-400 to-primary-500 text-white text-sm font-bold rounded-full">
+              02
+            </div>
+            <div class="w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center mb-6 mt-4">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-3">Discover Your Patterns</h3>
+            <p class="text-neutral-600">AI reveals the emotional triggers behind your eating habits—connections you couldn't see on your own.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-accent-200 hover:shadow-xl transition-all hover:-translate-y-2 animate-on-scroll delay-300">
+            <div class="absolute -top-4 left-8 px-4 py-1 bg-gradient-to-r from-accent-400 to-accent-500 text-white text-sm font-bold rounded-full">
+              03
+            </div>
+            <div class="w-16 h-16 bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl flex items-center justify-center mb-6 mt-4">
+              <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-900 mb-3">Build New Responses</h3>
+            <p class="text-neutral-600">Get personalized challenges to develop healthier coping strategies and break the automatic eating cycle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features: Freemium vs Premium -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4 animate-on-scroll">
+            Choose Your Plan
+          </h2>
+          <p class="text-xl text-neutral-600 max-w-2xl mx-auto animate-on-scroll delay-100">
+            Start free and upgrade when you're ready for deeper insights
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Free Plan -->
+          <div class="bg-neutral-50 p-8 rounded-3xl border-2 border-neutral-200 animate-on-scroll delay-100">
+            <h3 class="text-2xl font-bold text-neutral-900 mb-2">Free</h3>
+            <p class="text-4xl font-bold text-neutral-900 mb-1">$0</p>
+            <p class="text-neutral-500 mb-6">Forever free</p>
+            <p class="text-neutral-600 mb-8">Perfect for starting your awareness journey</p>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-secondary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700">10 daily conversations</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-secondary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700">Weekly pattern analysis</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-secondary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700">5 daily challenges</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-secondary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700">Basic progress tracking</span>
+              </li>
+            </ul>
+            <a
+              href={appUrl}
+              class="block text-center px-8 py-4 bg-neutral-200 hover:bg-neutral-300 text-neutral-800 font-semibold rounded-2xl transition-all hover:shadow-lg"
+              data-cta-location="pricing-free-overcoming-emotional-eating"
+            >
+              Start Free
+            </a>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="bg-gradient-to-br from-secondary-50 to-primary-50 p-8 rounded-3xl border-2 border-secondary-200 relative animate-on-scroll delay-200">
+            <div class="absolute -top-3 right-8 px-4 py-1 bg-gradient-to-r from-secondary-400 to-secondary-500 text-white text-sm font-bold rounded-full">
+              Popular
+            </div>
+            <h3 class="text-2xl font-bold text-neutral-900 mb-2">Premium</h3>
+            <p class="text-4xl font-bold text-neutral-900 mb-1">$7.99<span class="text-lg font-normal text-neutral-500">/month</span></p>
+            <p class="text-neutral-500 mb-6">Billed monthly</p>
+            <p class="text-neutral-600 mb-8">For deeper insights and faster progress</p>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-secondary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700">50 daily conversations</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-secondary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700">Daily pattern analysis</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-secondary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700">Pattern explanations</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-secondary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700">Advanced insights</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-secondary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700">Priority support</span>
+              </li>
+            </ul>
+            <a
+              href={appUrl}
+              class="block text-center px-8 py-4 bg-secondary-500 hover:bg-secondary-600 text-white font-semibold rounded-2xl transition-all hover:shadow-xl hover:-translate-y-0.5"
+              data-cta-location="pricing-premium-overcoming-emotional-eating"
+            >
+              Start Free Trial
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emotional Triggers That Keep the Cycle Alive -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4 animate-on-scroll">
+            Emotional Triggers That Keep the Cycle Alive
+          </h2>
+          <p class="text-xl text-neutral-600 max-w-2xl mx-auto animate-on-scroll delay-100">
+            Understanding your triggers is the first step to overcoming them
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Stress & Overwhelm -->
+          <div class="bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-red-200 hover:shadow-xl transition-all animate-on-scroll delay-100">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-red-100 to-red-200 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-neutral-900">Stress & Overwhelm</h3>
+            </div>
+            <p class="text-neutral-600 mb-4">Deadlines piling up, responsibilities mounting, feeling like everything is out of control. Using food to decompress or escape. The "I deserve this" justification after a hard day.</p>
+            <p class="text-sm text-secondary-600 font-medium">EmotionEat helps you recognize stress patterns before they lead to eating.</p>
+          </div>
+
+          <!-- Boredom & Restlessness -->
+          <div class="bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-amber-200 hover:shadow-xl transition-all animate-on-scroll delay-200">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-neutral-900">Boredom & Restlessness</h3>
+            </div>
+            <p class="text-neutral-600 mb-4">Lack of stimulation or engagement. Eating to fill time or avoid tasks you don't want to do. Mindless snacking without awareness of what or why you're eating.</p>
+            <p class="text-sm text-accent-600 font-medium">EmotionEat helps you distinguish between hunger and boredom.</p>
+          </div>
+
+          <!-- Loneliness & Isolation -->
+          <div class="bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-indigo-200 hover:shadow-xl transition-all animate-on-scroll delay-100">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-neutral-900">Loneliness & Isolation</h3>
+            </div>
+            <p class="text-neutral-600 mb-4">Eating for company or comfort when you're alone. Using food as emotional connection. Evening and weekend patterns when isolation feels strongest.</p>
+            <p class="text-sm text-primary-600 font-medium">EmotionEat provides a supportive presence and helps identify loneliness patterns.</p>
+          </div>
+
+          <!-- Anxiety & Uncertainty -->
+          <div class="bg-white p-8 rounded-3xl border-2 border-neutral-100 hover:border-pink-200 hover:shadow-xl transition-all animate-on-scroll delay-200">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-pink-100 to-pink-200 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-neutral-900">Anxiety & Uncertainty</h3>
+            </div>
+            <p class="text-neutral-600 mb-4">Worry about the future. Using food to soothe nervous energy. The temporary calm that eating provides when everything feels uncertain.</p>
+            <p class="text-sm text-secondary-600 font-medium">EmotionEat helps you develop healthier ways to manage anxiety.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4 animate-on-scroll">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-xl text-neutral-600 animate-on-scroll delay-100">
+            Everything you need to know about overcoming emotional eating
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {faqs.map((faq, index) => (
+            <div class="border-2 border-neutral-100 rounded-2xl overflow-hidden animate-on-scroll" style={`animation-delay: ${(index + 1) * 100}ms`}>
+              <button
+                class="faq-question w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-neutral-50 transition-colors"
+                aria-expanded="false"
+                data-faq-question={faq.question}
+              >
+                <span class="font-semibold text-neutral-900 pr-4">{faq.question}</span>
+                <svg class="faq-icon w-5 h-5 text-neutral-400 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-5">
+                <p class="text-neutral-600">{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-secondary-400 via-secondary-500 to-primary-500 relative overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full mix-blend-overlay filter blur-3xl opacity-10"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full mix-blend-overlay filter blur-3xl opacity-10"></div>
+      </div>
+
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center relative z-10">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 animate-on-scroll">
+          Ready to Overcome Emotional Eating?
+        </h2>
+        <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto animate-on-scroll delay-100">
+          Start building awareness today—your journey to freedom begins with a single conversation.
+        </p>
+        <a
+          href={appUrl}
+          class="inline-flex items-center px-10 py-5 bg-white hover:bg-neutral-100 text-secondary-600 font-bold text-lg rounded-2xl transition-all hover:shadow-2xl hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-secondary-500 animate-on-scroll delay-200"
+          data-cta-location="footer-overcoming-emotional-eating"
+        >
+          Start Your Awareness Journey
+          <svg class="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+
+        <!-- Trust Indicators -->
+        <div class="mt-12 flex flex-wrap justify-center gap-8 text-white/80 animate-on-scroll delay-300">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            <span class="text-sm font-medium">Privacy-first</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+            <span class="text-sm font-medium">AI-powered</span>
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+            <span class="text-sm font-medium">Cancel anytime</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer t={t} />
+
+  <script>
+    import { initMixpanel, trackPageView, trackCTAClick, trackFAQOpen } from '../scripts/mixpanel';
+
+    (function() {
+      initMixpanel();
+      trackPageView('overcoming-emotional-eating', 'en');
+
+      // CTA tracking
+      document.querySelectorAll('[data-cta-location]').forEach(button => {
+        button.addEventListener('click', () => {
+          const location = button.getAttribute('data-cta-location');
+          if (location) {
+            trackCTAClick(location, 'en');
+          }
+        });
+      });
+
+      // FAQ accordion functionality
+      document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+          const answer = button.nextElementSibling;
+          const icon = button.querySelector('.faq-icon');
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+          const question = button.getAttribute('data-faq-question');
+
+          // Toggle current FAQ
+          button.setAttribute('aria-expanded', !isExpanded);
+          answer?.classList.toggle('hidden');
+          icon?.classList.toggle('rotate-180');
+
+          // Track FAQ open
+          if (!isExpanded && question) {
+            trackFAQOpen(question, 'en');
+          }
+        });
+      });
+    })();
+  </script>
+</Layout>
