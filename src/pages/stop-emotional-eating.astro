@@ -573,7 +573,7 @@ const faqSchema = {
           const question = button.getAttribute('data-faq-question');
 
           // Toggle current FAQ
-          button.setAttribute('aria-expanded', !isExpanded);
+          button.setAttribute('aria-expanded', String(!isExpanded));
           answer?.classList.toggle('hidden');
           icon?.classList.toggle('rotate-180');
 
