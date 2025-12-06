@@ -5,7 +5,9 @@
       "Bash(git commit:*)",
       "Bash(git push)",
       "Bash(tree:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(find:*)",
+      "Bash(wc:*)"
     ],
     "deny": [],
     "ask": []

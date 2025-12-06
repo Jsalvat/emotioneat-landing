@@ -67,11 +67,11 @@ const resourceLinks = {
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center space-x-2" aria-label="Main navigation">
-        <a href="#how-it-works" class="nav-link">
+        <a href="/#how-it-works" class="nav-link">
           How It Works
         </a>
 
-        <a href="#features" class="nav-link">
+        <a href="/#features" class="nav-link">
           {translations.header.features}
         </a>
 
@@ -181,7 +181,7 @@ const resourceLinks = {
           Blog
         </a>
 
-        <a href="#faq" class="nav-link">
+        <a href="/#faq" class="nav-link">
           {translations.header.faq}
         </a>
       </nav>
@@ -227,8 +227,8 @@ const resourceLinks = {
   >
     <div class="container mx-auto px-6 py-8 h-full overflow-y-auto">
       <nav class="space-y-2">
-        <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
-        <a href="#features" class="mobile-nav-link">{translations.header.features}</a>
+        <a href="/#how-it-works" class="mobile-nav-link">How It Works</a>
+        <a href="/#features" class="mobile-nav-link">{translations.header.features}</a>
 
         <!-- Mobile Accordion: Resources -->
         <div class="mobile-accordion">
@@ -270,7 +270,7 @@ const resourceLinks = {
         </div>
 
         <a href="/blog" class="mobile-nav-link">Blog</a>
-        <a href="#faq" class="mobile-nav-link">{translations.header.faq}</a>
+        <a href="/#faq" class="mobile-nav-link">{translations.header.faq}</a>
       </nav>
 
       <!-- Mobile CTA -->
@@ -358,21 +358,7 @@ const resourceLinks = {
 </style>
 
 <script>
-  import { initMixpanel, trackCTAClick } from '../scripts/mixpanel';
-
   function initHeader() {
-    initMixpanel();
-
-    // CTA Tracking
-    document.querySelectorAll('[data-cta-location]').forEach(button => {
-      button.addEventListener('click', () => {
-        const location = button.getAttribute('data-cta-location');
-        if (location) {
-          trackCTAClick(location, 'en');
-        }
-      });
-    });
-
     // Mobile Menu Toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');

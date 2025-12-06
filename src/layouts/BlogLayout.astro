@@ -47,12 +47,14 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 
 		<!-- Preconnect to external domains -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preconnect" href="https://www.googletagmanager.com" />
 
-		<!-- Font preload for faster LCP -->
+		<!-- Google Fonts - Plus Jakarta Sans (async loading) -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qU79TR_V.woff2" as="font" type="font/woff2" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" /></noscript>
 
 		<!-- Schema.org for Blog Post -->
 		<script type="application/ld+json" is:inline set:html={JSON.stringify({
@@ -77,19 +79,6 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 			}
 		})} />
 
-		<!-- GA4 -->
-		{import.meta.env.PUBLIC_GA4_ID && (
-			<>
-				<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA4_ID}`}></script>
-				<script is:inline define:vars={{ GA4_ID: import.meta.env.PUBLIC_GA4_ID }}>
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-					gtag('config', GA4_ID);
-				</script>
-			</>
-		)}
-
 		<!-- GSC Verification -->
 		{import.meta.env.PUBLIC_GSC_VERIFICATION_CODE && (
 			<meta name="google-site-verification" content={import.meta.env.PUBLIC_GSC_VERIFICATION_CODE} />
@@ -103,6 +92,19 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 		</main>
 
 		<Footer t={t} />
+
+		<!-- GA4 (deferred to end of body for better performance) -->
+		{import.meta.env.PUBLIC_GA4_ID && (
+			<>
+				<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA4_ID}`}></script>
+				<script is:inline define:vars={{ GA4_ID: import.meta.env.PUBLIC_GA4_ID }}>
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+					gtag('config', GA4_ID);
+				</script>
+			</>
+		)}
 	</body>
 </html>
 
